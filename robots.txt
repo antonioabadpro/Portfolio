@@ -1,0 +1,8 @@
+# User-agent: * significa que estas reglas aplican para TODOS los robots (Google, Bing, etc.)
+User-agent: *
+
+# Allow: / significa que permites que rastreen toda la web desde la raíz
+Allow: /
+
+# Descomenta la siguiente línea y pega tu URL real cuando tengas el dominio propio
+# Sitemap: https://antonioabadpro.netlify.app/sitemap.xml
