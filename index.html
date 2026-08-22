@@ -14,13 +14,13 @@
         <!-- Google Font Inter -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <script>
-            // 1. Declaras tus constantes de color arriba
+            // Constantes de colores para el modo oscuro
             const COLOR_PRINCIPAL = '#059669'; // Verde Esmeralda
             const COLOR_SECUNDARIO = '#10b981'; // Verde Claro
             const FONDO_OSCURO = '#0b0f19';
             const TARJETA_OSCURA = '#111827';
 
-            // 2. Las asocias a la configuración de Tailwind
+            // Asociamos las constantes a la configuración de Tailwind
             tailwind.config = {
                 darkMode: 'class',
                 theme: {
@@ -38,34 +38,35 @@
             }
         </script>
         <style type="text/tailwindcss">
+            /* Constantes Modo Oscuro */
             :root {
-                /* Constantes Modo Oscuro */
                 --color-fondo: #0b0f19;
                 --color-tarjeta: #111827;
                 --color-texto: #f9fafb;
                 --color-acento: #059669;
             }
 
+            /* Constantes Modo Claro */
             [data-theme="light"] {
-                /* Constantes Modo Claro */
                 --color-fondo: #f8fafc;
                 --color-tarjeta: #ffffff;
                 --color-texto: #0f172a;
                 --color-acento: #047857;
             }
 
-            /* Aplicas las variables a Tailwind */
+            /* Aplicamos las variables a Tailwind */
             body {
                 background-color: var(--color-fondo);
                 color: var(--color-texto);
                 font-family: 'Inter', sans-serif;
             }
 
+            /* Creamos un conjunto de estilos personalizados utilizando las clases de Tailwind */
             @layer utilities
             {
                 .fecha-formacion-experiencia
                 {
-                    @apply px-2.5 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md w-44 shrink-0 text-center justify-center whitespace-nowrap;
+                    @apply px-2.5 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md w-36 shrink-0 text-center justify-center whitespace-nowrap;
                 }
             }
         </style>
@@ -80,11 +81,11 @@
                 
                 <div class="flex items-center gap-8">
                     <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
-                        <li><a href="#about" class="hover:text-slate-100 transition-colors" data-i18n="nav_home">Inicio</a></li>
-                        <li><a href="#resume" class="hover:text-slate-100 transition-colors" data-i18n="nav_resume">Trayectoria</a></li>
+                        <li><a href="#about" class="hover:text-slate-100 transition-colors" data-i18n="nav_inicio">Inicio</a></li>
+                        <li><a href="#trayectoria" class="hover:text-slate-100 transition-colors" data-i18n="nav_trayectoria">Trayectoria</a></li>
                         <li><a href="#tech" class="hover:text-slate-100 transition-colors" data-i18n="nav_tech">Stack</a></li>
-                        <li><a href="#projects" class="hover:text-slate-100 transition-colors" data-i18n="nav_proj">Proyectos</a></li>
-                        <li><a href="#contact" class="hover:text-slate-100 transition-colors" data-i18n="nav_contact">Contacto</a></li>
+                        <li><a href="#projects" class="hover:text-slate-100 transition-colors" data-i18n="nav_proyectos">Proyectos</a></li>
+                        <li><a href="#contact" class="hover:text-slate-100 transition-colors" data-i18n="nav_contacto">Contacto</a></li>
                     </ul>
 
                     <div class="flex items-center gap-2 pl-4 border-l border-slate-800">
@@ -92,18 +93,18 @@
                             ES
                         </button>
                         <button id="themeToggle" class="w-9 h-9 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-300 hover:border-slate-700 hover:bg-slate-800 transition-all">
-                            <i data-lucide="sun" class="w-4 h-4" id="themeIcon"></i>
+                            <i data-lucide="moon" class="w-4 h-4" id="themeIcon"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <!-- Sección de Inicio (Ubicacion, Nombre, Profesion, Texto Resumen y Botones) -->
+        <!-- Sección INICIO (Ubicacion, Nombre, Profesion, Texto Resumen y Botones) -->
         <section id="about" class="min-h-[75vh] max-w-6xl mx-auto px-6 flex flex-col justify-center py-16">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold w-fit mb-6">
                 <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-                <span data-i18n="hero_badge">Huelva y alrededores</span>
+                <span data-i18n="texto_inicio_ubicacion">Huelva y alrededores</span>
             </div>
 
             <!-- Nombre y Apellidos -->
@@ -111,22 +112,22 @@
                 Hola, soy<br>
                 <span class="inline-flex items-end gap-2">
                     <span id="name" class="text-emerald-500 pr-4">Antonio Abad</span>
-                    <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="tag_name">nombre</span>
+                    <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="texto_inicio_nombre">nombre</span>
                 </span>
                 <br>
                 <span class="inline-flex items-end gap-2">
                     <span id="surname" class="text-emerald-500 pr-4">Hernández Gálvez</span>
-                    <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="tag_surnames">apellidos</span>
+                    <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="texto_inicio_apellidos">apellidos</span>
                 </span>
             </h1>
 
             <!-- Profesion -->
-            <h2 class="text-lg sm:text-xl text-slate-400 font-medium mb-6" data-i18n="hero_subtitle">
+            <h2 class="text-lg sm:text-xl text-slate-400 font-medium mb-6" data-i18n="texto_inicio_profesion">
                 Ingeniero Informático &bull; Ingeniero de Software
             </h2>
 
             <!-- Texto Resumen -->
-            <p class="text-slate-400 max-w-2xl text-base sm:text-lg leading-relaxed mb-8" data-i18n="hero_desc">
+            <p class="text-slate-400 max-w-2xl text-base sm:text-lg leading-relaxed mb-8" data-i18n="texto_inicio_resumen">
                 Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante de Máster en Ingeniería de Software en la UNIR. Especializado en el desarrollo Backend robusto y arquitectura de software escalable.
             </p>
 
@@ -136,13 +137,84 @@
                     <svg id="logo-github1" class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
-                    <span data-i18n="btn_projects">Ver proyectos</span>
+                    <span data-i18n="btn_inicio_proyectos">Ver proyectos</span>
                     <i data-lucide="arrow-down" class="w-4 h-4"></i>
                 </a>
                 <a href="#contact" class="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium px-5 py-2.5 rounded-lg hover:-translate-y-0.5 transition-all text-sm">
                     <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span data-i18n="btn_cv_hero">Contactar</span>
+                    <span data-i18n="btn_inicio_contacto">Contactar</span>
                 </a>
+            </div>
+        </section>
+
+        <!-- Sección TRAYECTORIA -->
+        <section id="trayectoria" class="max-w-6xl mx-auto px-6 py-12">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="titulo_trayectoria">
+                    Trayectoria
+                </h2>
+            </div>
+
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm">
+                <!-- Botones de Navegación (Tabs Navigation) -->
+                <div class="flex border-b border-slate-800 bg-slate-900/60">
+                    <button id="btn-formacion-academica" class="tab-btn flex-1 py-3.5 px-6 font-semibold text-sm text-white hover:text-white border-b-2 border-emerald-500 bg-slate-900 transition-all flex items-center justify-center gap-2 active">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                        <span data-i18n="tab_trayectoria_estudio">Formación Académica</span>
+                    </button>
+                    <button id="btn-experiencia-profesional" class="tab-btn flex-1 py-3.5 px-6 font-semibold text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i>
+                        <span data-i18n="tab_trayectoria_trabajo">Experiencia Profesional</span>
+                    </button>
+                    <button id="btn-certificaciones" class="tab-btn flex-1 py-3.5 px-6 font-semibold text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="scroll-text" class="w-4 h-4"></i>
+                        <span data-i18n="tab_trayectoria_certificaciones">Certificaciones</span>
+                    </button>
+                </div>
+
+                <!-- Tab Formación Académica -->
+                <div id="tab-estudio" class="tab-content p-6 sm:p-8 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="fecha-formacion-experiencia">2026 - ACTUALIDAD</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_2">Máster Universitario en Ingeniería de Software y Sistemas Informáticos</h3>
+                            <p class="text-sm text-slate-400">Escuela Técnica Superior de Ingeniería y Tecnología (ESIT) - UNIR (Universidad Internacional de La Rioja)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="fecha-formacion-experiencia">2022 - 2026</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_1">Grado Universitario en Ingeniería Informática (Especialidad Ingeniería de Software)</h3>
+                            <p class="text-sm text-slate-400 mb-1">Escuela Superior de Ingeniería (ETSI) - Universidad de Huelva (UHU)</p>
+                            <p class="text-xs text-slate-400 font-bold" data-i18n="nota_trayectoria_estudios_1">Nota Media: 7'61 / 10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Experiencia Profesional-->
+                <div id="tab-trabajo" class="tab-content hidden p-6 sm:p-8 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                        <span class="fecha-formacion-experiencia">2018 - ACTUALIDAD</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_trabajo_1">Asesoramiento y Mantenimiento de Equipos Informáticos</h3>
+                            <p class="text-sm text-slate-400 mb-2">Freelance - Valverde del Camino, Huelva</p>
+                            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="texto_trayectoria_trabajo_1">Asesoramiento personalizado en adquisición, configuración y optimización de Hardware/Software. Diagnóstico preventivo y mantenimiento integral de sistemas operativos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Certificaciones -->
+                <div id="tab-certificaciones" class="tab-content hidden p-6 sm:p-8 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                        <span class="fecha-formacion-experiencia">2019</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_certificaciones_1">Idiomas</h3>
+                            <p class="text-sm text-slate-400">Cambridge & Native</p>
+                            <p class="text-xs text-slate-400" data-i18n="texto_certificaciones_1">Inglés - Nivel B1</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -155,6 +227,62 @@
             // Inicializar iconos de Lucide
             lucide.createIcons();
 
+            // Funcionalidad cambio de columnas (Tabs) en la sección de TRAYECTORIA
+            const btnEstudio = document.getElementById('btn-formacion-academica');
+            const btnTrabajo = document.getElementById('btn-experiencia-profesional');
+            const btnCertificaciones = document.getElementById('btn-certificaciones');
+
+            const columnaEstudio = document.getElementById('tab-estudio');
+            const columnaTrabajo = document.getElementById('tab-trabajo');
+            const columnaCertificaciones = document.getElementById('tab-certificaciones');
+
+            // Listas Auxiliares para manejar los botones y las columnas
+            const listaBotones = [btnEstudio, btnTrabajo, btnCertificaciones];
+            const listaColumnas = [columnaEstudio, columnaTrabajo, columnaCertificaciones];
+
+            // Definimos las clases Tailwind para los botones Activos e Inactivos
+            const listaClasesActivas = ['text-white', 'hover:text-white', 'border-emerald-500', 'bg-slate-900', 'active'];
+            const listaClasesInactivas = ['text-slate-400', 'border-transparent', 'bg-transparent'];
+
+            // Funcion para mostrar el contenido de la columna seleccionada y ocultar las demás, cambiando el estilo
+            function mostrarColumnaTrayectoria(posicion)
+            {
+                // Ocultamos todas las columnas de la Tabla
+                listaColumnas.forEach((columna, i) => {
+                    columna.classList.add('hidden');
+                });
+
+                // Cambiamos el estilo de los botones para reflejar la columna seleccionada
+                listaBotones.forEach((boton, i) => {
+                    if (i === posicion)
+                    {
+                        boton.classList.add(...listaClasesActivas); // Desempaquetamos las clases activas del array (...) y las añadimos al botón seleccionado
+                        boton.classList.remove(...listaClasesInactivas);
+                    }
+                    else
+                    {
+                        boton.classList.remove(...listaClasesActivas);
+                        boton.classList.add(...listaClasesInactivas);
+                    }
+                });
+
+                // Mostramos la columna seleccionada y ocultamos el resto de columnas
+                listaColumnas.forEach((columna, i) => {
+                    if (i === posicion)
+                    {
+                        columna.classList.remove('hidden');
+                    }
+                    else
+                    {
+                        columna.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Eventos de click para los botones de la sección de TRAYECTORIA
+            btnEstudio.addEventListener('click', () => mostrarColumnaTrayectoria(0));
+            btnTrabajo.addEventListener('click', () => mostrarColumnaTrayectoria(1));
+            btnCertificaciones.addEventListener('click', () => mostrarColumnaTrayectoria(2));
             
         </script>
     </body>
