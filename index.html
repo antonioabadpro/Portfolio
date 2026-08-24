@@ -12,6 +12,9 @@
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- DevIcons CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
     <!-- Google Font Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
@@ -87,26 +90,26 @@
     <!-- Navbar -->
     <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#about" class="text-xl font-bold tracking-tight text-white flex items-center gap-1">
-                AAHG<span class="text-emerald-500">.</span>
-            </a>
+            <a href="#inicio" class="text-xl font-bold tracking-tight text-white flex items-center gap-1">
+                    AAHG<span class="text-emerald-500">.</span>
+                </a>
 
             <div class="flex items-center gap-8">
                 <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
                     <li>
-                        <a href="#about" class="hover:text-slate-100 transition-colors" data-i18n="nav_inicio">Inicio</a>
+                        <a href="#inicio" class="hover:text-slate-100 transition-colors" data-i18n="nav_inicio">Inicio</a>
                     </li>
                     <li>
                         <a href="#trayectoria" class="hover:text-slate-100 transition-colors" data-i18n="nav_trayectoria">Trayectoria</a>
                     </li>
                     <li>
-                        <a href="#tech" class="hover:text-slate-100 transition-colors" data-i18n="nav_tech">Stack</a>
+                        <a href="#stack" class="hover:text-slate-100 transition-colors" data-i18n="nav_stack">Stack</a>
                     </li>
                     <li>
-                        <a href="#projects" class="hover:text-slate-100 transition-colors" data-i18n="nav_proyectos">Proyectos</a>
+                        <a href="#proyectos" class="hover:text-slate-100 transition-colors" data-i18n="nav_proyectos">Proyectos</a>
                     </li>
                     <li>
-                        <a href="#contact" class="hover:text-slate-100 transition-colors" data-i18n="nav_contacto">Contacto</a>
+                        <a href="#contacto" class="hover:text-slate-100 transition-colors" data-i18n="nav_contacto">Contacto</a>
                     </li>
                 </ul>
 
@@ -123,7 +126,7 @@
     </nav>
 
     <!-- Sección INICIO (Ubicacion, Nombre, Profesion, Texto Resumen y Botones) -->
-    <section id="about" class="min-h-[75vh] max-w-6xl mx-auto px-6 flex flex-col justify-center py-16">
+    <section id="inicio" class="min-h-[75vh] max-w-6xl mx-auto px-6 flex flex-col justify-center py-16">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold w-fit mb-6">
             <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
             <span data-i18n="texto_inicio_ubicacion">Huelva y alrededores</span>
@@ -133,12 +136,12 @@
         <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-2 leading-tight">
             Hola, soy<br>
             <span class="inline-flex items-end gap-2">
-                <span id="name" class="text-emerald-500 pr-4">Antonio Abad</span>
+                    <span id="name" class="text-emerald-500 pr-4">Antonio Abad</span>
             <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="texto_inicio_nombre">nombre</span>
             </span>
             <br>
             <span class="inline-flex items-end gap-2">
-                <span id="surname" class="text-emerald-500 pr-4">Hernández Gálvez</span>
+                    <span id="surname" class="text-emerald-500 pr-4">Hernández Gálvez</span>
             <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="texto_inicio_apellidos">apellidos</span>
             </span>
         </h1>
@@ -156,17 +159,17 @@
 
         <!-- Botones de Acción -->
         <div class="flex flex-wrap gap-4">
-            <a href="#projects" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-5 py-2.5 rounded-lg shadow-lg shadow-emerald-900/20 hover:-translate-y-0.5 transition-all text-sm">
-                <svg id="logo-github1" class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                <span data-i18n="btn_inicio_proyectos">Ver proyectos</span>
-                <i data-lucide="arrow-down" class="w-4 h-4"></i>
-            </a>
-            <a href="#contact" class="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium px-5 py-2.5 rounded-lg hover:-translate-y-0.5 transition-all text-sm">
-                <i data-lucide="mail" class="w-4 h-4"></i>
-                <span data-i18n="btn_inicio_contacto">Contactar</span>
-            </a>
+            <a href="#proyectos" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-5 py-2.5 rounded-lg shadow-lg shadow-emerald-900/20 hover:-translate-y-0.5 transition-all text-sm">
+                    <svg id="logo-github1" class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    <span data-i18n="btn_inicio_proyectos">Ver proyectos</span>
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </a>
+            <a href="#contacto" class="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium px-5 py-2.5 rounded-lg hover:-translate-y-0.5 transition-all text-sm">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span data-i18n="btn_inicio_contacto">Contactar</span>
+                </a>
         </div>
     </section>
 
@@ -265,7 +268,7 @@
     </section>
 
     <!-- Sección STACK TECNOLÓGICO -->
-    <section class="max-w-6xl mx-auto px-6 py-12" id="tech">
+    <section class="max-w-6xl mx-auto px-6 py-12" id="stack">
         <div class="mb-8">
             <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="stack_titulo">
                 Stack Tecnológico
@@ -273,408 +276,475 @@
         </div>
         <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-sm flex flex-col gap-6">
             <!-- Lenguajes -->
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b border-slate-800/60">
                 <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
                     <i class="w-5 h-5" data-lucide="code-2"></i>
                     <h3 class="font-bold text-white text-sm" data-i18n="stack_lenguajes_titulo">
                         Lenguajes
                     </h3>
                 </div>
-                <div class="flex flex-wrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        C
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        C++
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        C#
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Java
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Python
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        HTML
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        CSS
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        JavaScript
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        SQL
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        PL/SQL
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        PlantUML
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Bash
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Kotlin MP
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        MATLAB
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Alloy (UML)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        OCL (UML)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Ensamblador x86
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        xPath (XML)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        XSLT (XML)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Pascal-FC
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        VHDL
-                    </p>
+                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-c-plain"></i> C
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-cplusplus-plain"></i> C++
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-csharp-plain"></i> C#
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-java-plain"></i> Java
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-python-plain"></i> Python
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-html5-plain"></i> HTML
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-css3-plain"></i> CSS
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-javascript-plain"></i> JavaScript
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            SQL
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            PL/SQL
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-unifiedmodelinglanguage-plain"></i> PlantUML
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-bash-plain"></i> Bash
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-kotlin-plain"></i> Kotlin MP
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-matlab-plain"></i> MATLAB
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Alloy (UML)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            OCL (UML)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Ensamblador x86
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            xPath (XML)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            XSLT (XML)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Pascal-FC
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            VHDL
+                        </p>
+                    </div>
+                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
             <!-- Frameworks -->
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b border-slate-800/60">
                 <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
                     <i class="w-5 h-5" data-lucide="layers"></i>
                     <h3 class="font-bold text-white text-sm" data-i18n="stack_frameworks_titulo">
                         Frameworks
                     </h3>
                 </div>
-                <div class="flex flex-wrap gap-2 flex-1">
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Spring Boot (Java)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Tailwind (CSS)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Bootstrap (CSS)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Hibernate (Java)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        ROS - Robot Operating System (C++ | Python)
-                    </p>
+                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-spring-original"></i> Spring Boot (Java)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-tailwindcss-plain"></i> Tailwind (CSS)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-bootstrap-plain"></i> Bootstrap (CSS)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-hibernate-plain"></i> Hibernate (Java)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-ros-original"></i>ROS - Robot Operating System (C++ | Python)
+                        </p>
+                    </div>
+                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
-            <!-- Librerías y APIs-->
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+            <!-- Librerías & APIs-->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b border-slate-800/60">
                 <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
-                    <i class="w-5 h-5" data-lucide="layers"></i>
+                    <i class="w-5 h-5" data-lucide="library"></i>
                     <h3 class="font-bold text-white text-sm" data-i18n="stack_librerias_titulo">
-                        Librerías / APIs
+                        Librerías & APIs
                     </h3>
                 </div>
-                <div class="flex flex-wrap gap-2 flex-1">
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        HTMX (JavaScript)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        PyTorch (Python)
-                    </p>
+                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-htmx-plain"></i> HTMX (JavaScript)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-pytorch-plain"></i> PyTorch (Python)
+                        </p>
+                    </div>
+                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
-            <!-- Componentes / ORMs -->
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+            <!-- Componentes & ORMs -->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b border-slate-800/60">
                 <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
-                    <i class="w-5 h-5" data-lucide="layers"></i>
+                    <i class="w-5 h-5" data-lucide="boxes"></i>
                     <h3 class="font-bold text-white text-sm" data-i18n="stack_componentes_titulo">
-                        Componentes / ORMs
+                        Componentes & ORMs
                     </h3>
                 </div>
-                <div class="flex flex-wrap gap-2 flex-1">
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Java Servlets (Java)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Java Server Pages (Java)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Java Swing (Java)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Jakarta EE (Java)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        JPA (Java Persistence API)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Hibernate ORM (Java)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        EclipseLink ORM (Java)
-                    </p>
+                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Java Servlets (Java)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Java Server Pages (Java)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Java Swing (Java)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Jakarta EE (Java)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            JPA (Java Persistence API)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-hibernate-plain"></i> Hibernate ORM (Java)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-eclipse-plain"></i> EclipseLink ORM (Java)
+                        </p>
+                    </div>
+                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
             <!-- Bases de Datos -->
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b border-slate-800/60">
                 <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
-                    <i class="w-5 h-5" data-lucide="database"></i>
+                    <i class="w-8 h-8" data-lucide="database"></i>
                     <h3 class="font-bold text-white text-sm" data-i18n="stack_bd_titulo">
-                        Sistemas Gestores de Bases de Datos (SGBD)
+                        Sistemas Gestores de Bases de Datos
                     </h3>
                 </div>
-                <div class="flex flex-wrap gap-2 flex-1">
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Oracle Database
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        PostgreSQL
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        MySQL
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        MariaDB
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        H2 Database
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        MongoDB
-                    </p>
+                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-oracle-plain"></i> Oracle Database
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-postgresql-plain"></i> PostgreSQL
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-mysql-plain"></i> MySQL
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-mariadb-plain"></i> MariaDB
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            H2 Database
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-mongodb-plain"></i> MongoDB
+                        </p>
+                    </div>
+                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
             <!-- IDEs -->
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b border-slate-800/60">
                 <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
                     <i class="w-5 h-5" data-lucide="terminal"></i>
                     <h3 class="font-bold text-white text-sm" data-i18n="stack_ide_titulo">
                         IDEs
                     </h3>
                 </div>
-                <div class="flex flex-wrap gap-2 flex-1">
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        VS Code
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        IntelliJ IDEA
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        NetBeans
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Eclipse
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Oracle SQL Developer
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        DBeaver
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Microsoft Visual Studio
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Code::Blocks
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Android Studio
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Xilinx
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        MATLAB
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        EMU8086
-                    </p>
+                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-vscode-plain"></i> VS Code
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-intellij-plain"></i> IntelliJ IDEA
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-netbeans-plain"></i> NetBeans
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-eclipse-plain"></i> Eclipse
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-sqldeveloper-plain"></i> Oracle SQL Developer
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-dbeaver-plain"></i> DBeaver
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-visualstudio-plain"></i> Microsoft Visual Studio
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            ode::Blocks
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-androidstudio-plain"></i> Android Studio
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Xilinx
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            <i class="devicon-matlab-plain"></i> MATLAB
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            EMU8086
+                        </p>
+                    </div>
+                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
             <!-- Herramientas & Despliegue -->
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b border-slate-800/60">
                 <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
                     <i class="w-5 h-5" data-lucide="wrench"></i>
                     <h3 class="font-bold text-white text-sm" data-i18n="stack_herramientas_titulo">Herramientas & Despliegue</h3>
                 </div>
-                <div class="flex flex-wrap gap-2 flex-1">
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="git-branch"></i>
-                        Git
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="github"></i>
-                        GitHub
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="github"></i>
-                        GitHub Desktop
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="box"></i>
-                        Docker
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="send"></i>
-                        Postman
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Supabase
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        LM Studio
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Cisco Packet Tracer
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Maven
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Ant
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        GlassFish
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        Praat
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        Orange Data Mining
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        n8n
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        Microsoft Project
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        Microsoft Visio
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
-                        Lucidchart
-                    </p>
+                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            <i class="devicon-git-plain"></i> Git
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            <i class="devicon-github-plain"></i> GitHub
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            <i class="devicon-github-plain"></i> GitHub Desktop
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            <i class="devicon-docker-plain"></i> Docker
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            <i class="devicon-postman-plain"></i> Postman
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            <i class="devicon-supabase-plain"></i> Supabase
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            LM Studio
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            Cisco Packet Tracer
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            <i class="devicon-maven-plain"></i> Maven
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            Ant
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            GlassFish
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            Praat
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            Orange Data Mining
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            n8n
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            Microsoft Project
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            Microsoft Visio
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                            Lucidchart
+                        </p>
+                    </div>
+                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
             <!-- Habilidades -->
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 pb-6 border-b border-slate-800/60">
                 <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
-                    <i class="w-5 h-5" data-lucide="check-circle"></i>
+                    <i class="w-5 h-5" data-lucide="sparkles"></i>
                     <h3 class="font-bold text-white text-sm" data-i18n="stack_habilidades_titulo">
                         Habilidades
                     </h3>
                 </div>
-                <div class="flex flex-wrap gap-2 flex-1">
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Gestión Ágil de Proyectos
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Desarrollo de Aplicaciones Web
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Desarrollo de Aplicaciones de Escritorio
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Desarrollo de Aplicaciones Móviles
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Medición de la Calidad del Software
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Estimación y Planificación de Proyectos de Software
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Interconexión de Redes de Computadores
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Infraestructura de Redes de Computadores
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Seguridad de Redes de Computadores
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Sistemas Distribuidos
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Programación Concurrente
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Arquitectura de Computadores
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Manejo de la Shell de Linux
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Robótica
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Aprendizaje Automático
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Análisis de Algoritmos
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Optimización y Eficiencia
-                    </p>
+                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Gestión Ágil de Proyectos
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Desarrollo de Aplicaciones Web
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Desarrollo de Aplicaciones de Escritorio
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Desarrollo de Aplicaciones Móviles
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Medición de la Calidad del Software
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Estimación y Planificación de Proyectos de Software
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Interconexión de Redes de Computadores
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Infraestructura de Redes de Computadores
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Seguridad de Redes de Computadores
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Sistemas Distribuidos
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Programación Concurrente
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Arquitectura de Computadores
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Manejo de la Shell de Linux
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Robótica
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Aprendizaje Automático
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Análisis de Algoritmos
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Optimización y Eficiencia
+                        </p>
+                    </div>
+                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
             <!-- Ingeniería de Software -->
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 last:border-none last:pb-0">
                 <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
-                    <i class="w-5 h-5" data-lucide="wrench"></i>
+                    <i class="w-5 h-5" data-lucide="cpu"></i>
                     <h3 class="font-bold text-white text-sm" data-i18n="stack_ingenieria_titulo">
                         Ingeniería de Software
                     </h3>
                 </div>
-                <div class="flex flex-wrap gap-2 flex-1">
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Código Limpio
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Principios SOLID
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Patrones de Diseño
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        TDD (Test Driven Development)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Elicitación y Análisis de Requisitos
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Kanban (Gestión de Proyectos)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Scrum (Metodología Ágil)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Lenguaje Unificado de Modelado (UML)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Modelo Entidad-Relación (ER)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Programación Orientada a Objetos (POO)
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Modelo-Vista-Controlador
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Arquitectura Limpia
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Arquitectura Hexagonal
-                    </p>
-                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
-                        Model Checking
-                    </p>
+                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Código Limpio
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Principios SOLID
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Patrones de Diseño
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            TDD (Test Driven Development)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Elicitación y Análisis de Requisitos
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Kanban (Gestión de Proyectos)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Scrum (Metodología Ágil)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Lenguaje Unificado de Modelado (UML)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Modelo Entidad-Relación (ER)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Programación Orientada a Objetos (POO)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Modelo-Vista-Controlador
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Arquitectura Limpia
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Arquitectura Hexagonal
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                            Model Checking
+                        </p>
+                    </div>
+                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -688,6 +758,8 @@
     <script>
         // Inicializar iconos de Lucide
         lucide.createIcons();
+
+        // ****************** ---- TRAYECTORIA---- ******************
 
         // Funcionalidad cambio de columnas (Tabs) en la sección de TRAYECTORIA
         const btnEstudio = document.getElementById('btn-formacion-academica');
@@ -740,6 +812,99 @@
         btnEstudio.addEventListener('click', () => mostrarColumnaTrayectoria(0));
         btnTrabajo.addEventListener('click', () => mostrarColumnaTrayectoria(1));
         btnCertificaciones.addEventListener('click', () => mostrarColumnaTrayectoria(2));
+
+        // ****************** ---- STACK TECNOLÓGICO ---- ******************
+
+        // Desplaza el contenedor en la dirección indicada
+        function desplazarHorizontal(evento) {
+            let boton = evento.currentTarget;
+            let contenedor = boton.parentElement.querySelector(".scroll-container");
+            let distancia = parseInt(boton.getAttribute("data-distancia"), 10) || 220;
+
+            if (contenedor) {
+                contenedor.scrollBy({ left: distancia, behavior: "smooth" });
+            }
+        }
+
+        // Comprueba el desbordamiento y actualiza la visibilidad de los botones
+        function actualizarVisibilidadFlechas(contenedor) {
+            if (!contenedor) return;
+
+            let envoltorio = contenedor.parentElement;
+            let btnIzquierda = envoltorio.querySelector(".scroll-btn-left");
+            let btnDerecha = envoltorio.querySelector(".scroll-btn-right");
+
+            if (!btnIzquierda || !btnDerecha) return;
+
+            let hayDesbordamiento = contenedor.scrollWidth > contenedor.clientWidth + 1;
+
+            if (!hayDesbordamiento) {
+                btnIzquierda.classList.add("hidden");
+                btnDerecha.classList.add("hidden");
+                return;
+            }
+
+            // Flecha izquierda: visible si se ha desplazado a la derecha
+            if (contenedor.scrollLeft > 10) {
+                btnIzquierda.classList.remove("hidden");
+            } else {
+                btnIzquierda.classList.add("hidden");
+            }
+
+            // Flecha derecha: visible si aún queda contenido por ver a la derecha
+            let limiteDerecho = contenedor.scrollWidth - contenedor.clientWidth;
+            if (contenedor.scrollLeft < limiteDerecho - 10) {
+                btnDerecha.classList.remove("hidden");
+            } else {
+                btnDerecha.classList.add("hidden");
+            }
+        }
+
+        // Manejador del evento 'scroll' en cada contenedor
+        function manejarScrollContenedor(evento) {
+            actualizarVisibilidadFlechas(evento.target);
+        }
+
+        // Recorre todos los carriles y actualiza su estado (útil para resize/carga)
+        function actualizarTodosLosCarriles() {
+            let contenedores = document.querySelectorAll(".scroll-container");
+            for (let i = 0; i < contenedores.length; i++) {
+                actualizarVisibilidadFlechas(contenedores[i]);
+            }
+        }
+
+        // Inicializa los observadores y los eventos al cargar el DOM
+        function inicializarStackScroll() {
+            let botonesIzquierda = document.querySelectorAll(".scroll-btn-left");
+            let botonesDerecha = document.querySelectorAll(".scroll-btn-right");
+            let contenedores = document.querySelectorAll(".scroll-container");
+
+            // Asignar distancia y evento a botones izquierdos
+            for (let i = 0; i < botonesIzquierda.length; i++) {
+                botonesIzquierda[i].setAttribute("data-distancia", "-220");
+                botonesIzquierda[i].addEventListener("click", desplazarHorizontal);
+            }
+
+            // Asignar distancia y evento a botones derechos
+            for (let j = 0; j < botonesDerecha.length; j++) {
+                botonesDerecha[j].setAttribute("data-distancia", "220");
+                botonesDerecha[j].addEventListener("click", desplazarHorizontal);
+            }
+
+            // Asignar evento scroll a cada carril
+            for (let k = 0; k < contenedores.length; k++) {
+                contenedores[k].addEventListener("scroll", manejarScrollContenedor);
+            }
+
+            // Recalcular al cambiar el tamaño de la ventana
+            window.addEventListener("resize", actualizarTodosLosCarriles);
+
+            // Comprobación inicial de dimensiones
+            actualizarTodosLosCarriles();
+        }
+
+        // Registro del punto de entrada cuando se carga el DOM
+        document.addEventListener("DOMContentLoaded", inicializarStackScroll);
 
     </script>
 </body>
