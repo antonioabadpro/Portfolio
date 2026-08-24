@@ -1,289 +1,747 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio | Antonio Abad Hernández Gálvez</title>
-        
-        <!-- Tailwind v3 CSS CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
 
-        <!-- Lucide Icons CDN -->
-        <script src="https://unpkg.com/lucide@latest"></script>
-        
-        <!-- Google Font Inter -->
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-        <script>
-            // Constantes de colores para el modo oscuro
-            const COLOR_PRINCIPAL = '#059669'; // Verde Esmeralda
-            const COLOR_SECUNDARIO = '#10b981'; // Verde Claro
-            const FONDO_OSCURO = '#0b0f19';
-            const TARJETA_OSCURA = '#111827';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Antonio Abad Hernández Gálvez</title>
 
-            // Asociamos las constantes a la configuración de Tailwind
-            tailwind.config = {
-                darkMode: 'class',
-                theme: {
-                    extend: {
-                        colors: {
-                            brand: {
-                                primary: COLOR_PRINCIPAL,
-                                secondary: COLOR_SECUNDARIO,
-                                bg: FONDO_OSCURO,
-                                card: TARJETA_OSCURA,
-                            }
+    <!-- Tailwind v3 CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        // Constantes de colores para el modo oscuro
+        const COLOR_PRINCIPAL = '#059669'; // Verde Esmeralda
+        const COLOR_SECUNDARIO = '#10b981'; // Verde Claro
+        const FONDO_OSCURO = '#0b0f19';
+        const TARJETA_OSCURA = '#111827';
+
+        // Asociamos las constantes a la configuración de Tailwind
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: COLOR_PRINCIPAL,
+                            secondary: COLOR_SECUNDARIO,
+                            bg: FONDO_OSCURO,
+                            card: TARJETA_OSCURA,
                         }
                     }
                 }
             }
-        </script>
-        <style type="text/tailwindcss">
-            /* Constantes Modo Oscuro */
-            :root {
-                --color-fondo: #0b0f19;
-                --color-tarjeta: #111827;
-                --color-texto: #f9fafb;
-                --color-acento: #059669;
-            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        /* Constantes Modo Oscuro */
+        :root {
+            --color-fondo: #0b0f19;
+            --color-tarjeta: #111827;
+            --color-texto: #f9fafb;
+            --color-acento: #059669;
+        }
 
-            /* Constantes Modo Claro */
-            [data-theme="light"] {
-                --color-fondo: #f8fafc;
-                --color-tarjeta: #ffffff;
-                --color-texto: #0f172a;
-                --color-acento: #047857;
-            }
+        /* Constantes Modo Claro */
+        [data-theme="light"] {
+            --color-fondo: #f8fafc;
+            --color-tarjeta: #ffffff;
+            --color-texto: #0f172a;
+            --color-acento: #047857;
+        }
 
-            /* Aplicamos las variables a Tailwind */
-            body {
-                background-color: var(--color-fondo);
-                color: var(--color-texto);
-                font-family: 'Inter', sans-serif;
-            }
+        /* Aplicamos las variables a Tailwind */
+        body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            font-family: 'Inter', sans-serif;
+        }
 
-            /* Creamos un conjunto de estilos personalizados utilizando las clases de Tailwind */
-            @layer utilities
+        /* Creamos un conjunto de estilos personalizados utilizando las clases de Tailwind */
+        @layer utilities
+        {
+            .fecha-formacion-experiencia
             {
-                .fecha-formacion-experiencia
-                {
-                    @apply px-2.5 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md w-36 shrink-0 text-center justify-center whitespace-nowrap;
-                }
+                @apply px-2.5 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md w-36 shrink-0 text-center justify-center whitespace-nowrap;
             }
-        </style>
-    </head>
-    <body class="bg-slate-950 text-slate-100 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
-        <!-- Navbar -->
-        <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
-            <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-                <a href="#about" class="text-xl font-bold tracking-tight text-white flex items-center gap-1">
-                    AAHG<span class="text-emerald-500">.</span>
-                </a>
-                
-                <div class="flex items-center gap-8">
-                    <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
-                        <li><a href="#about" class="hover:text-slate-100 transition-colors" data-i18n="nav_inicio">Inicio</a></li>
-                        <li><a href="#trayectoria" class="hover:text-slate-100 transition-colors" data-i18n="nav_trayectoria">Trayectoria</a></li>
-                        <li><a href="#tech" class="hover:text-slate-100 transition-colors" data-i18n="nav_tech">Stack</a></li>
-                        <li><a href="#projects" class="hover:text-slate-100 transition-colors" data-i18n="nav_proyectos">Proyectos</a></li>
-                        <li><a href="#contact" class="hover:text-slate-100 transition-colors" data-i18n="nav_contacto">Contacto</a></li>
-                    </ul>
+            /* Oculta la barra de desplazamiento del Stack Tecnologico para mejorar la estetica y la experiencia de usuario */
+            .no-scrollbar::-webkit-scrollbar
+            {
+                display: none;
+            }
+            .no-scrollbar
+            {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+            }
+        }
+    </style>
+</head>
 
-                    <div class="flex items-center gap-2 pl-4 border-l border-slate-800">
-                        <button id="langToggle" class="w-9 h-9 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-center text-xs font-semibold text-slate-300 hover:border-slate-700 hover:bg-slate-800 transition-all">
-                            ES
-                        </button>
-                        <button id="themeToggle" class="w-9 h-9 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-300 hover:border-slate-700 hover:bg-slate-800 transition-all">
-                            <i data-lucide="moon" class="w-4 h-4" id="themeIcon"></i>
-                        </button>
-                    </div>
+<body class="bg-slate-950 text-slate-100 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#about" class="text-xl font-bold tracking-tight text-white flex items-center gap-1">
+                AAHG<span class="text-emerald-500">.</span>
+            </a>
+
+            <div class="flex items-center gap-8">
+                <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+                    <li>
+                        <a href="#about" class="hover:text-slate-100 transition-colors" data-i18n="nav_inicio">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#trayectoria" class="hover:text-slate-100 transition-colors" data-i18n="nav_trayectoria">Trayectoria</a>
+                    </li>
+                    <li>
+                        <a href="#tech" class="hover:text-slate-100 transition-colors" data-i18n="nav_tech">Stack</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="hover:text-slate-100 transition-colors" data-i18n="nav_proyectos">Proyectos</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="hover:text-slate-100 transition-colors" data-i18n="nav_contacto">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="flex items-center gap-2 pl-4 border-l border-slate-800">
+                    <button id="langToggle" class="w-9 h-9 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-center text-xs font-semibold text-slate-300 hover:border-slate-700 hover:bg-slate-800 transition-all">
+                        ES
+                    </button>
+                    <button id="themeToggle" class="w-9 h-9 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-300 hover:border-slate-700 hover:bg-slate-800 transition-all">
+                        <i data-lucide="moon" class="w-4 h-4" id="themeIcon"></i>
+                    </button>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <!-- Sección INICIO (Ubicacion, Nombre, Profesion, Texto Resumen y Botones) -->
-        <section id="about" class="min-h-[75vh] max-w-6xl mx-auto px-6 flex flex-col justify-center py-16">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold w-fit mb-6">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-                <span data-i18n="texto_inicio_ubicacion">Huelva y alrededores</span>
-            </div>
+    <!-- Sección INICIO (Ubicacion, Nombre, Profesion, Texto Resumen y Botones) -->
+    <section id="about" class="min-h-[75vh] max-w-6xl mx-auto px-6 flex flex-col justify-center py-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold w-fit mb-6">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            <span data-i18n="texto_inicio_ubicacion">Huelva y alrededores</span>
+        </div>
 
-            <!-- Nombre y Apellidos -->
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-2 leading-tight">
-                Hola, soy<br>
-                <span class="inline-flex items-end gap-2">
-                    <span id="name" class="text-emerald-500 pr-4">Antonio Abad</span>
-                    <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="texto_inicio_nombre">nombre</span>
-                </span>
-                <br>
-                <span class="inline-flex items-end gap-2">
-                    <span id="surname" class="text-emerald-500 pr-4">Hernández Gálvez</span>
-                    <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="texto_inicio_apellidos">apellidos</span>
-                </span>
-            </h1>
+        <!-- Nombre y Apellidos -->
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+            Hola, soy<br>
+            <span class="inline-flex items-end gap-2">
+                <span id="name" class="text-emerald-500 pr-4">Antonio Abad</span>
+            <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="texto_inicio_nombre">nombre</span>
+            </span>
+            <br>
+            <span class="inline-flex items-end gap-2">
+                <span id="surname" class="text-emerald-500 pr-4">Hernández Gálvez</span>
+            <span class="text-xs sm:text-sm font-normal text-slate-400 border border-slate-700/60 px-2 py-0.5 rounded-md" data-i18n="texto_inicio_apellidos">apellidos</span>
+            </span>
+        </h1>
 
-            <!-- Profesion -->
-            <h2 class="text-lg sm:text-xl text-slate-400 font-medium mb-6" data-i18n="texto_inicio_profesion">
-                Ingeniero Informático &bull; Ingeniero de Software
+        <!-- Profesion -->
+        <h2 class="text-lg sm:text-xl text-slate-400 font-medium mb-6" data-i18n="texto_inicio_profesion">
+            Ingeniero Informático &bull; Ingeniero de Software
+        </h2>
+
+        <!-- Texto Resumen -->
+        <p class="text-slate-400 max-w-2xl text-base sm:text-lg leading-relaxed mb-8" data-i18n="texto_inicio_resumen">
+            Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante de Máster en Ingeniería de
+            Software en la UNIR. Especializado en el desarrollo Backend robusto y arquitectura de software escalable.
+        </p>
+
+        <!-- Botones de Acción -->
+        <div class="flex flex-wrap gap-4">
+            <a href="#projects" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-5 py-2.5 rounded-lg shadow-lg shadow-emerald-900/20 hover:-translate-y-0.5 transition-all text-sm">
+                <svg id="logo-github1" class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                <span data-i18n="btn_inicio_proyectos">Ver proyectos</span>
+                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+            <a href="#contact" class="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium px-5 py-2.5 rounded-lg hover:-translate-y-0.5 transition-all text-sm">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span data-i18n="btn_inicio_contacto">Contactar</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección TRAYECTORIA -->
+    <section id="trayectoria" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="titulo_trayectoria">
+                Trayectoria
             </h2>
+        </div>
 
-            <!-- Texto Resumen -->
-            <p class="text-slate-400 max-w-2xl text-base sm:text-lg leading-relaxed mb-8" data-i18n="texto_inicio_resumen">
-                Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante de Máster en Ingeniería de Software en la UNIR. Especializado en el desarrollo Backend robusto y arquitectura de software escalable.
-            </p>
-
-            <!-- Botones de Acción -->
-            <div class="flex flex-wrap gap-4">
-                <a href="#projects" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-5 py-2.5 rounded-lg shadow-lg shadow-emerald-900/20 hover:-translate-y-0.5 transition-all text-sm">
-                    <svg id="logo-github1" class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    <span data-i18n="btn_inicio_proyectos">Ver proyectos</span>
-                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
-                </a>
-                <a href="#contact" class="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium px-5 py-2.5 rounded-lg hover:-translate-y-0.5 transition-all text-sm">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span data-i18n="btn_inicio_contacto">Contactar</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Sección TRAYECTORIA -->
-        <section id="trayectoria" class="max-w-6xl mx-auto px-6 py-12">
-            <div class="mb-8">
-                <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="titulo_trayectoria">
-                    Trayectoria
-                </h2>
+        <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm">
+            <!-- Botones de Navegación (Tabs Navigation) -->
+            <div class="flex border-b border-slate-800 bg-slate-900/60">
+                <button id="btn-formacion-academica" class="tab-btn flex-1 py-3.5 px-6 font-semibold text-sm text-white hover:text-white border-b-2 border-emerald-500 bg-slate-900 transition-all flex items-center justify-center gap-2 active">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                    <span data-i18n="tab_trayectoria_estudio">Formación Académica</span>
+                </button>
+                <button id="btn-experiencia-profesional" class="tab-btn flex-1 py-3.5 px-6 font-semibold text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                    <span data-i18n="tab_trayectoria_trabajo">Experiencia Profesional</span>
+                </button>
+                <button id="btn-certificaciones" class="tab-btn flex-1 py-3.5 px-6 font-semibold text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="scroll-text" class="w-4 h-4"></i>
+                    <span data-i18n="tab_trayectoria_certificaciones">Certificaciones</span>
+                </button>
             </div>
 
-            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm">
-                <!-- Botones de Navegación (Tabs Navigation) -->
-                <div class="flex border-b border-slate-800 bg-slate-900/60">
-                    <button id="btn-formacion-academica" class="tab-btn flex-1 py-3.5 px-6 font-semibold text-sm text-white hover:text-white border-b-2 border-emerald-500 bg-slate-900 transition-all flex items-center justify-center gap-2 active">
-                        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
-                        <span data-i18n="tab_trayectoria_estudio">Formación Académica</span>
-                    </button>
-                    <button id="btn-experiencia-profesional" class="tab-btn flex-1 py-3.5 px-6 font-semibold text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="briefcase" class="w-4 h-4"></i>
-                        <span data-i18n="tab_trayectoria_trabajo">Experiencia Profesional</span>
-                    </button>
-                    <button id="btn-certificaciones" class="tab-btn flex-1 py-3.5 px-6 font-semibold text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="scroll-text" class="w-4 h-4"></i>
-                        <span data-i18n="tab_trayectoria_certificaciones">Certificaciones</span>
-                    </button>
-                </div>
-
-                <!-- Tab Formación Académica -->
-                <div id="tab-estudio" class="tab-content p-6 sm:p-8 space-y-6">
-                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                        <span class="fecha-formacion-experiencia">2026 - ACTUALIDAD</span>
-                        <div>
-                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_2">Máster Universitario en Ingeniería de Software y Sistemas Informáticos</h3>
-                            <p class="text-sm text-slate-400">Escuela Técnica Superior de Ingeniería y Tecnología (ESIT) - UNIR (Universidad Internacional de La Rioja)</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                        <span class="fecha-formacion-experiencia">2022 - 2026</span>
-                        <div>
-                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_1">Grado Universitario en Ingeniería Informática (Especialidad Ingeniería de Software)</h3>
-                            <p class="text-sm text-slate-400 mb-1">Escuela Superior de Ingeniería (ETSI) - Universidad de Huelva (UHU)</p>
-                            <p class="text-xs text-slate-400 font-bold" data-i18n="nota_trayectoria_estudios_1">Nota Media: 7'61 / 10</p>
-                        </div>
+            <!-- Tab Formación Académica -->
+            <div id="tab-estudio" class="tab-content p-6 sm:p-8 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                    <span class="fecha-formacion-experiencia">2026 - ACTUALIDAD</span>
+                    <div>
+                        <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_2">
+                            Máster Universitario en Ingeniería de Software y Sistemas Informáticos
+                        </h3>
+                        <p class="text-sm text-slate-400">
+                            Escuela Técnica Superior de Ingeniería y Tecnología (ESIT) - UNIR (Universidad Internacional de La Rioja)
+                        </p>
                     </div>
                 </div>
 
-                <!-- Tab Experiencia Profesional-->
-                <div id="tab-trabajo" class="tab-content hidden p-6 sm:p-8 space-y-6">
-                    <div class="flex flex-col sm:flex-row sm:items-start gap-4">
-                        <span class="fecha-formacion-experiencia">2018 - ACTUALIDAD</span>
-                        <div>
-                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_trabajo_1">Asesoramiento y Mantenimiento de Equipos Informáticos</h3>
-                            <p class="text-sm text-slate-400 mb-2">Freelance - Valverde del Camino, Huelva</p>
-                            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="texto_trayectoria_trabajo_1">Asesoramiento personalizado en adquisición, configuración y optimización de Hardware/Software. Diagnóstico preventivo y mantenimiento integral de sistemas operativos.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tab Certificaciones -->
-                <div id="tab-certificaciones" class="tab-content hidden p-6 sm:p-8 space-y-6">
-                    <div class="flex flex-col sm:flex-row sm:items-start gap-4">
-                        <span class="fecha-formacion-experiencia">2019</span>
-                        <div>
-                            <h3 class="font-bold text-base text-white" data-i18n="titulo_certificaciones_1">Idiomas</h3>
-                            <p class="text-sm text-slate-400">Cambridge & Native</p>
-                            <p class="text-xs text-slate-400" data-i18n="texto_certificaciones_1">Inglés - Nivel B1</p>
-                        </div>
+                <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                    <span class="fecha-formacion-experiencia">2022 - 2026</span>
+                    <div>
+                        <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_1">
+                            Grado Universitario en Ingeniería Informática (Especialidad Ingeniería de Software)
+                        </h3>
+                        <p class="text-sm text-slate-400 mb-1">
+                            Escuela Superior de Ingeniería (ETSI) - Universidad de Huelva (UHU)
+                        </p>
+                        <p class="text-xs text-slate-400 font-bold" data-i18n="nota_trayectoria_estudios_1">
+                            Nota Media: 7'61 / 10
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-400">
-            <p data-i18n="footer_copy">&copy; Antonio Abad Hernández Gálvez.</p>
-            <p>En búsqueda constante del aprendizaje y del crecimiento personal y profesional.</p>
-        </footer>
+            <!-- Tab Experiencia Profesional-->
+            <div id="tab-trabajo" class="tab-content hidden p-6 sm:p-8 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                    <span class="fecha-formacion-experiencia">2018 - ACTUALIDAD</span>
+                    <div>
+                        <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_trabajo_1">
+                            Asesoramiento y Mantenimiento de Equipos Informáticos
+                        </h3>
+                        <p class="text-sm text-slate-400 mb-2">
+                            Freelance - Valverde del Camino, Huelva
+                        </p>
+                        <p class="text-xs text-slate-400 leading-relaxed" data-i18n="texto_trayectoria_trabajo_1">
+                            Asesoramiento personalizado en adquisición, configuración y optimización de Hardware/Software. <br>
+                            Diagnóstico preventivo y mantenimiento integral de sistemas operativos.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        <script>
-            // Inicializar iconos de Lucide
-            lucide.createIcons();
+            <!-- Tab Certificaciones -->
+            <div id="tab-certificaciones" class="tab-content hidden p-6 sm:p-8 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                    <span class="fecha-formacion-experiencia">2019</span>
+                    <div>
+                        <h3 class="font-bold text-base text-white" data-i18n="titulo_certificaciones_1">
+                            Idiomas
+                        </h3>
+                        <p class="text-sm text-slate-400">
+                            Cambridge & Native
+                        </p>
+                        <p class="text-xs text-slate-400" data-i18n="texto_certificaciones_1">
+                            Inglés - Nivel B1
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            // Funcionalidad cambio de columnas (Tabs) en la sección de TRAYECTORIA
-            const btnEstudio = document.getElementById('btn-formacion-academica');
-            const btnTrabajo = document.getElementById('btn-experiencia-profesional');
-            const btnCertificaciones = document.getElementById('btn-certificaciones');
+    <!-- Sección STACK TECNOLÓGICO -->
+    <section class="max-w-6xl mx-auto px-6 py-12" id="tech">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="stack_titulo">
+                Stack Tecnológico
+            </h2>
+        </div>
+        <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-sm flex flex-col gap-6">
+            <!-- Lenguajes -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60">
+                <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
+                    <i class="w-5 h-5" data-lucide="code-2"></i>
+                    <h3 class="font-bold text-white text-sm" data-i18n="stack_lenguajes_titulo">
+                        Lenguajes
+                    </h3>
+                </div>
+                <div class="flex flex-wrap flex-1 py-1 gap-2 items-center no-scrollbar overflow-x-auto scroll-smooth">
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        C
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        C++
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        C#
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Java
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Python
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        HTML
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        CSS
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        JavaScript
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        SQL
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        PL/SQL
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        PlantUML
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Bash
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Kotlin MP
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        MATLAB
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Alloy (UML)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        OCL (UML)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Ensamblador x86
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        xPath (XML)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        XSLT (XML)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Pascal-FC
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        VHDL
+                    </p>
+                </div>
+            </div>
+            <!-- Frameworks -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
+                    <i class="w-5 h-5" data-lucide="layers"></i>
+                    <h3 class="font-bold text-white text-sm" data-i18n="stack_frameworks_titulo">
+                        Frameworks
+                    </h3>
+                </div>
+                <div class="flex flex-wrap gap-2 flex-1">
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Spring Boot (Java)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Tailwind (CSS)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Bootstrap (CSS)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Hibernate (Java)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        ROS - Robot Operating System (C++ | Python)
+                    </p>
+                </div>
+            </div>
+            <!-- Librerías y APIs-->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
+                    <i class="w-5 h-5" data-lucide="layers"></i>
+                    <h3 class="font-bold text-white text-sm" data-i18n="stack_librerias_titulo">
+                        Librerías / APIs
+                    </h3>
+                </div>
+                <div class="flex flex-wrap gap-2 flex-1">
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        HTMX (JavaScript)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        PyTorch (Python)
+                    </p>
+                </div>
+            </div>
+            <!-- Componentes / ORMs -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
+                    <i class="w-5 h-5" data-lucide="layers"></i>
+                    <h3 class="font-bold text-white text-sm" data-i18n="stack_componentes_titulo">
+                        Componentes / ORMs
+                    </h3>
+                </div>
+                <div class="flex flex-wrap gap-2 flex-1">
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Java Servlets (Java)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Java Server Pages (Java)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Java Swing (Java)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Jakarta EE (Java)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        JPA (Java Persistence API)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Hibernate ORM (Java)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        EclipseLink ORM (Java)
+                    </p>
+                </div>
+            </div>
+            <!-- Bases de Datos -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
+                    <i class="w-5 h-5" data-lucide="database"></i>
+                    <h3 class="font-bold text-white text-sm" data-i18n="stack_bd_titulo">
+                        Sistemas Gestores de Bases de Datos (SGBD)
+                    </h3>
+                </div>
+                <div class="flex flex-wrap gap-2 flex-1">
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Oracle Database
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        PostgreSQL
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        MySQL
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        MariaDB
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        H2 Database
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        MongoDB
+                    </p>
+                </div>
+            </div>
+            <!-- IDEs -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
+                    <i class="w-5 h-5" data-lucide="terminal"></i>
+                    <h3 class="font-bold text-white text-sm" data-i18n="stack_ide_titulo">
+                        IDEs
+                    </h3>
+                </div>
+                <div class="flex flex-wrap gap-2 flex-1">
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        VS Code
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        IntelliJ IDEA
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        NetBeans
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Eclipse
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Oracle SQL Developer
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        DBeaver
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Microsoft Visual Studio
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Code::Blocks
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Android Studio
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Xilinx
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        MATLAB
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        EMU8086
+                    </p>
+                </div>
+            </div>
+            <!-- Herramientas & Despliegue -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
+                    <i class="w-5 h-5" data-lucide="wrench"></i>
+                    <h3 class="font-bold text-white text-sm" data-i18n="stack_herramientas_titulo">Herramientas & Despliegue</h3>
+                </div>
+                <div class="flex flex-wrap gap-2 flex-1">
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="git-branch"></i>
+                        Git
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="github"></i>
+                        GitHub
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="github"></i>
+                        GitHub Desktop
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="box"></i>
+                        Docker
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        <i class="w-3.5 h-3.5 text-slate-400" data-lucide="send"></i>
+                        Postman
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Supabase
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        LM Studio
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Cisco Packet Tracer
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Maven
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Ant
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        GlassFish
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        Praat
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        Orange Data Mining
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        n8n
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        Microsoft Project
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        Microsoft Visio
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md flex items-center gap-1.5">
+                        Lucidchart
+                    </p>
+                </div>
+            </div>
+            <!-- Habilidades -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
+                    <i class="w-5 h-5" data-lucide="check-circle"></i>
+                    <h3 class="font-bold text-white text-sm" data-i18n="stack_habilidades_titulo">
+                        Habilidades
+                    </h3>
+                </div>
+                <div class="flex flex-wrap gap-2 flex-1">
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Gestión Ágil de Proyectos
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Desarrollo de Aplicaciones Web
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Desarrollo de Aplicaciones de Escritorio
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Desarrollo de Aplicaciones Móviles
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Medición de la Calidad del Software
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Estimación y Planificación de Proyectos de Software
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Interconexión de Redes de Computadores
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Infraestructura de Redes de Computadores
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Seguridad de Redes de Computadores
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Sistemas Distribuidos
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Programación Concurrente
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Arquitectura de Computadores
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Manejo de la Shell de Linux
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Robótica
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Aprendizaje Automático
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Análisis de Algoritmos
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Optimización y Eficiencia
+                    </p>
+                </div>
+            </div>
+            <!-- Ingeniería de Software -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                <div class="flex items-center gap-2 text-emerald-400 w-48 shrink-0">
+                    <i class="w-5 h-5" data-lucide="wrench"></i>
+                    <h3 class="font-bold text-white text-sm" data-i18n="stack_ingenieria_titulo">
+                        Ingeniería de Software
+                    </h3>
+                </div>
+                <div class="flex flex-wrap gap-2 flex-1">
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Código Limpio
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Principios SOLID
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Patrones de Diseño
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        TDD (Test Driven Development)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Elicitación y Análisis de Requisitos
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Kanban (Gestión de Proyectos)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Scrum (Metodología Ágil)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Lenguaje Unificado de Modelado (UML)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Modelo Entidad-Relación (ER)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Programación Orientada a Objetos (POO)
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Modelo-Vista-Controlador
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Arquitectura Limpia
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Arquitectura Hexagonal
+                    </p>
+                    <p class="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-md">
+                        Model Checking
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            const columnaEstudio = document.getElementById('tab-estudio');
-            const columnaTrabajo = document.getElementById('tab-trabajo');
-            const columnaCertificaciones = document.getElementById('tab-certificaciones');
+    <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-400">
+        <p data-i18n="footer_copy">&copy; Antonio Abad Hernández Gálvez.</p>
+        <p>En búsqueda constante del crecimiento personal y profesional.</p>
+    </footer>
 
-            // Listas Auxiliares para manejar los botones y las columnas
-            const listaBotones = [btnEstudio, btnTrabajo, btnCertificaciones];
-            const listaColumnas = [columnaEstudio, columnaTrabajo, columnaCertificaciones];
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
 
-            // Definimos las clases Tailwind para los botones Activos e Inactivos
-            const listaClasesActivas = ['text-white', 'hover:text-white', 'border-emerald-500', 'bg-slate-900', 'active'];
-            const listaClasesInactivas = ['text-slate-400', 'border-transparent', 'bg-transparent'];
+        // Funcionalidad cambio de columnas (Tabs) en la sección de TRAYECTORIA
+        const btnEstudio = document.getElementById('btn-formacion-academica');
+        const btnTrabajo = document.getElementById('btn-experiencia-profesional');
+        const btnCertificaciones = document.getElementById('btn-certificaciones');
 
-            // Funcion para mostrar el contenido de la columna seleccionada y ocultar las demás, cambiando el estilo
-            function mostrarColumnaTrayectoria(posicion)
-            {
-                // Ocultamos todas las columnas de la Tabla
-                listaColumnas.forEach((columna, i) => {
+        const columnaEstudio = document.getElementById('tab-estudio');
+        const columnaTrabajo = document.getElementById('tab-trabajo');
+        const columnaCertificaciones = document.getElementById('tab-certificaciones');
+
+        // Listas Auxiliares para manejar los botones y las columnas
+        const listaBotones = [btnEstudio, btnTrabajo, btnCertificaciones];
+        const listaColumnas = [columnaEstudio, columnaTrabajo, columnaCertificaciones];
+
+        // Definimos las clases Tailwind para los botones Activos e Inactivos
+        const listaClasesActivas = ['text-white', 'hover:text-white', 'border-emerald-500', 'bg-slate-900', 'active'];
+        const listaClasesInactivas = ['text-slate-400', 'border-transparent', 'bg-transparent'];
+
+        // Funcion para mostrar el contenido de la columna seleccionada y ocultar las demás, cambiando el estilo
+        function mostrarColumnaTrayectoria(posicion) {
+            // Ocultamos todas las columnas de la Tabla
+            listaColumnas.forEach((columna, i) => {
+                columna.classList.add('hidden');
+            });
+
+            // Cambiamos el estilo de los botones para reflejar la columna seleccionada
+            listaBotones.forEach((boton, i) => {
+                if (i === posicion) {
+                    boton.classList.add(...listaClasesActivas); // Desempaquetamos las clases activas del array (...) y las añadimos al botón seleccionado
+                    boton.classList.remove(...listaClasesInactivas);
+                }
+                else {
+                    boton.classList.remove(...listaClasesActivas);
+                    boton.classList.add(...listaClasesInactivas);
+                }
+            });
+
+            // Mostramos la columna seleccionada y ocultamos el resto de columnas
+            listaColumnas.forEach((columna, i) => {
+                if (i === posicion) {
+                    columna.classList.remove('hidden');
+                }
+                else {
                     columna.classList.add('hidden');
-                });
+                }
+            });
+        }
 
-                // Cambiamos el estilo de los botones para reflejar la columna seleccionada
-                listaBotones.forEach((boton, i) => {
-                    if (i === posicion)
-                    {
-                        boton.classList.add(...listaClasesActivas); // Desempaquetamos las clases activas del array (...) y las añadimos al botón seleccionado
-                        boton.classList.remove(...listaClasesInactivas);
-                    }
-                    else
-                    {
-                        boton.classList.remove(...listaClasesActivas);
-                        boton.classList.add(...listaClasesInactivas);
-                    }
-                });
+        // Eventos de click para los botones de la sección de TRAYECTORIA
+        btnEstudio.addEventListener('click', () => mostrarColumnaTrayectoria(0));
+        btnTrabajo.addEventListener('click', () => mostrarColumnaTrayectoria(1));
+        btnCertificaciones.addEventListener('click', () => mostrarColumnaTrayectoria(2));
 
-                // Mostramos la columna seleccionada y ocultamos el resto de columnas
-                listaColumnas.forEach((columna, i) => {
-                    if (i === posicion)
-                    {
-                        columna.classList.remove('hidden');
-                    }
-                    else
-                    {
-                        columna.classList.add('hidden');
-                    }
-                });
-            }
+    </script>
+</body>
 
-            // Eventos de click para los botones de la sección de TRAYECTORIA
-            btnEstudio.addEventListener('click', () => mostrarColumnaTrayectoria(0));
-            btnTrabajo.addEventListener('click', () => mostrarColumnaTrayectoria(1));
-            btnCertificaciones.addEventListener('click', () => mostrarColumnaTrayectoria(2));
-            
-        </script>
-    </body>
 </html>
