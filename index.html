@@ -42,6 +42,43 @@
         }
     </script>
     <style type="text/tailwindcss">
+
+        /* Configuración del fade-in Up para la sección de Inicio */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Configuración del fade-in Down para la sección de Inicio */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animación de fade-in Down para la navbar */
+        .reveal-navbar {
+            opacity: 0;
+            animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Animación de fade-in Up para los elementos de la sección de Inicio */
+        .reveal-item {
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
         /* Constantes Modo Oscuro */
         :root {
             --color-fondo: #0b0f19;
@@ -70,7 +107,7 @@
         {
             .fecha-formacion-experiencia
             {
-                @apply px-2.5 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 text-center justify-center whitespace-nowrap;
+                @apply inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap;
             }
             /* Oculta la barra de desplazamiento del Stack Tecnologico para mejorar la estetica y la experiencia de usuario */
             .no-scrollbar::-webkit-scrollbar
@@ -88,7 +125,7 @@
 
 <body class="bg-slate-950 text-slate-100 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
+    <nav class="reveal-navbar sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#inicio" class="text-xl font-bold tracking-tight text-white flex items-center gap-1">
                     AAHG<span class="text-emerald-500">.</span>
@@ -126,14 +163,15 @@
     </nav>
 
     <!-- Sección INICIO (Ubicacion, Nombre, Profesion, Texto Resumen y Botones) -->
-    <section id="inicio" class="min-h-[75vh] max-w-6xl mx-auto px-6 flex flex-col justify-center py-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold w-fit mb-6">
+
+    <section id="inicio" class="min-h-[75vh] max-w-6xl mx-auto py-12 sm:py-16 px-4 sm:px-6 flex flex-col justify-center">
+        <div class="reveal-item inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold w-fit mb-6">
             <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
             <span data-i18n="texto_inicio_ubicacion">Huelva y alrededores</span>
         </div>
 
         <!-- Nombre y Apellidos -->
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+        <h1 class="reveal-item [animation-delay:200ms] text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-2 leading-tight">
             Hola, soy<br>
             <span class="inline-flex items-end gap-2">
                     <span id="name" class="text-emerald-500 pr-4">Antonio Abad</span>
@@ -147,18 +185,18 @@
         </h1>
 
         <!-- Profesion -->
-        <h2 class="text-lg sm:text-xl text-slate-400 font-medium mb-6" data-i18n="texto_inicio_profesion">
+        <h2 class="reveal-item [animation-delay:400ms] text-lg sm:text-xl text-slate-400 font-medium mb-6" data-i18n="texto_inicio_profesion">
             Ingeniero Informático &bull; Ingeniero de Software
         </h2>
 
         <!-- Texto Resumen -->
-        <p class="text-slate-400 max-w-2xl text-base sm:text-lg leading-relaxed mb-8" data-i18n="texto_inicio_resumen">
+        <p class="reveal-item [animation-delay:600ms] text-slate-400 max-w-2xl text-base sm:text-lg leading-relaxed mb-8" data-i18n="texto_inicio_resumen">
             Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante de Máster en Ingeniería de
             Software en la UNIR. Especializado en el desarrollo Backend robusto y arquitectura de software escalable.
         </p>
 
         <!-- Botones de Acción -->
-        <div class="flex flex-wrap gap-4">
+        <div class="reveal-item [animation-delay:800ms] flex-wrap gap-4">
             <a href="#proyectos" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-5 py-2.5 rounded-lg shadow-lg shadow-emerald-900/20 hover:-translate-y-0.5 transition-all text-sm">
                 <i class="devicon-github-plain"></i>
                     <span data-i18n="btn_inicio_proyectos">Ver proyectos</span>
@@ -172,7 +210,7 @@
     </section>
 
     <!-- Sección TRAYECTORIA -->
-    <section id="trayectoria" class="max-w-6xl mx-auto px-6 py-12">
+    <section id="trayectoria" class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div class="mb-8">
             <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="titulo_trayectoria">
                 Trayectoria
@@ -316,7 +354,6 @@
     </section>
 
     <!-- Sección STACK TECNOLÓGICO -->
-    <section class="max-w-6xl mx-auto px-6 py-12" id="stack">
     <section id="stack" class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div class="mb-8">
             <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="stack_titulo">
@@ -545,7 +582,6 @@
     </section>
 
     <!-- Sección PROYECTOS & LOGROS -->
-    <section id="proyectos" class="max-w-6xl mx-auto px-6 py-12">
     <section id="proyectos" class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div class="mb-8">
             <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="proyectos_titulo">
@@ -1114,6 +1150,30 @@
         // Registro del punto de entrada cuando se carga el DOM
         document.addEventListener("DOMContentLoaded", inicializarStackScroll);
 
+        // ****************** ---- DESPLAZAMIENTO HORIZONTAL SUAVE CON SCROLL ---- ******************
+        function inicializarEfectoScroll() {
+            const elementosParaAnimar = document.querySelectorAll('.reveal');
+
+            const observador = new IntersectionObserver((entradas, observer) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        // Al entrar en el viewport, restauramos opacidad y posición original
+                        entrada.target.classList.remove('opacity-0', 'translate-y-8');
+                        entrada.target.classList.add('opacity-100', 'translate-y-0');
+                        // Dejamos de observar para ejecutar la animación una sola vez
+                        observer.unobserve(entrada.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.25, // Se activa cuando el 25% del elemento es visible
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            elementosParaAnimar.forEach(el => observador.observe(el));
+        }
+
+        document.addEventListener("DOMContentLoaded", inicializarEfectoScroll);
 
     </script>
 </body>
