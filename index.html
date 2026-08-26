@@ -70,7 +70,7 @@
         {
             .fecha-formacion-experiencia
             {
-                @apply px-2.5 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md w-36 shrink-0 text-center justify-center whitespace-nowrap;
+                @apply px-2.5 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 text-center justify-center whitespace-nowrap;
             }
             /* Oculta la barra de desplazamiento del Stack Tecnologico para mejorar la estetica y la experiencia de usuario */
             .no-scrollbar::-webkit-scrollbar
@@ -276,14 +276,14 @@
 
             <!-- Lenguajes -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center gap-2 text-emerald-400 w-44 shrink-0">
-                    <i class="w-5 h-5 shrink-0" data-lucide="code-2"></i>
-                    <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_lenguajes_titulo">
-                        Lenguajes
-                    </h3>
-                </div>
-                <div class="w-10 shrink-0 flex items-center justify-start">
-                    <span id="contador-lenguajes" class="px-2 py-0.5 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-2xl text-center min-w-[28px]">
+                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                        <i class="w-5 h-5 shrink-0" data-lucide="code-2"></i>
+                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_lenguajes_titulo">
+                            Lenguajes
+                        </h3>
+                    </div>
+                    <span id="contador-lenguajes" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
                     </span>
                 </div>
                 <div class="relative flex items-center flex-1 min-w-0 group/scroll">
@@ -300,14 +300,14 @@
 
             <!-- Frameworks -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center gap-2 text-emerald-400 w-44 shrink-0">
-                    <i class="w-5 h-5 shrink-0" data-lucide="layers"></i>
-                    <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_frameworks_titulo">
-                        Frameworks
-                    </h3>
-                </div>
-                <div class="w-10 shrink-0 flex items-center justify-start">
-                    <span id="contador-frameworks" class="px-2 py-0.5 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-md text-center min-w-[28px]">
+                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                        <i class="w-5 h-5 shrink-0" data-lucide="layers"></i>
+                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_frameworks_titulo">
+                            Frameworks
+                        </h3>
+                    </div>
+                    <span id="contador-frameworks" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
                     </span>
                 </div>
                 <div class="relative flex items-center flex-1 min-w-0 group/scroll">
@@ -324,14 +324,14 @@
 
             <!-- Librerías & APIs -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center gap-2 text-emerald-400 w-44 shrink-0">
-                    <i class="w-5 h-5 shrink-0" data-lucide="library"></i>
-                    <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_librerias_titulo">
-                        Librerías & APIs
-                    </h3>
-                </div>
-                <div class="w-10 shrink-0 flex items-center justify-start">
-                    <span id="contador-librerias" class="px-2 py-0.5 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-md text-center min-w-[28px]">
+                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                        <i class="w-5 h-5 shrink-0" data-lucide="library"></i>
+                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_librerias_titulo">
+                            Librerías & APIs
+                        </h3>
+                    </div>
+                    <span id="contador-librerias" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
                     </span>
                 </div>
                 <div class="relative flex items-center flex-1 min-w-0 group/scroll">
@@ -348,14 +348,14 @@
 
             <!-- Componentes & ORMs -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center gap-2 text-emerald-400 w-44 shrink-0">
-                    <i class="w-5 h-5 shrink-0" data-lucide="boxes"></i>
-                    <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_componentes_titulo">
-                        Componentes & ORMs
-                    </h3>
-                </div>
-                <div class="w-10 shrink-0 flex items-center justify-start">
-                    <span id="contador-componentes" class="px-2 py-0.5 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-md text-center min-w-[28px]">
+                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                        <i class="w-5 h-5 shrink-0" data-lucide="boxes"></i>
+                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_componentes_titulo">
+                            Componentes & ORMs
+                        </h3>
+                    </div>
+                    <span id="contador-componentes" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
                     </span>
                 </div>
                 <div class="relative flex items-center flex-1 min-w-0 group/scroll">
@@ -372,14 +372,14 @@
 
             <!-- Bases de Datos -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center gap-2 text-emerald-400 w-44 shrink-0">
-                    <i class="w-5 h-5 shrink-0" data-lucide="database"></i>
-                    <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_bd_titulo">
-                        Sistemas Gestores de Bases de Datos
-                    </h3>
-                </div>
-                <div class="w-10 shrink-0 flex items-center justify-start">
-                    <span id="contador-sgbd" class="px-2 py-0.5 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-md text-center min-w-[28px]">
+                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                        <i class="w-5 h-5 shrink-0" data-lucide="database"></i>
+                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_sgbd_titulo">
+                            Sistemas Gestores de Bases de Datos
+                        </h3>
+                    </div>
+                    <span id="contador-sgbd" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
                     </span>
                 </div>
                 <div class="relative flex items-center flex-1 min-w-0 group/scroll">
@@ -396,14 +396,14 @@
 
             <!-- IDEs -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center gap-2 text-emerald-400 w-44 shrink-0">
-                    <i class="w-5 h-5 shrink-0" data-lucide="terminal"></i>
-                    <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_ide_titulo">
-                        IDEs
-                    </h3>
-                </div>
-                <div class="w-10 shrink-0 flex items-center justify-start">
-                    <span id="contador-ide" class="px-2 py-0.5 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-md text-center min-w-[28px]">
+                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                        <i class="w-5 h-5 shrink-0" data-lucide="terminal"></i>
+                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_ide_titulo">
+                            IDEs
+                        </h3>
+                    </div>
+                    <span id="contador-ide" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
                     </span>
                 </div>
                 <div class="relative flex items-center flex-1 min-w-0 group/scroll">
@@ -420,14 +420,14 @@
 
             <!-- Herramientas & Despliegue -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center gap-2 text-emerald-400 w-44 shrink-0">
-                    <i class="w-5 h-5 shrink-0" data-lucide="wrench"></i>
-                    <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_herramientas_titulo">
-                        Herramientas & Despliegue
-                    </h3>
-                </div>
-                <div class="w-10 shrink-0 flex items-center justify-start">
-                    <span id="contador-herramientas" class="px-2 py-0.5 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-md text-center min-w-[28px]">
+                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                        <i class="w-5 h-5 shrink-0" data-lucide="wrench"></i>
+                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_herramientas_titulo">
+                            Herramientas & Despliegue
+                        </h3>
+                    </div>
+                    <span id="contador-herramientas" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
                     </span>
                 </div>
                 <div class="relative flex items-center flex-1 min-w-0 group/scroll">
@@ -444,14 +444,14 @@
 
             <!-- Habilidades -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center gap-2 text-emerald-400 w-44 shrink-0">
-                    <i class="w-5 h-5 shrink-0" data-lucide="sparkles"></i>
-                    <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_habilidades_titulo">
-                        Habilidades
-                    </h3>
-                </div>
-                <div class="w-10 shrink-0 flex items-center justify-start">
-                    <span id="contador-habilidades" class="px-2 py-0.5 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-md text-center min-w-[28px]">
+                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                        <i class="w-5 h-5 shrink-0" data-lucide="sparkles"></i>
+                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_habilidades_titulo">
+                            Habilidades
+                        </h3>
+                    </div>
+                    <span id="contador-habilidades" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
                     </span>
                 </div>
                 <div class="relative flex items-center flex-1 min-w-0 group/scroll">
@@ -468,14 +468,14 @@
 
             <!-- Ingeniería de Software -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2 last:border-none last:pb-0">
-                <div class="flex items-center gap-2 text-emerald-400 w-44 shrink-0">
-                    <i class="w-5 h-5 shrink-0" data-lucide="cpu"></i>
-                    <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_ingenieria_titulo">
-                        Ingeniería de Software
-                    </h3>
-                </div>
-                <div class="w-10 shrink-0 flex items-center justify-start">
-                    <span id="contador-is" class="px-2 py-0.5 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-md text-center min-w-[28px]">
+                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                        <i class="w-5 h-5 shrink-0" data-lucide="cpu"></i>
+                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_is_titulo">
+                            Ingeniería de Software
+                        </h3>
+                    </div>
+                    <span id="contador-is" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
                     </span>
                 </div>
                 <div class="relative flex items-center flex-1 min-w-0 group/scroll">
@@ -518,13 +518,13 @@
                 <div>
                     <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
                         <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                            ODS (Objetivos de Desarrollo Sostenible)
+                        </p>
+                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
                             MVP
                         </p>
                         <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
                             Elevator Pitch
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            ODS (Objetivos de Desarrollo Sostenible)
                         </p>
                     </div>
                     <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
