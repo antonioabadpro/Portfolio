@@ -311,143 +311,145 @@
     </section>
 
     <!-- Sección TRAYECTORIA -->
-    <section id="trayectoria" class="scroll-mt-12 reveal opacity-0 translate-y-8 transition-all duration-700 ease-out max-w-6xl mx-auto px-4 sm:px-6 py-12">
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="titulo_trayectoria">
-                Trayectoria
-            </h2>
-        </div>
-
-        <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm">
-            <!-- Botones de Navegación (Tabs Navigation) -->
-            <div class="flex border-b border-slate-800 bg-slate-900/60 overflow-x-auto no-scrollbar">
-                <button id="btn-formacion-academica" class="tab-btn flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-white hover:text-white border-b-2 border-emerald-500 bg-slate-900 transition-all flex items-center justify-center gap-1.5 sm:gap-2 active">
-                    <i data-lucide="graduation-cap" class="w-4 h-4 shrink-0"></i>
-                    <span class="hidden sm:inline" data-i18n="tab_trayectoria_estudio">Formación Académica</span>
-                    <span class="sm:hidden">Estudios</span>
-                </button>
-                <button id="btn-experiencia-profesional" class="tab-btn flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-1.5 sm:gap-2">
-                    <i data-lucide="briefcase" class="w-4 h-4 shrink-0"></i>
-                    <span class="hidden sm:inline" data-i18n="tab_trayectoria_trabajo">Experiencia Profesional</span>
-                    <span class="sm:hidden">Experiencia</span>
-                </button>
-                <button id="btn-certificaciones" class="tab-btn flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-1.5 sm:gap-2">
-                    <i data-lucide="scroll-text" class="w-4 h-4 shrink-0"></i>
-                    <span class="hidden sm:inline" data-i18n="tab_trayectoria_certificaciones">Certificaciones</span>
-                    <span class="sm:hidden">Cursos</span>
-                </button>
+    <section id="trayectoria" class="scroll-mt-12 max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="titulo_trayectoria">
+                    Trayectoria
+                </h2>
             </div>
 
-            <!-- Tab Formación Académica -->
-            <div id="tab-estudio" class="tab-content p-6 sm:p-8 space-y-6">
-                <!-- Master Universitario -->
-                <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                    <span class="fecha-formacion-experiencia">2026 - ACTUALIDAD</span>
-                    <div>
-                        <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_2">
-                            Máster Universitario en Ingeniería de Software y Sistemas Informáticos
-                        </h3>
-                        <p class="text-sm sm:text-base text-slate-400">
-                            Escuela Técnica Superior de Ingeniería y Tecnología (ESIT) - UNIR (Universidad Internacional de La Rioja)
-                        </p>
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm">
+                <!-- Botones de Navegación (Tabs Navigation) -->
+                <div class="flex border-b border-slate-800 bg-slate-900/60 overflow-x-auto no-scrollbar">
+                    <button id="btn-formacion-academica" class="tab-btn flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-white hover:text-white border-b-2 border-emerald-500 bg-slate-900 transition-all flex items-center justify-center gap-1.5 sm:gap-2 active">
+                        <i data-lucide="graduation-cap" class="w-4 h-4 shrink-0"></i>
+                        <span class="hidden sm:inline" data-i18n="tab_trayectoria_estudio">Formación Académica</span>
+                        <span class="sm:hidden">Estudios</span>
+                    </button>
+                    <button id="btn-experiencia-profesional" class="tab-btn flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-1.5 sm:gap-2">
+                        <i data-lucide="briefcase" class="w-4 h-4 shrink-0"></i>
+                        <span class="hidden sm:inline" data-i18n="tab_trayectoria_trabajo">Experiencia Profesional</span>
+                        <span class="sm:hidden">Experiencia</span>
+                    </button>
+                    <button id="btn-certificaciones" class="tab-btn flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-1.5 sm:gap-2">
+                        <i data-lucide="scroll-text" class="w-4 h-4 shrink-0"></i>
+                        <span class="hidden sm:inline" data-i18n="tab_trayectoria_certificaciones">Certificaciones</span>
+                        <span class="sm:hidden">Cursos</span>
+                    </button>
+                </div>
+
+                <!-- Tab Formación Académica -->
+                <div id="tab-estudio" class="tab-content p-6 sm:p-8 space-y-6">
+                    <!-- Master Universitario -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="fecha-formacion-experiencia">2026 - ACTUALIDAD</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_2">
+                                Máster Universitario en Ingeniería de Software y Sistemas Informáticos
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-400">
+                                Escuela Técnica Superior de Ingeniería y Tecnología (ESIT) - UNIR (Universidad Internacional de La Rioja)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Grado Universitario -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="fecha-formacion-experiencia">2022 - 2026</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_1">
+                                Grado Universitario en Ingeniería Informática (Especialidad Ingeniería de Software)
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-400 mb-1">
+                                Escuela Superior de Ingeniería (ETSI) - UHU (Universidad de Huelva)
+                            </p>
+                            <p class="text-xs sm:text-sm text-slate-400 font-bold mt-2 mb-1 leading-relaxed" data-i18n="texto_trayectoria_estudios_1">
+                                Nota más alta de mi promoción en las siguientes asignaturas:
+                            </p>
+                            <ul class="text-xs sm:text-sm text-slate-400 font-bold leading-relaxed">
+                                <li data-i18n="texto_trayectoria_estudios_1_asig_1">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Ingeniería de Requisitos
+                                </li>
+                                <li data-i18n="texto_trayectoria_estudios_1_asig_2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Diseño de Interfaces de Usuario
+                                </li>
+                                <li data-i18n="texto_trayectoria_estudios_1_asig_3">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Desarrollo de Aplicaciones Web
+                                </li>
+                                <li data-i18n="texto_trayectoria_estudios_1_asig_4">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Integración de la Información y Aplicaciones
+                                </li>
+                                <li data-i18n="texto_trayectoria_estudios_1_asig_5">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Arquitectura Software Dirigida por Modelos
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Grado Universitario -->
-                <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                    <span class="fecha-formacion-experiencia">2022 - 2026</span>
-                    <div>
-                        <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_1">
-                            Grado Universitario en Ingeniería Informática (Especialidad Ingeniería de Software)
-                        </h3>
-                        <p class="text-sm sm:text-base text-slate-400 mb-1">
-                            Escuela Superior de Ingeniería (ETSI) - UHU (Universidad de Huelva)
-                        </p>
-                        <p class="text-xs sm:text-sm text-slate-400 font-bold mt-2 mb-1 leading-relaxed" data-i18n="texto_trayectoria_estudios_1">
-                            Nota más alta de mi promoción en las siguientes asignaturas:
-                        </p>
-                        <ul class="text-xs sm:text-sm text-slate-400 font-bold leading-relaxed">
-                            <li data-i18n="texto_trayectoria_estudios_1_asig_1">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
-                                Ingeniería de Requisitos
-                            </li>
-                            <li data-i18n="texto_trayectoria_estudios_1_asig_2">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
-                                Diseño de Interfaces de Usuario
-                            </li>
-                            <li data-i18n="texto_trayectoria_estudios_1_asig_3">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
-                                Desarrollo de Aplicaciones Web
-                            </li>
-                            <li data-i18n="texto_trayectoria_estudios_1_asig_4">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
-                                Integración de la Información y Aplicaciones
-                            </li>
-                            <li data-i18n="texto_trayectoria_estudios_1_asig_5">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
-                                Arquitectura Software Dirigida por Modelos
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tab Experiencia Profesional-->
-            <div id="tab-trabajo" class="tab-content hidden p-6 sm:p-8 space-y-6">
-                <!-- Asesoramiento y Mantenimiento de Equipos Informáticos -->
-                <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                    <span class="fecha-formacion-experiencia">2018 - ACTUALIDAD</span>
-                    <div>
-                        <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_trabajo_1">
-                            Asesoramiento y Mantenimiento de Equipos Informáticos
-                        </h3>
-                        <p class="text-sm sm:text-base text-slate-400 mb-2">
-                            Freelance - Valverde del Camino, Huelva
-                        </p>
-                        <ul class="text-xs sm:text-sm text-slate-400 leading-relaxed" data-i18n="texto_trayectoria_trabajo_1">
-                            <li>
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block"></i>
-                                Asesoramiento personalizado en la adquisición, configuración y optimización de Hardware y Software para clientes particulares.
-                            </li>
-                            <li>
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block"></i>
-                                Diagnóstico preventivo, mantenimiento integral de Sistemas Operativos y resolución de incidencias en equipos informáticos.
-                            </li>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tab Certificaciones -->
-            <div id="tab-certificaciones" class="tab-content hidden p-6 sm:p-8 space-y-6">
-                <!-- Curso de Iniciación al Desarrollo con IA -->
-                <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                    <span class="fecha-formacion-experiencia">2026</span>
-                    <div>
-                        <h3 class="font-bold text-base text-white" data-i18n="titulo_certificaciones_1">
-                            Curso de Desarrollo con IA: de 0 a Producción
-                        </h3>
-                        <p class="text-sm text-slate-400">
-                            BIG SCHOOL & MoureDev
-                        </p>
-                        <p class="text-sm text-slate-400" data-i18n="texto_certificaciones_1">
-                            Certificado de Iniciación al Desarrollo con IA
-                        </p>
+                <!-- Tab Experiencia Profesional-->
+                <div id="tab-trabajo" class="tab-content hidden p-6 sm:p-8 space-y-6">
+                    <!-- Asesoramiento y Mantenimiento de Equipos Informáticos -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="fecha-formacion-experiencia">2018 - ACTUALIDAD</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_trabajo_1">
+                                Asesoramiento y Mantenimiento de Equipos Informáticos
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-400 mb-2">
+                                Freelance - Valverde del Camino, Huelva
+                            </p>
+                            <ul class="text-xs sm:text-sm text-slate-400 leading-relaxed" data-i18n="texto_trayectoria_trabajo_1">
+                                <li>
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block"></i>
+                                    Asesoramiento personalizado en la adquisición, configuración y optimización de Hardware y Software para clientes particulares.
+                                </li>
+                                <li>
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block"></i>
+                                    Diagnóstico preventivo, mantenimiento integral de Sistemas Operativos y resolución de incidencias en equipos informáticos.
+                                </li>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Idioma Inglés B1 -->
-                <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                    <span class="fecha-formacion-experiencia">2019</span>
-                    <div>
-                        <h3 class="font-bold text-base text-white" data-i18n="titulo_certificaciones_1">
-                            Idiomas
-                        </h3>
-                        <p class="text-sm text-slate-400">
-                            Cambridge & Native
-                        </p>
-                        <p class="text-sm text-slate-400" data-i18n="texto_certificaciones_1">
-                            Inglés - Nivel B1
-                        </p>
+                <!-- Tab Certificaciones -->
+                <div id="tab-certificaciones" class="tab-content hidden p-6 sm:p-8 space-y-6">
+                    <!-- Curso de Iniciación al Desarrollo con IA -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="fecha-formacion-experiencia">2026</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_certificaciones_1">
+                                Curso de Desarrollo con IA: de 0 a Producción
+                            </h3>
+                            <p class="text-sm text-slate-400">
+                                BIG SCHOOL & MoureDev
+                            </p>
+                            <p class="text-sm text-slate-400" data-i18n="texto_certificaciones_1">
+                                Certificado de Iniciación al Desarrollo con IA
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Idioma Inglés B1 -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="fecha-formacion-experiencia">2019</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_certificaciones_1">
+                                Idiomas
+                            </h3>
+                            <p class="text-sm text-slate-400">
+                                Cambridge & Native
+                            </p>
+                            <p class="text-sm text-slate-400" data-i18n="texto_certificaciones_1">
+                                Inglés - Nivel B1
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -455,373 +457,385 @@
     </section>
 
     <!-- Sección STACK TECNOLÓGICO -->
-    <section id="stack" class="scroll-mt-12 reveal opacity-0 translate-y-8 transition-all duration-700 ease-out max-w-6xl mx-auto px-4 sm:px-6 py-12">
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="stack_titulo">
-                Stack Tecnológico
-            </h2>
-        </div>
-        <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-sm flex flex-col gap-6">
+    <section id="stack" class="scroll-mt-12 max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="stack_titulo">
+                    Stack Tecnológico
+                </h2>
+            </div>
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-sm flex flex-col gap-6">
 
-            <!-- Lenguajes -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
-                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
-                        <i class="w-5 h-5 shrink-0" data-lucide="code-2"></i>
-                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_lenguajes_titulo">
-                            Lenguajes
-                        </h3>
+                <!-- Lenguajes -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="code-2"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_lenguajes_titulo">
+                                Lenguajes
+                            </h3>
+                        </div>
+                        <span id="contador-lenguajes" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
                     </div>
-                    <span id="contador-lenguajes" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
-                    </span>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-lenguajes" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
-                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </button>
-                    <ul id="lista-lenguajes" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
-                    </ul>
-                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </button>
+
+                <!-- Frameworks -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="layers"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_frameworks_titulo">
+                                Frameworks
+                            </h3>
+                        </div>
+                        <span id="contador-frameworks" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-frameworks" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Librerías & APIs -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="library"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_librerias_titulo">
+                                Librerías & APIs
+                            </h3>
+                        </div>
+                        <span id="contador-librerias" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-librerias" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Componentes & ORMs -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="boxes"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_componentes_titulo">
+                                Componentes & ORMs
+                            </h3>
+                        </div>
+                        <span id="contador-componentes" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-componentes" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bases de Datos -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="database"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_sgbd_titulo">
+                                Sistemas Gestores de Bases de Datos
+                            </h3>
+                        </div>
+                        <span id="contador-sgbd" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-sgbd" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- IDEs -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="terminal"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_ide_titulo">
+                                IDEs
+                            </h3>
+                        </div>
+                        <span id="contador-ide" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-ide" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Herramientas & Despliegue -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="wrench"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_herramientas_titulo">
+                                Herramientas & Despliegue
+                            </h3>
+                        </div>
+                        <span id="contador-herramientas" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-herramientas" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Habilidades -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="sparkles"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_habilidades_titulo">
+                                Habilidades
+                            </h3>
+                        </div>
+                        <span id="contador-habilidades" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-habilidades" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ingeniería de Software -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 last:border-none last:pb-0">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="cpu"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_is_titulo">
+                                Ingeniería de Software
+                            </h3>
+                        </div>
+                        <span id="contador-is" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-is" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-
-            <!-- Frameworks -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
-                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
-                        <i class="w-5 h-5 shrink-0" data-lucide="layers"></i>
-                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_frameworks_titulo">
-                            Frameworks
-                        </h3>
-                    </div>
-                    <span id="contador-frameworks" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
-                    </span>
-                </div>
-                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
-                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </button>
-                    <ul id="lista-frameworks" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
-                    </ul>
-                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Librerías & APIs -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
-                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
-                        <i class="w-5 h-5 shrink-0" data-lucide="library"></i>
-                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_librerias_titulo">
-                            Librerías & APIs
-                        </h3>
-                    </div>
-                    <span id="contador-librerias" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
-                    </span>
-                </div>
-                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
-                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </button>
-                    <ul id="lista-librerias" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
-                    </ul>
-                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Componentes & ORMs -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
-                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
-                        <i class="w-5 h-5 shrink-0" data-lucide="boxes"></i>
-                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_componentes_titulo">
-                            Componentes & ORMs
-                        </h3>
-                    </div>
-                    <span id="contador-componentes" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
-                    </span>
-                </div>
-                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
-                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </button>
-                    <ul id="lista-componentes" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
-                    </ul>
-                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Bases de Datos -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
-                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
-                        <i class="w-5 h-5 shrink-0" data-lucide="database"></i>
-                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_sgbd_titulo">
-                            Sistemas Gestores de Bases de Datos
-                        </h3>
-                    </div>
-                    <span id="contador-sgbd" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
-                    </span>
-                </div>
-                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
-                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </button>
-                    <ul id="lista-sgbd" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
-                    </ul>
-                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- IDEs -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
-                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
-                        <i class="w-5 h-5 shrink-0" data-lucide="terminal"></i>
-                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_ide_titulo">
-                            IDEs
-                        </h3>
-                    </div>
-                    <span id="contador-ide" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
-                    </span>
-                </div>
-                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
-                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </button>
-                    <ul id="lista-ide" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
-                    </ul>
-                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Herramientas & Despliegue -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
-                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
-                        <i class="w-5 h-5 shrink-0" data-lucide="wrench"></i>
-                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_herramientas_titulo">
-                            Herramientas & Despliegue
-                        </h3>
-                    </div>
-                    <span id="contador-herramientas" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
-                    </span>
-                </div>
-                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
-                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </button>
-                    <ul id="lista-herramientas" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
-                    </ul>
-                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Habilidades -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
-                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
-                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
-                        <i class="w-5 h-5 shrink-0" data-lucide="sparkles"></i>
-                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_habilidades_titulo">
-                            Habilidades
-                        </h3>
-                    </div>
-                    <span id="contador-habilidades" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
-                    </span>
-                </div>
-                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
-                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </button>
-                    <ul id="lista-habilidades" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
-                    </ul>
-                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Ingeniería de Software -->
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 last:border-none last:pb-0">
-                <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
-                    <div class="flex items-center gap-2 min-w-0 text-emerald-400">
-                        <i class="w-5 h-5 shrink-0" data-lucide="cpu"></i>
-                        <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_is_titulo">
-                            Ingeniería de Software
-                        </h3>
-                    </div>
-                    <span id="contador-is" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
-                    </span>
-                </div>
-                <div class="relative flex items-center flex-1 min-w-0 group/scroll">
-                    <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </button>
-                    <ul id="lista-is" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
-                    </ul>
-                    <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- Sección PROYECTOS & LOGROS -->
-    <section id="proyectos" class="scroll-mt-12 reveal opacity-0 translate-y-8 transition-all duration-700 ease-out max-w-6xl mx-auto px-4 sm:px-6 py-12">
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="proyectos_titulo">
-                Proyectos & Logros
-            </h2>
-        </div>
+    <section id="proyectos" class="scroll-mt-12 max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="proyectos_titulo">
+                    Proyectos & Logros
+                </h2>
+            </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <!-- Proyecto 1 -->
-            <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 pb-4 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-500/50 transition-all duration-300">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="font-bold text-lg text-white">NetEvents</h3>
-                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" data-i18n="netevents_status">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Proyecto 1 -->
+                <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 pb-4 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-500/50 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-lg text-white">NetEvents</h3>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" data-i18n="netevents_status">
                                 Ganador Hackathon 2025
                         </span>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4" data-i18n="netevents_desc">
-                        Proyecto colaborativo ganador del Hackathon Andalucía Emprende 2025. Solución creativa para fomentar la cultura y el ocio. Seleccionado entre 14 equipos por su innovación.
-                    </p>
-                </div>
-                <div>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            ODS (Objetivos de Desarrollo Sostenible)
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            MVP
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            Elevator Pitch
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4" data-i18n="netevents_desc">
+                            Proyecto colaborativo ganador del Hackathon Andalucía Emprende 2025. Solución creativa para fomentar la cultura y el ocio. Seleccionado entre 14 equipos por su innovación.
                         </p>
                     </div>
-                    <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7408130981578158080/" target="_blank" rel="noopener noreferrer" class="relative z-10 overflow-hidden flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                ODS (Objetivos de Desarrollo Sostenible)
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                MVP
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Elevator Pitch
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7408130981578158080/" target="_blank" rel="noopener noreferrer" class="relative z-10 overflow-hidden flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
                             <i class="devicon-linkedin-plain text-sm transition-colors duration-300"></i>
                             <span data-i18n="view_code" class="transition-colors duration-300">Ver Publicación</span>
                         </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Proyecto 2 -->
-            <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 pb-4 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-500/50 transition-all duration-300">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="font-bold text-lg text-white">ERP Autoescuela</h3>
-                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20" data-i18n="erp_status">
+                <!-- Proyecto 2 -->
+                <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 pb-4 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-500/50 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-lg text-white">ERP Autoescuela</h3>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20" data-i18n="erp_status">
                                 En desarrollo (TFG)
                             </span>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4" data-i18n="erp_desc">
-                        Sistema integral de planificación de recursos (ERP) diseñado para la gestión operativa y administrativa de una autoescuela. Desarrollo orientado a la defensa del TFG.
-                    </p>
-                </div>
-                <div>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            HTML
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            Tailwind CSS
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            JavaScript
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            HTMX
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            Spring Boot
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            PostgreSQL
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4" data-i18n="erp_desc">
+                            Sistema integral de planificación de recursos (ERP) diseñado para la gestión operativa y administrativa de una autoescuela. Desarrollo orientado a la defensa del TFG.
                         </p>
                     </div>
-                    <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
-                        <a href="https://github.com/antonioabadpro/ERP_Autoescuela" target="_blank" rel="noopener noreferrer" class="relative z-10 overflow-hidden flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                HTML
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Tailwind CSS
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                JavaScript
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                HTMX
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Spring Boot
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                PostgreSQL
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <a href="https://github.com/antonioabadpro/ERP_Autoescuela" target="_blank" rel="noopener noreferrer" class="relative z-10 overflow-hidden flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
                             <i class="devicon-github-plain text-sm transition-colors duration-300"></i>
                             <span data-i18n="view_code" class="transition-colors duration-300">Ver Código</span>
                         </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Proyecto 3 -->
-            <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 pb-4 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-500/50 transition-all duration-300">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="font-bold text-lg text-white">ToniCar</h3>
-                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400" data-i18n="tonicar_status">
+                <!-- Proyecto 3 -->
+                <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 pb-4 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-500/50 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-lg text-white">ToniCar</h3>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400" data-i18n="tonicar_status">
                                 Completado
                             </span>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4" data-i18n="tonicar_desc">
-                        Aplicación web académica que funciona como un catálogo estructurado de vehículos. Diseñado e implementado utilizando el patrón Modelo-Vista-Controlador (MVC).
-                    </p>
-                </div>
-                <div>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            HTML
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            Bootstrap CSS
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            JavaScript
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            Java Servlets
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            JSP
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            GlassFish
-                        </p>
-                        <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
-                            Apache Derby
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4" data-i18n="tonicar_desc">
+                            Aplicación web académica que funciona como un catálogo estructurado de vehículos. Diseñado e implementado utilizando el patrón Modelo-Vista-Controlador (MVC).
                         </p>
                     </div>
-                    <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
-                        <a href="https://github.com/antonioabadpro/ToniCar_DAW" target="_blank" rel="noopener noreferrer" class="relative z-10 overflow-hidden flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                HTML
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Bootstrap CSS
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                JavaScript
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Java Servlets
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                JSP
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                GlassFish
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Apache Derby
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <a href="https://github.com/antonioabadpro/ToniCar_DAW" target="_blank" rel="noopener noreferrer" class="relative z-10 overflow-hidden flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
                             <i class="devicon-github-plain text-sm transition-colors duration-300"></i>
                             <span data-i18n="view_code" class="transition-colors duration-300">Ver Código</span>
                         </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Botón Ver Todos los Proyectos -->
-        <div class="flex justify-center">
-            <a href="https://github.com/antonioabadpro?tab=repositories" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white transition-colors">
+            <!-- Botón Ver Todos los Proyectos -->
+            <div class="flex justify-center">
+                <a href="https://github.com/antonioabadpro?tab=repositories" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white transition-colors">
                     <i class="devicon-github-plain"></i>
                     <span data-i18n="btn_view_all_projects">Ver todos los proyectos</span>
                     <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </a>
+            </div>
         </div>
     </section>
 
