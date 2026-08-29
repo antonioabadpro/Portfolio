@@ -114,6 +114,17 @@
             }
         }
 
+        /* Oculta la barra de desplazamiento del Stack Tecnologico para mejorar la estetica y la experiencia de usuario */
+            .no-scrollbar::-webkit-scrollbar
+            {
+                display: none;
+            }
+            .no-scrollbar
+            {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+            }
+
         /* Animación de fade-in Down para la navbar */
         .reveal-navbar {
             opacity: 0;
@@ -159,24 +170,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* Creamos un conjunto de estilos personalizados utilizando las clases de Tailwind */
-        @layer utilities
-        {
-            .fecha-formacion-experiencia
-            {
-                @apply inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap;
-            }
-            /* Oculta la barra de desplazamiento del Stack Tecnologico para mejorar la estetica y la experiencia de usuario */
-            .no-scrollbar::-webkit-scrollbar
-            {
-                display: none;
-            }
-            .no-scrollbar
-            {
-                -ms-overflow-style: none;  /* IE and Edge */
-                scrollbar-width: none;  /* Firefox */
-            }
-        }
     </style>
 </head>
 
@@ -357,7 +350,7 @@
                 <div id="tab-estudio" class="tab-content p-6 sm:p-8 space-y-6">
                     <!-- Master Universitario -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                        <span class="fecha-formacion-experiencia">2026 - ACTUALIDAD</span>
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2026 - ACTUALIDAD</span>
                         <div>
                             <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_2">
                                 Máster Universitario en Ingeniería de Software y Sistemas Informáticos
@@ -370,7 +363,7 @@
 
                     <!-- Grado Universitario -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                        <span class="fecha-formacion-experiencia">2022 - 2026</span>
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2022 - 2026</span>
                         <div>
                             <h3 class="font-bold text-base text-white" data-i18n="titulo_estudio_1">
                                 Grado Universitario en Ingeniería Informática (Especialidad Ingeniería de Software)
@@ -411,7 +404,7 @@
                 <div id="tab-trabajo" class="tab-content hidden p-6 sm:p-8 space-y-6">
                     <!-- Asesoramiento y Mantenimiento de Equipos Informáticos -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                        <span class="fecha-formacion-experiencia">2018 - ACTUALIDAD</span>
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2018 - ACTUALIDAD</span>
                         <div>
                             <h3 class="font-bold text-base text-white" data-i18n="titulo_trabajo_1">
                                 Asesoramiento y Mantenimiento de Equipos Informáticos
@@ -437,7 +430,7 @@
                 <div id="tab-certificaciones" class="tab-content hidden p-6 sm:p-8 space-y-6">
                     <!-- Curso de Iniciación al Desarrollo con IA -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                        <span class="fecha-formacion-experiencia">2026</span>
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2026</span>
                         <div>
                             <h3 class="font-bold text-base text-white" data-i18n="certificacion_2">
                                 Curso de Desarrollo con IA: de 0 a Producción
@@ -453,7 +446,7 @@
 
                     <!-- Idioma Inglés B1 -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                        <span class="fecha-formacion-experiencia">2019</span>
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2019</span>
                         <div>
                             <h3 class="font-bold text-base text-white" data-i18n="certificacion_1">
                                 Idiomas
@@ -935,9 +928,9 @@
         </div>
     </section>
 
-    <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-400">
-        <p data-i18n="footer_copy">&copy; Antonio Abad Hernández Gálvez.</p>
-        <p>En búsqueda constante del crecimiento personal y profesional.</p>
+    <footer class="border-t border-slate-800/80 py-8 text-center text-sm text-slate-400">
+        <p> &copy; <span id="year-actual"></span> &bull; Antonio Abad Hernández Gálvez</p>
+        <p data-i18n="footer-descripcion">En búsqueda constante del crecimiento personal y profesional.</p>
     </footer>
 
     <script>
@@ -1500,6 +1493,9 @@
                 window.open(selectAccountUrl, '_blank');
             }
         });
+
+        // ****************** ---- FOOTER (Actualizar año) ---- ******************
+        document.getElementById('year-actual').textContent = new Date().getFullYear();
 
     </script>
 </body>
