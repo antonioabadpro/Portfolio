@@ -114,16 +114,26 @@
             }
         }
 
+        /* Animación Fade-In suave para los tabs de Trayectoria */
+        @keyframes tabFadeSuave {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
         /* Oculta la barra de desplazamiento del Stack Tecnologico para mejorar la estetica y la experiencia de usuario */
-            .no-scrollbar::-webkit-scrollbar
-            {
-                display: none;
-            }
-            .no-scrollbar
-            {
-                -ms-overflow-style: none;  /* IE and Edge */
-                scrollbar-width: none;  /* Firefox */
-            }
+        .no-scrollbar::-webkit-scrollbar
+        {
+            display: none;
+        }
+        .no-scrollbar
+        {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
 
         /* Animación de fade-in Down para la navbar */
         .reveal-navbar {
@@ -145,6 +155,17 @@
         /* Animación de entrada para el menú de navegación móvil */
         .anim-menu-out {
             animation: menuExit 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+        }
+
+        /* Animación de fade-in para los tabs de Trayectoria */
+        .anim-tab-fadeIn {
+            animation: tabFadeSuave 0.45s ease-out forwards;
+        }
+
+        /* Desplazamiento suave para el indicador verde del tab */
+        #tab-indicador {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s ease;
+            will-change: transform, width;
         }
 
         /* Constantes Modo Oscuro */
@@ -328,26 +349,30 @@
 
             <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm">
                 <!-- Botones de Navegación (Tabs Navigation) -->
-                <div class="flex border-b border-slate-800 bg-slate-900/60 overflow-x-auto no-scrollbar">
-                    <button id="btn-formacion-academica" class="tab-btn flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-white hover:text-white border-b-2 border-emerald-500 bg-slate-900 transition-all flex items-center justify-center gap-1.5 sm:gap-2 active">
+                <div class="relative flex border-b border-slate-800 bg-slate-900/60 overflow-x-auto no-scrollbar">
+                    <button id="btn-formacion-academica" class="tab-btn relative z-10 flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-white bg-slate-900 transition-colors flex items-center justify-center gap-1.5 sm:gap-2">
                         <i data-lucide="graduation-cap" class="w-4 h-4 shrink-0"></i>
                         <span class="hidden sm:inline" data-i18n="tab_formacion_academica">Formación Académica</span>
                         <span class="sm:hidden" data-i18n="tab_estudios">Estudios</span>
                     </button>
-                    <button id="btn-experiencia-profesional" class="tab-btn flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-1.5 sm:gap-2">
+                    <button id="btn-experiencia-profesional" class="tab-btn relative z-10 flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 bg-transparent hover:text-white hover:bg-slate-900/40 transition-colors flex items-center justify-center gap-1.5 sm:gap-2">
                         <i data-lucide="briefcase" class="w-4 h-4 shrink-0"></i>
                         <span class="hidden sm:inline" data-i18n="tab_experiencia_profesional">Experiencia Profesional</span>
                         <span class="sm:hidden" data-i18n="tab_experiencia">Experiencia</span>
                     </button>
-                    <button id="btn-certificaciones" class="tab-btn flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 hover:text-white border-b-2 border-transparent bg-transparent transition-all flex items-center justify-center gap-1.5 sm:gap-2">
+                    <button id="btn-certificaciones" class="tab-btn relative z-10 flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 bg-transparent hover:text-white hover:bg-slate-900/40 transition-colors flex items-center justify-center gap-1.5 sm:gap-2">
                         <i data-lucide="scroll-text" class="w-4 h-4 shrink-0"></i>
                         <span class="hidden sm:inline" data-i18n="tab_certificaciones">Certificaciones</span>
                         <span class="sm:hidden" data-i18n="tab_cursos">Cursos</span>
                     </button>
+
+                    <!-- Indicador deslizante -->
+                    <span id="tab-indicador" class="absolute bottom-0 left-0 h-[2px] w-1/3 bg-emerald-500 rounded-full z-20 pointer-events-none transition-all duration-300 ease-out">
+                    </span>
                 </div>
 
                 <!-- Tab Formación Académica -->
-                <div id="tab-estudio" class="tab-content p-6 sm:p-8 space-y-6">
+                <div id="tab-estudio" class="tab-content anim-tab-fadeSuave p-6 sm:p-8 space-y-6">
                     <!-- Master Universitario -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
                         <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2026 - ACTUALIDAD</span>
@@ -401,7 +426,7 @@
                 </div>
 
                 <!-- Tab Experiencia Profesional-->
-                <div id="tab-trabajo" class="tab-content hidden p-6 sm:p-8 space-y-6">
+                <div id="tab-trabajo" class="tab-content anim-tab-fadeSuave hidden p-6 sm:p-8 space-y-6">
                     <!-- Asesoramiento y Mantenimiento de Equipos Informáticos -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
                         <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2018 - ACTUALIDAD</span>
@@ -425,9 +450,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Tab Certificaciones -->
-                <div id="tab-certificaciones" class="tab-content hidden p-6 sm:p-8 space-y-6">
+                <div id="tab-certificaciones" class="tab-content anim-tab-fadeSuave hidden p-6 sm:p-8 space-y-6">
                     <!-- Curso de Iniciación al Desarrollo con IA -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
                         <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2026</span>
@@ -1004,44 +1027,49 @@
         const columnaTrabajo = document.getElementById('tab-trabajo');
         const columnaCertificaciones = document.getElementById('tab-certificaciones');
 
-        // Listas Auxiliares para manejar los botones y las columnas
+        const indicador = document.getElementById('tab-indicador');
+
         const listaBotones = [btnEstudio, btnTrabajo, btnCertificaciones];
         const listaColumnas = [columnaEstudio, columnaTrabajo, columnaCertificaciones];
 
-        // Definimos las clases Tailwind para los botones Activos e Inactivos
-        const listaClasesActivas = ['text-white', 'border-emerald-500', 'bg-slate-900', 'active'];
-        const listaClasesInactivas = ['text-slate-400', 'border-transparent', 'bg-transparent'];
+        const clasesBotonActivo = ['text-white', 'bg-slate-900'];
+        const clasesBotonInactivo = ['text-slate-400', 'bg-transparent', 'hover:text-white', 'hover:bg-slate-900/40'];
 
-        // Funcion para mostrar el contenido de la columna seleccionada y ocultar las demás, cambiando el estilo
-        function mostrarColumnaTrayectoria(posicion) {
+        function cambiarTabTrayectoria(indiceActivo) {
 
             // Cambiamos el estilo de los botones para reflejar la columna seleccionada
-            listaBotones.forEach((boton, i) => {
-                if (i === posicion) {
-                    boton.classList.add(...listaClasesActivas); // Desempaquetamos las clases activas del array (...) y las añadimos al botón seleccionado
-                    boton.classList.remove(...listaClasesInactivas);
-                }
-                else {
-                    boton.classList.remove(...listaClasesActivas);
-                    boton.classList.add(...listaClasesInactivas);
+            listaBotones.forEach((btn, idx) => {
+                if (idx === indiceActivo) {
+                    btn.classList.remove(...clasesBotonInactivo);
+                    btn.classList.add(...clasesBotonActivo);
+                } else {
+                    btn.classList.remove(...clasesBotonActivo);
+                    btn.classList.add(...clasesBotonInactivo);
                 }
             });
 
+            // Movemos el indicador visual inferior a la columna seleccionada
+            if (indicador) {
+                indicador.style.transform = `translateX(${indiceActivo * 100}%)`;
+            }
+
             // Mostramos la columna seleccionada y ocultamos el resto de columnas
-            listaColumnas.forEach((columna, i) => {
-                if (i === posicion) {
-                    columna.classList.remove('hidden');
-                }
-                else {
-                    columna.classList.add('hidden');
+            listaColumnas.forEach((col, idx) => {
+                if (idx === indiceActivo) {
+                    col.classList.remove('hidden');
+                    col.classList.remove('anim-tab-fadeIn');
+                    void col.offsetWidth; // Reiniciamos la animación forzando un reflow (re-procesamiento del DOM para calcular los elementos de la pagina)
+                    col.classList.add('anim-tab-fadeIn');
+                } else {
+                    col.classList.add('hidden');
                 }
             });
         }
 
         // Eventos de click para los botones de la sección de TRAYECTORIA
-        btnEstudio.addEventListener('click', () => mostrarColumnaTrayectoria(0));
-        btnTrabajo.addEventListener('click', () => mostrarColumnaTrayectoria(1));
-        btnCertificaciones.addEventListener('click', () => mostrarColumnaTrayectoria(2));
+        listaBotones.forEach((btn, index) => {
+            btn.addEventListener('click', () => cambiarTabTrayectoria(index));
+        });
 
         // ****************** ---- STACK TECNOLÓGICO ---- ******************
 
