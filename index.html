@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth dark">
 
 <head>
     <meta charset="UTF-8">
@@ -41,24 +41,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
-        // Constantes de colores para el modo oscuro
-        const COLOR_PRINCIPAL = '#059669'; // Verde Esmeralda
-        const COLOR_SECUNDARIO = '#10b981'; // Verde Claro
-        const FONDO_OSCURO = '#0b0f19';
-        const TARJETA_OSCURA = '#111827';
-
         // Asociamos las constantes a la configuración de Tailwind
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            primary: COLOR_PRINCIPAL,
-                            secondary: COLOR_SECUNDARIO,
-                            bg: FONDO_OSCURO,
-                            card: TARJETA_OSCURA,
-                        }
+                        slate: {
+                            50: 'rgb(var(--color-slate-50) / <alpha-value>)',
+                            100: 'rgb(var(--color-slate-100) / <alpha-value>)',
+                            200: 'rgb(var(--color-slate-200) / <alpha-value>)',
+                            300: 'rgb(var(--color-slate-300) / <alpha-value>)',
+                            400: 'rgb(var(--color-slate-400) / <alpha-value>)',
+                            500: 'rgb(var(--color-slate-500) / <alpha-value>)',
+                            600: 'rgb(var(--color-slate-600) / <alpha-value>)',
+                            700: 'rgb(var(--color-slate-700) / <alpha-value>)',
+                            800: 'rgb(var(--color-slate-800) / <alpha-value>)',
+                            900: 'rgb(var(--color-slate-900) / <alpha-value>)',
+                            950: 'rgb(var(--color-slate-950) / <alpha-value>)',
+                        },
+                        emerald: {
+                            400: 'rgb(var(--color-emerald-400) / <alpha-value>)',
+                            500: 'rgb(var(--color-emerald-500) / <alpha-value>)',
+                            600: 'rgb(var(--color-emerald-600) / <alpha-value>)',
+                            700: 'rgb(var(--color-emerald-700) / <alpha-value>)',
+                            800: 'rgb(var(--color-emerald-800) / <alpha-value>)',
+                            950: 'rgb(var(--color-emerald-950) / <alpha-value>)',
+                        },
+                        white: 'rgb(var(--color-white) / <alpha-value>)',
                     }
                 }
             }
@@ -124,6 +134,10 @@
             }
         }
 
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         /* Oculta la barra de desplazamiento del Stack Tecnologico para mejorar la estetica y la experiencia de usuario */
         .no-scrollbar::-webkit-scrollbar
         {
@@ -168,33 +182,134 @@
             will-change: transform, width;
         }
 
-        /* Constantes Modo Oscuro */
-        :root {
-            --color-fondo: #0b0f19;
-            --color-tarjeta: #111827;
-            --color-texto: #f9fafb;
-            --color-acento: #059669;
+        /* Paleta Modo Claro */
+    :root {
+        --color-white: 15 23 42;          /* Invierte text-white a texto oscuro */
+        --color-slate-950: 241 245 249;    /* Fondo base (#f1f5f9) */
+        --color-slate-900: 255 255 255;    /* Tarjetas y fondos elevados (#ffffff) */
+        --color-slate-800: 226 232 240;    /* Bordes y separadores (#e2e8f0) */
+        --color-slate-700: 203 213 225;    /* Bordes secundarios (#cbd5e1) */
+        --color-slate-500: 100 116 139;    /* #64748b */
+        --color-slate-400: 71 85 105;      /* Textos legibles (#475569) */
+        --color-slate-300: 51 65 85;       /* Textos de títulos (#334155) */
+        --color-slate-200: 30 41 59;
+        --color-slate-100: 15 23 42;
+        --color-slate-50: 2 6 23;
+
+        --color-emerald-400: 5 150 105;
+        --color-emerald-500: 16 185 129;
+        --color-emerald-600: 5 150 105;
+        --color-emerald-700: 167 243 208;
+        --color-emerald-800: 209 250 229;
+        --color-emerald-950: 16 185 129;
+    }
+
+    /* Paleta Modo Oscuro */
+    .dark {
+        --color-white: 255 255 255;
+        --color-slate-950: 2 6 23;
+        --color-slate-900: 15 23 42;
+        --color-slate-800: 30 41 59;
+        --color-slate-700: 51 65 85;
+        --color-slate-500: 100 116 139;
+        --color-slate-400: 148 163 184;
+        --color-slate-300: 203 213 225;
+        --color-slate-200: 226 232 240;
+        --color-slate-100: 241 245 249;
+        --color-slate-50: 248 250 252;
+
+        --color-emerald-400: 52 211 153;
+        --color-emerald-500: 16 185 129;
+        --color-emerald-600: 5 150 105;
+        --color-emerald-700: 4 120 87;
+        --color-emerald-800: 6 95 70;
+        --color-emerald-950: 2 44 34;
+    }
+
+    /* 1. Botones verdes principales: texto blanco siempre */
+    .bg-emerald-600, .bg-emerald-600 * {
+        color: #ffffff !important;
+    }
+
+    /* 1. LOGO DE LINKEDIN (ESTADO NORMAL Y HOVER) */
+        /* Estado normal: Ícono monocromático limpio calado con el fondo */
+        svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
+            fill: currentColor !important;
+            opacity: 0.85;
+            transition: fill 0.3s ease, opacity 0.3s ease;
+        }
+        svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) path {
+            fill: rgb(var(--color-slate-900)) !important;
+            transition: fill 0.3s ease;
         }
 
-        /* Constantes Modo Claro */
-        [data-theme="light"] {
-            --color-fondo: #f8fafc;
-            --color-tarjeta: #ffffff;
-            --color-texto: #0f172a;
-            --color-acento: #047857;
+        /* Hover general en LinkedIn (ej. Redes sociales) */
+        a:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect,
+        .group:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
+            fill: #0A66C2 !important;
+            opacity: 1;
+        }
+        a:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) path,
+        .group:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) path {
+            fill: #ffffff !important;
         }
 
-        /* Aplicamos las variables a Tailwind */
-        body {
-            background-color: var(--color-fondo);
-            color: var(--color-texto);
-            font-family: 'Inter', sans-serif;
+        /* ==========================================================================
+           2. BARRIDO INVERTIDO EXACTO PARA BOTONES DE PROYECTOS EN MODO CLARO
+           ========================================================================== */
+        /* Base en modo claro */
+        :root:not(.dark) a.group\/btn,
+        :root:not(.dark) #proyectos a.cursor-pointer {
+            background-color: #f1f5f9 !important;
+            border-color: #cbd5e1 !important;
+            color: #334155 !important;
         }
+
+        /* Fondo del barrido en modo claro: oscuro (#0f172a / slate-900) */
+        :root:not(.dark) .group\/btn::after,
+        :root:not(.dark) #proyectos a.cursor-pointer::after {
+            background-color: #0f172a !important;
+        }
+
+        /* En hover modo claro: texto e icono GitHub pasan a blanco puro (#ffffff) */
+        :root:not(.dark) a.group\/btn:hover,
+        :root:not(.dark) #proyectos a.cursor-pointer:hover,
+        :root:not(.dark) #proyectos a.cursor-pointer:hover span,
+        :root:not(.dark) #proyectos a.cursor-pointer:hover svg {
+            color: #ffffff !important;
+            fill: #ffffff !important;
+            border-color: #0f172a !important;
+        }
+
+        /* En hover modo claro del botón LinkedIn: el fondo del ícono se vuelve azul y las letras blancas */
+        :root:not(.dark) a.group\/btn:hover svg rect {
+            fill: #0A66C2 !important;
+            opacity: 1;
+        }
+        :root:not(.dark) a.group\/btn:hover svg path {
+            fill: #ffffff !important;
+        }
+
+    /* 3. Tabs de Trayectoria (Modo Claro) */
+    :root:not(.dark) .tab-btn.bg-transparent:hover {
+        background-color: #f8fafc !important; /* Hover gris sutil */
+        color: #0f172a !important;
+    }
+    :root:not(.dark) .tab-btn.bg-slate-900 {
+        background-color: #f1f5f9 !important; /* Tab activo distinguido */
+        color: #0f172a !important;
+    }
+
+    /* 4. Footer: tono más claro que el fondo en modo claro */
+    :root:not(.dark) footer {
+        background-color: #f8fafc !important;
+        border-color: #e2e8f0 !important;
+    }
 
     </style>
 </head>
 
-<body class="bg-slate-950 text-slate-100 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 transition-colors duration-300 antialiased selection:bg-emerald-500 selection:text-white">
     <!-- Navbar -->
     <nav class="reveal-navbar sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -315,11 +430,10 @@
                     <span data-i18n="boton_verProyectos">Ver proyectos</span>
                     <i data-lucide="arrow-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                     </a>
-                    <a href="#contacto" class="group relative flex-1 sm:flex-none sm:w-52 inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-slate-900 hover:bg-gradient-to-r hover:from-slate-900 hover:via-slate-800 hover:to-emerald-950/40 border border-slate-800 hover:border-emerald-500/60 text-slate-200 hover:text-white font-medium px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-950/30 transition-all duration-300 text-xs sm:text-sm whitespace-nowrap overflow-hidden">
-                    <!-- Icono animado al hover -->
-                    <i data-lucide="mail" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400 group-hover:text-emerald-400 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-12"></i>
-                    <span data-i18n="boton_contactar">Contactar</span>
-                </a>
+                    <a href="#contacto" class="group relative flex-1 sm:flex-none sm:w-52 inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-slate-900 hover:bg-gradient-to-r hover:from-slate-900 hover:via-slate-800 hover:to-emerald-800/20 dark:hover:from-slate-900 dark:hover:via-slate-800 dark:hover:to-emerald-950/40 border border-slate-800 hover:border-emerald-500/60 text-slate-200 hover:text-white font-medium px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/10 dark:hover:shadow-emerald-950/30 transition-all duration-300 text-xs sm:text-sm whitespace-nowrap overflow-hidden">
+                        <i data-lucide="mail" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400 group-hover:text-emerald-400 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-12"></i>
+                        <span data-i18n="boton_contactar">Contactar</span>
+                    </a>
                 </div>
             </div>
 
@@ -762,8 +876,8 @@
                             </p>
                         </div>
                         <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
-                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7408130981578158080/" target="_blank" rel="noopener noreferrer" class="group/btn relative z-10 overflow-hidden flex items-center justify-center gap-2.5 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-[#0A66C2] after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
-                                <svg class="w-[1.125rem] h-[1.125rem] fill-current shrink-0 transition-colors duration-300" viewBox="0 0 24 24">
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7408130981578158080/" target="_blank" rel="noopener noreferrer" class="group/btn relative z-10 overflow-hidden flex items-center justify-center gap-2.5 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
+                                <svg class="w-[1.125rem] h-[1.125rem] hover:text-[#0A66C2] fill-current shrink-0 transition-colors duration-300" viewBox="0 0 24 24">
                                     <rect x="0" y="0" width="24" height="24" rx="5"></rect>
                                     <path class="fill-[#0f172a] group-hover/btn:fill-white transition-colors duration-500" d="M7.4 19.5H4.2V9.2h3.2v10.3zM5.8 7.8c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.7 11.7h-3.2v-5c0-1.2 0-2.7-1.7-2.7-1.7 0-1.9 1.3-1.9 2.6v5.1H9.5V9.2h3.1v1.4h.04c.43-.82 1.5-1.7 3.06-1.7 3.3 0 3.9 2.1 3.9 5v5.6z"/>
                                 </svg>
@@ -1046,7 +1160,7 @@
         const listaColumnas = [columnaEstudio, columnaTrabajo, columnaCertificaciones];
 
         const clasesBotonActivo = ['text-white', 'bg-slate-900'];
-        const clasesBotonInactivo = ['text-slate-400', 'bg-transparent', 'hover:text-white', 'hover:bg-slate-900/40'];
+        const clasesBotonInactivo = ['text-slate-400', 'bg-transparent'];
 
         function cambiarTabTrayectoria(indiceActivo) {
 
@@ -1339,7 +1453,7 @@
                             `;
                         } else {
                             htmlGenerado += `
-                            <li class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-950/50 hover:bg-slate-800/50 border border-slate-700/60 hover:border-slate-500/60 transition-colors rounded-md flex items-center">
+                            <li class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-400 bg-slate-900/50 hover:bg-slate-800/50 border border-slate-700/60 hover:border-slate-500/60 transition-colors rounded-md flex items-center">
                                 ${htmlIcono}${nombre}
                             </li>
                             `;
@@ -1713,6 +1827,36 @@
             const nuevoIdioma = idiomaActual === 'es' ? 'en' : 'es';
             aplicarIdioma(nuevoIdioma);
         });
+
+        // ******************* ---- SWITCH TEMA (Modo Oscuro / Modo Claro) ---- ******************
+        const btnTema = document.getElementById('btn-tema');
+
+        function actualizarIconoTema(esOscuro) {
+            btnTema.innerHTML = `<i data-lucide="${esOscuro ? 'sun' : 'moon'}" class="w-4 h-4"></i>`;
+            lucide.createIcons();
+        }
+
+        function cambiarTema() {
+            const esOscuro = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', esOscuro ? 'dark' : 'light');
+            actualizarIconoTema(esOscuro);
+        }
+
+        // Cargar preferencia guardada o del sistema al iniciar
+        (function inicializarTema() {
+            const temaGuardado = localStorage.getItem('theme');
+            const prefiereOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const esOscuro = temaGuardado === 'dark' || (!temaGuardado && prefiereOscuro);
+
+            if (esOscuro) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            actualizarIconoTema(esOscuro);
+        })();
+
+        btnTema.addEventListener('click', cambiarTema);
 
     </script>
 </body>
