@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Metadatos SEO -->
     <meta name="description" content="Portfolio profesional de Antonio Abad Hernández Gálvez. Ingeniero Informático especializado en Ingeniería de Software, Arquitectura de Sistemas y Desarrollo Full Stack. Ver proyectos, habilidades y contacto.">
     <link rel="canonical" href="https://antonioabadpro.netlify.app/" />
-    <link rel="icon" href="img/Letra_A.png" type="image/x-icon">
+    <link rel="icon" type="image/png" href="img/Letra_A.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/Letra_A.png">
 
     <meta name="keywords" content="Antonio Abad Hernández Gálvez, Ingeniero Informático, Ingeniero de Software, Desarrollador Full Stack, Portfolio, Proyectos, Habilidades, Contacto">
@@ -26,133 +27,1871 @@
     <meta property="twitter:image" content="img/Letra_A.png">
 
     <title>Antonio Abad Hernández Gálvez | Ingeniero de Software & Desarrollador Full Stack</title>
-    <!-- Tailwind CSS CDN -->
+
+    <!-- Tailwind v3 CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configuración personalizada de Tailwind para animaciones -->
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- DevIcons CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script>
+        // Asociamos las constantes a la configuración de Tailwind
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
-                    animation: {
-                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
+                    colors: {
+                        slate: {
+                            50: 'rgb(var(--color-slate-50) / <alpha-value>)',
+                            100: 'rgb(var(--color-slate-100) / <alpha-value>)',
+                            200: 'rgb(var(--color-slate-200) / <alpha-value>)',
+                            300: 'rgb(var(--color-slate-300) / <alpha-value>)',
+                            400: 'rgb(var(--color-slate-400) / <alpha-value>)',
+                            500: 'rgb(var(--color-slate-500) / <alpha-value>)',
+                            600: 'rgb(var(--color-slate-600) / <alpha-value>)',
+                            700: 'rgb(var(--color-slate-700) / <alpha-value>)',
+                            800: 'rgb(var(--color-slate-800) / <alpha-value>)',
+                            900: 'rgb(var(--color-slate-900) / <alpha-value>)',
+                            950: 'rgb(var(--color-slate-950) / <alpha-value>)',
+                        },
+                        emerald: {
+                            400: 'rgb(var(--color-emerald-400) / <alpha-value>)',
+                            500: 'rgb(var(--color-emerald-500) / <alpha-value>)',
+                            600: 'rgb(var(--color-emerald-600) / <alpha-value>)',
+                            700: 'rgb(var(--color-emerald-700) / <alpha-value>)',
+                            800: 'rgb(var(--color-emerald-800) / <alpha-value>)',
+                            950: 'rgb(var(--color-emerald-950) / <alpha-value>)',
+                        },
+                        white: 'rgb(var(--color-white) / <alpha-value>)',
                     }
                 }
             }
         }
     </script>
-    <!-- Tecnicas de SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Antonio Abad Hernández Gálvez",
-        "url": "https://antonioabadpro.netlify.app/",
-        "image": "img/Letra_A.png",
-        "jobTitle": "Ingeniero Informático & Ingeniero de Software & Desarrollador Full Stack",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Freelance / En busca de oportunidades"
-        },
-        "sameAs": [
-        "https://github.com/antonioabadpro",
-        "https://www.linkedin.com/in/antonioabadhernandezgalvez/",
-        "https://www.instagram.com/ing_informatico.antonioabad/"
-        ]
-    }
-    </script>
-
-    <!-- Estilos adicionales para el fondo animado y retrasos en la entrada -->
     <style type="text/tailwindcss">
-        @layer utilities {
-            .animation-delay-100 { animation-delay: 150ms; }
-            .animation-delay-200 { animation-delay: 300ms; }
-            .animation-delay-300 { animation-delay: 450ms; }
-            .animation-delay-400 { animation-delay: 600ms; }
+
+        /* Configuración del fade-in Up para la sección de Inicio */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
-        .bg-gradient-animate {
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #312e81);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+
+        /* Configuración del fade-in Down para la sección de Inicio */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+        /* Configuración de la animación de entrada del menú hamburguesa (baja suavemente y aparece) */
+        @keyframes menuEnter {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        /* Configuración de la animación de salida del menú hamburguesa (sube suavemente y desaparece) */
+        @keyframes menuExit {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Animación Fade-In suave para los tabs de Trayectoria */
+        @keyframes tabFadeSuave {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Oculta la barra de desplazamiento del Stack Tecnologico para mejorar la estetica y la experiencia de usuario */
+        .no-scrollbar::-webkit-scrollbar
+        {
+            display: none;
+        }
+        .no-scrollbar
+        {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Animación de fade-in Down para la navbar */
+        .reveal-navbar {
+            opacity: 0;
+            animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Animación de fade-in Up para los elementos de la sección de Inicio */
+        .reveal-item {
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Animación de entrada para el menú de navegación móvil */
+        .anim-menu-in {
+            animation: menuEnter 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Animación de entrada para el menú de navegación móvil */
+        .anim-menu-out {
+            animation: menuExit 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+        }
+
+        /* Animación de fade-in para los tabs de Trayectoria */
+        .anim-tab-fadeIn {
+            animation: tabFadeSuave 0.45s ease-out forwards;
+        }
+
+        /* Desplazamiento suave para el indicador verde del tab */
+        #tab-indicador {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s ease;
+            will-change: transform, width;
+        }
+
+        /* Paleta Modo Claro */
+    :root {
+        --color-white: 15 23 42;          /* Invierte text-white a texto oscuro */
+        --color-slate-950: 241 245 249;    /* Fondo base (#f1f5f9) */
+        --color-slate-900: 255 255 255;    /* Tarjetas y fondos elevados (#ffffff) */
+        --color-slate-800: 226 232 240;    /* Bordes y separadores (#e2e8f0) */
+        --color-slate-700: 203 213 225;    /* Bordes secundarios (#cbd5e1) */
+        --color-slate-500: 100 116 139;    /* #64748b */
+        --color-slate-400: 71 85 105;      /* Textos legibles (#475569) */
+        --color-slate-300: 51 65 85;       /* Textos de títulos (#334155) */
+        --color-slate-200: 30 41 59;
+        --color-slate-100: 15 23 42;
+        --color-slate-50: 2 6 23;
+
+        --color-emerald-400: 5 150 105;
+        --color-emerald-500: 16 185 129;
+        --color-emerald-600: 5 150 105;
+        --color-emerald-700: 167 243 208;
+        --color-emerald-800: 209 250 229;
+        --color-emerald-950: 16 185 129;
+    }
+
+    /* Paleta Modo Oscuro */
+    .dark {
+        --color-white: 255 255 255;
+        --color-slate-950: 2 6 23;
+        --color-slate-900: 15 23 42;
+        --color-slate-800: 30 41 59;
+        --color-slate-700: 51 65 85;
+        --color-slate-500: 100 116 139;
+        --color-slate-400: 148 163 184;
+        --color-slate-300: 203 213 225;
+        --color-slate-200: 226 232 240;
+        --color-slate-100: 241 245 249;
+        --color-slate-50: 248 250 252;
+
+        --color-emerald-400: 52 211 153;
+        --color-emerald-500: 16 185 129;
+        --color-emerald-600: 5 150 105;
+        --color-emerald-700: 4 120 87;
+        --color-emerald-800: 6 95 70;
+        --color-emerald-950: 2 44 34;
+    }
+
+    /* 1. Botones verdes principales: texto blanco siempre */
+    .bg-emerald-600, .bg-emerald-600 * {
+        color: #ffffff !important;
+    }
+
+    /* 1. LOGO DE LINKEDIN (ESTADO NORMAL Y HOVER) */
+        /* Estado normal: Ícono monocromático limpio calado con el fondo */
+        svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
+            fill: currentColor !important;
+            opacity: 0.85;
+            transition: fill 0.3s ease, opacity 0.3s ease;
+        }
+        svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) path {
+            fill: rgb(var(--color-slate-900)) !important;
+            transition: fill 0.3s ease;
+        }
+
+        /* Hover general en LinkedIn (ej. Redes sociales) */
+        a:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect,
+        .group:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
+            fill: #0A66C2 !important;
+            opacity: 1;
+        }
+        a:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) path,
+        .group:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) path {
+            fill: #ffffff !important;
+        }
+
+        /* ==========================================================================
+           2. BARRIDO INVERTIDO EXACTO PARA BOTONES DE PROYECTOS EN MODO CLARO
+           ========================================================================== */
+        /* Base en modo claro */
+        :root:not(.dark) a.group\/btn,
+        :root:not(.dark) #proyectos a.cursor-pointer {
+            background-color: #f1f5f9 !important;
+            border-color: #cbd5e1 !important;
+            color: #334155 !important;
+        }
+
+        /* Fondo del barrido en modo claro: oscuro (#0f172a / slate-900) */
+        :root:not(.dark) .group\/btn::after,
+        :root:not(.dark) #proyectos a.cursor-pointer::after {
+            background-color: #0f172a !important;
+        }
+
+        /* En hover modo claro: texto e icono GitHub pasan a blanco puro (#ffffff) */
+        :root:not(.dark) a.group\/btn:hover,
+        :root:not(.dark) #proyectos a.cursor-pointer:hover,
+        :root:not(.dark) #proyectos a.cursor-pointer:hover span,
+        :root:not(.dark) #proyectos a.cursor-pointer:hover svg {
+            color: #ffffff !important;
+            fill: #ffffff !important;
+            border-color: #0f172a !important;
+        }
+
+        /* En hover modo claro del botón LinkedIn: el fondo del ícono se vuelve azul y las letras blancas */
+        :root:not(.dark) a.group\/btn:hover svg rect {
+            fill: #0A66C2 !important;
+            opacity: 1;
+        }
+        :root:not(.dark) a.group\/btn:hover svg path {
+            fill: #ffffff !important;
+        }
+
+    /* 3. Tabs de Trayectoria (Modo Claro) */
+    :root:not(.dark) .tab-btn.bg-transparent:hover {
+        background-color: #f8fafc !important; /* Hover gris sutil */
+        color: #0f172a !important;
+    }
+    :root:not(.dark) .tab-btn.bg-slate-900 {
+        background-color: #f1f5f9 !important; /* Tab activo distinguido */
+        color: #0f172a !important;
+    }
+
+    /* 4. Footer: tono más claro que el fondo en modo claro */
+    :root:not(.dark) footer {
+        background-color: #f8fafc !important;
+        border-color: #e2e8f0 !important;
+    }
+
     </style>
 </head>
-<body class="bg-gradient-animate text-slate-200 min-h-[100dvh] flex items-center justify-center p-6 py-12 selection:bg-indigo-500 selection:text-white font-sans overflow-x-hidden relative">
 
-    <!-- Luces de fondo decorativas -->
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
-        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 animate-pulse-slow"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 animate-pulse-slow" style="animation-delay: 2s;"></div>
-    </div>
+<body class="bg-slate-950 text-slate-100 transition-colors duration-300 antialiased selection:bg-emerald-500 selection:text-white">
+    <!-- Navbar -->
+    <nav class="reveal-navbar sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#inicio" class="text-xl font-bold tracking-tight text-white flex items-center gap-1">
+                    AAHG<span class="text-emerald-500">.</span>
+                </a>
 
-    <!-- Contenedor Principal -->
-    <main class="max-w-3xl w-full text-center z-10 flex flex-col items-center">
-        
-        <!-- Icono de Código -->
-        <div class="opacity-0 animate-fade-in-up mb-8 bg-slate-800/40 p-4 rounded-2xl backdrop-blur-sm border border-slate-700/50 shadow-2xl">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-        </div>
+            <div class="flex items-center gap-8">
+                <!-- Menú de Navegación (Tablets y Ordenadores) -->
+                <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+                    <li>
+                        <a href="#inicio" class="hover:text-slate-100 transition-colors" data-i18n="inicio">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#trayectoria" class="hover:text-slate-100 transition-colors" data-i18n="trayectoria">Trayectoria</a>
+                    </li>
+                    <li>
+                        <a href="#stack" class="hover:text-slate-100 transition-colors">Stack</a>
+                    </li>
+                    <li>
+                        <a href="#proyectos" class="hover:text-slate-100 transition-colors" data-i18n="proyectos">Proyectos</a>
+                    </li>
+                    <li>
+                        <a href="#contacto" class="hover:text-slate-100 transition-colors" data-i18n="contacto">Contacto</a>
+                    </li>
+                </ul>
 
-        <!-- Encabezado -->
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight opacity-0 animate-fade-in-up animation-delay-100 text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-400">
-            Antonio Abad<br>Hernández Gálvez
-        </h1>
-
-        <h2 class="text-lg md:text-2xl text-indigo-300 mb-10 font-light opacity-0 animate-fade-in-up animation-delay-200 tracking-wide">
-            Ingeniero Informático &bull; Ingeniero de Software
-        </h2>
-
-        <!-- Caja de Estado: Work in Progress -->
-        <div class="opacity-0 animate-fade-in-up animation-delay-300 bg-slate-800/40 border border-slate-700/50 backdrop-blur-md rounded-2xl p-8 w-full max-w-lg mx-auto shadow-2xl transition-all duration-300 hover:border-indigo-500/30">
-            <div class="flex items-center justify-center space-x-3 mb-4">
-                <span class="relative flex h-3 w-3">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
-                </span>
-                <h2 class="text-xl md:text-2xl font-semibold text-white tracking-wide uppercase text-sm">Work in Progress</h2>
+                <div class="flex items-center gap-2 pl-4 border-l border-slate-800">
+                    <!-- Botón Idioma -->
+                    <button id="btn-idioma" class="w-9 h-9 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-center text-xs font-semibold text-slate-300 hover:border-slate-700 hover:bg-slate-800 transition-all" aria-label="Cambiar idioma">
+                        ES
+                    </button>
+                    <!-- Botón Tema -->
+                    <button id="btn-tema" class="w-9 h-9 rounded-lg border  border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-300 hover:border-slate-700 hover:bg-slate-800 transition-all" aria-label="Cambiar tema">
+                        <i data-lucide="moon" class="w-4 h-4" id="themeIcon"></i>
+                    </button>
+                    <!-- Botón Hamburguesa (Móvil) -->
+                    <button id="btn-menu-hamburguesa" aria-label="Abrir menú de navegación móvil" class="md:hidden w-9 h-9 rounded-lg border  border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-300 hover:border-slate-700 hover:bg-slate-800 hover:text-white transition-all">
+                        <i data-lucide="menu" class="w-5 h-5" id="icono-menu-hamburguesa"></i>
+                    </button>
+                </div>
             </div>
-            <p class="text-slate-400 text-sm md:text-base leading-relaxed">
-                Mi portfolio personal está actualmente en desarrollo.
-            </p>
-            <p class="text-slate-400 text-sm md:text-base leading-relaxed">
-                Muy pronto estará disponible con mis proyectos.
-            </p>
+        </div>
+        <!-- Menú de Navegación Desplegable (Móvil) -->
+        <div id="menu-hamburguesa" class="hidden md:hidden absolute top-full left-0 w-full border-b border-slate-800/80 bg-slate-950/95 backdrop-blur-xl px-6 py-4 shadow-2xl">
+            <ul class="flex flex-col gap-1 text-sm font-medium text-slate-300">
+                <li>
+                    <a href="#inicio" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:text-white hover:bg-slate-900/60 transition-colors" data-i18n="inicio">Inicio</a>
+                </li>
+                <li>
+                    <a href="#trayectoria" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:text-white hover:bg-slate-900/60 transition-colors" data-i18n="trayectoria">Trayectoria</a>
+                </li>
+                <li>
+                    <a href="#stack" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:text-white hover:bg-slate-900/60 transition-colors">Stack</a>
+                </li>
+                <li>
+                    <a href="#proyectos" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:text-white hover:bg-slate-900/60 transition-colors" data-i18n="proyectos">Proyectos</a>
+                </li>
+                <li>
+                    <a href="#contacto" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:text-white hover:bg-slate-900/60 transition-colors" data-i18n="contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-            <!-- Barra de progreso simulada -->
-            <div class="mt-8 w-full bg-slate-900 rounded-full h-1.5 mb-2 overflow-hidden shadow-inner">
-              <div class="bg-gradient-to-r from-indigo-600 to-blue-400 h-1.5 rounded-full w-2/3 animate-pulse"></div>
+    <!-- Sección INICIO (Ubicacion, Nombre, Profesion, Texto Resumen y Botones) -->
+    <section id="inicio" class="scroll-mt-20 min-h-[75vh] max-w-6xl mx-auto pt-12 sm:pt-16 pb-16 sm:pb-24 px-4 sm:px-6 flex flex-col justify-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <!-- Columna de Texto -->
+            <div class="flex flex-col justify-center lg:col-span-7 order-2 lg:order-1">
+                <div class="reveal-item inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold w-fit mb-5 sm:mb-6">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                    <span data-i18n="texto_inicio_ubicacion">Huelva y alrededores</span>
+                </div>
+
+                <!-- Nombre y Apellidos -->
+                <h1 class="reveal-item [animation-delay:200ms] text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-2 sm:mb-4 leading-tight">
+                    <span data-i18n="texto_inicio_presentacion">Hola, soy</span><br>
+                    <div class="flex flex-wrap items-end gap-2 sm:gap-3">
+                        <span id="nombre" class="text-emerald-500">Antonio Abad</span>
+                        <span class="inline-flex items-center justify-center h-5 sm:h-6 md:h-7 px-2 md:px-2.5 mb-1 md:mb-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-wide text-slate-400 border border-slate-700/60 rounded-lg leading-none select-none" data-i18n="texto_inicio_nombre">nombre</span>
+                    </div>
+                    <div class="flex flex-wrap items-end gap-2 sm:gap-3 mt-1 sm:mt-0">
+                        <span id="apellidos" class="text-emerald-500">Hernández Gálvez</span>
+                        <span class="inline-flex items-center justify-center h-5 sm:h-6 md:h-7 px-2 md:px-2.5 mb-1 md:mb-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-wide text-slate-400 border border-slate-700/60 rounded-lg leading-none select-none" data-i18n="texto_inicio_apellidos">apellidos</span>
+                    </div>
+                </h1>
+
+                <!-- Profesion -->
+                <h2 class="reveal-item [animation-delay:400ms] text-base sm:text-xl text-slate-100 font-medium mb-5 sm:mb-6" data-i18n="texto_inicio_profesion">
+                    Ingeniero Informático &bull; Ingeniero de Software
+                </h2>
+
+                <!-- Texto Resumen -->
+                <div class="reveal-item [animation-delay:600ms] text-slate-400 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed mb-8">
+                    <p data-i18n="texto_inicio_resumen">
+                        Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de
+                        Software en la UNIR. <br>
+                        Desarrollador Full Stack especializado en Backend robusto y seguro. <br>
+                        Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto. <br>
+                    </p>
+                    <blockquote class="reveal-item [animation-delay:700ms] relative my-6 p-5 sm:p-6 border-l-4 border-violet-600 bg-slate-800/40 rounded-r-xl max-w-2xl transition-all duration-300 ease-out hover:bg-slate-800/70 hover:border-violet-500 hover:shadow-xl hover:shadow-violet-600/10 hover:-translate-y-0.5 group">
+                        <ul class="space-y-4 text-sm sm:text-base italic text-slate-300 font-normal leading-relaxed">
+                            <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-violet-500/80 group-hover:before:bg-violet-400 group-hover:before:scale-110 before:transition-all" data-i18n="texto_inicio_frase_1">
+                                “El software comienza desde la idea, no en la primera línea de código. La calidad, la mantenibilidad y la escalabilidad son la clave del éxito.”
+                            </li>
+                            <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-violet-500/80 group-hover:before:bg-violet-400 group-hover:before:scale-110 before:transition-all" data-i18n="texto_inicio_frase_2">
+                                “En la mayoría de ocasiones, los requisitos cambian constantemente; Cuanto mejor sea el diseño inicial del software, menor será el coste de adaptación.”
+                            </li>
+                        </ul>
+                    </blockquote>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="reveal-item [animation-delay:800ms] flex flex-row gap-3 sm:gap-6 w-full sm:w-auto">
+                    <a href="#proyectos" class="flex-1 sm:flex-none sm:w-52 inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg shadow-lg shadow-emerald-900/20 hover:-translate-y-0.5 transition-all text-xs sm:text-sm whitespace-nowrap">
+                    <i class="devicon-github-plain text-xs sm:text-sm"></i>
+                    <span data-i18n="boton_verProyectos">Ver proyectos</span>
+                    <i data-lucide="arrow-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                    </a>
+                    <a href="#contacto" class="group relative flex-1 sm:flex-none sm:w-52 inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-slate-900 hover:bg-gradient-to-r hover:from-slate-900 hover:via-slate-800 hover:to-emerald-800/20 dark:hover:from-slate-900 dark:hover:via-slate-800 dark:hover:to-emerald-950/40 border border-slate-800 hover:border-emerald-500/60 text-slate-200 hover:text-white font-medium px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/10 dark:hover:shadow-emerald-950/30 transition-all duration-300 text-xs sm:text-sm whitespace-nowrap overflow-hidden">
+                        <i data-lucide="mail" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400 group-hover:text-emerald-400 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-12"></i>
+                        <span data-i18n="boton_contactar">Contactar</span>
+                    </a>
+                </div>
             </div>
-            <p class="text-xs text-slate-500 text-right mt-2">Q4 2026</p>
-        </div>
 
-        <!-- Enlaces a Redes (Reemplaza # con tus enlaces reales) -->
-        <div class="opacity-0 animate-fade-in-up animation-delay-400 mt-12 flex space-x-8">
-            <a href="https://github.com/antonioabadpro?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white hover:scale-110 transition-all duration-300 drop-shadow-lg hover:drop-shadow-indigo-500/50">
-                <span class="sr-only">GitHub</span>
-                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/antonioabadhernandezgalvez/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#0077b5] hover:scale-110 transition-all duration-300 drop-shadow-lg hover:drop-shadow-[#0077b5]/50">
-                <span class="sr-only">LinkedIn</span>
-                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
-            </a>
-        </div>
-    </main>
+            <!-- Columna de Imagen -->
+            <div class="reveal-item [animation-delay:300ms] lg:col-span-5 flex justify-center items-center order-1 lg:order-2">
+                <div class="relative group">
+                    <!-- Resplandor esmeralda suave visible ÚNICAMENTE en hover -->
+                    <div class="absolute -inset-1 bg-gradient-to-tr from-emerald-600/40 to-teal-500/40 rounded-2xl sm:rounded-3xl blur-md opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"></div>
 
+                    <!-- Contenedor sobrio -->
+                    <div class="relative w-44 sm:w-56 lg:w-full max-w-xs sm:max-w-sm rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800/80 group-hover:border-emerald-500/40 bg-slate-900 shadow-xl aspect-[2252/2805] transition duration-500">
+                        <img src="img/Graduacion_4_5.jpg" alt="Antonio Abad Hernández Gálvez" draggable="false" oncontextmenu="return false;" class="w-full h-full object-cover object-top origin-top scale-[1.05] group-hover:scale-125 transition-transform duration-500 ease-out pointer-events-none select-none" loading="eager" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección TRAYECTORIA -->
+    <section id="trayectoria" class="scroll-mt-12 max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="trayectoria">
+                    Trayectoria
+                </h2>
+            </div>
+
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm">
+                <!-- Botones de Navegación (Tabs Navigation) -->
+                <div class="relative flex border-b border-slate-800 bg-slate-900/60 overflow-x-auto no-scrollbar">
+                    <button id="btn-formacion-academica" class="tab-btn relative z-10 flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-white bg-slate-900 transition-colors flex items-center justify-center gap-1.5 sm:gap-2">
+                        <i data-lucide="graduation-cap" class="w-4 h-4 shrink-0"></i>
+                        <span class="hidden sm:inline" data-i18n="tab_formacion_academica">Formación Académica</span>
+                        <span class="sm:hidden" data-i18n="tab_estudios">Estudios</span>
+                    </button>
+                    <button id="btn-experiencia-profesional" class="tab-btn relative z-10 flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 bg-transparent hover:text-white hover:bg-slate-900/40 transition-colors flex items-center justify-center gap-1.5 sm:gap-2">
+                        <i data-lucide="briefcase" class="w-4 h-4 shrink-0"></i>
+                        <span class="hidden sm:inline" data-i18n="tab_experiencia_profesional">Experiencia Profesional</span>
+                        <span class="sm:hidden" data-i18n="tab_experiencia">Experiencia</span>
+                    </button>
+                    <button id="btn-certificaciones" class="tab-btn relative z-10 flex-1 py-3.5 px-2 sm:px-6 font-semibold text-xs sm:text-sm text-slate-400 bg-transparent hover:text-white hover:bg-slate-900/40 transition-colors flex items-center justify-center gap-1.5 sm:gap-2">
+                        <i data-lucide="scroll-text" class="w-4 h-4 shrink-0"></i>
+                        <span class="hidden sm:inline" data-i18n="tab_certificaciones">Certificaciones</span>
+                        <span class="sm:hidden" data-i18n="tab_cursos">Cursos</span>
+                    </button>
+
+                    <!-- Indicador deslizante -->
+                    <span id="tab-indicador" class="absolute bottom-0 left-0 h-[2px] w-1/3 bg-emerald-500 rounded-full z-20 pointer-events-none transition-all duration-300 ease-out">
+                    </span>
+                </div>
+
+                <!-- Tab Formación Académica -->
+                <div id="tab-estudio" class="tab-content anim-tab-fadeSuave p-6 sm:p-8 space-y-6">
+                    <!-- Master Universitario -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap" data-i18n="fecha_trayectoria_estudios_2">2026 - ACTUALIDAD</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_2">
+                                Máster Universitario en Ingeniería de Software y Sistemas Informáticos
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-400 mb-2" data-i18n="universidad_estudios_2">
+                                Escuela Técnica Superior de Ingeniería y Tecnología (ESIT) - UNIR (Universidad Internacional de La Rioja)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Grado Universitario -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2022 - 2026</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_estudio_1">
+                                Grado Universitario en Ingeniería Informática (Especialidad Ingeniería de Software)
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-400 mb-2" data-i18n="universidad_estudio_1">
+                                Escuela Superior de Ingeniería (ETSI) - UHU (Universidad de Huelva)
+                            </p>
+                            <p class="text-xs sm:text-sm text-slate-400 font-bold mb-1 leading-relaxed" data-i18n="texto_estudio_1">
+                                Nota más alta de mi promoción en las siguientes asignaturas:
+                            </p>
+                            <ul class="text-xs sm:text-sm text-slate-400 font-bold leading-relaxed">
+                                <li data-i18n="estudio_1_asig_1">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Ingeniería de Requisitos
+                                </li>
+                                <li data-i18n="estudio_1_asig_2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Diseño de Interfaces de Usuario
+                                </li>
+                                <li data-i18n="estudio_1_asig_3">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Desarrollo de Aplicaciones Web
+                                </li>
+                                <li data-i18n="estudio_1_asig_4">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Integración de la Información y Aplicaciones
+                                </li>
+                                <li data-i18n="estudio_1_asig_5">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Arquitectura Software Dirigida por Modelos
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Experiencia Profesional-->
+                <div id="tab-trabajo" class="tab-content anim-tab-fadeSuave hidden p-6 sm:p-8 space-y-6">
+                    <!-- Asesoramiento y Mantenimiento de Equipos Informáticos -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap" data-i18n="fecha_trayectoria_trabajo_1">2018 - ACTUALIDAD</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="titulo_trabajo_1">
+                                Asesoramiento y Mantenimiento de Equipos Informáticos
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-400 mb-2">
+                                Freelance - Valverde del Camino, Huelva
+                            </p>
+                            <ul class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                <li data-i18n="trabajo_1_texto_1">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Asesoramiento personalizado en la adquisición, configuración y optimización de Hardware y Software para clientes particulares.
+                                </li>
+                                <li data-i18n="trabajo_1_texto_2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline-block mr-1"></i>
+                                    Diagnóstico preventivo, mantenimiento integral de Sistemas Operativos y resolución de incidencias en equipos informáticos.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-certificaciones" class="tab-content anim-tab-fadeSuave hidden p-6 sm:p-8 space-y-6">
+                    <!-- Curso de Iniciación al Desarrollo con IA -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2026</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="certificacion_2">
+                                Curso de Desarrollo con IA: de 0 a Producción
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-400 mb-2">
+                                BIG SCHOOL & MoureDev
+                            </p>
+                            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed" data-i18n="texto_certificacion_2">
+                                Certificado de Iniciación al Desarrollo con IA
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Idioma Inglés B1 -->
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2019</span>
+                        <div>
+                            <h3 class="font-bold text-base text-white" data-i18n="certificacion_1">
+                                Idiomas
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-400 mb-2">
+                                Cambridge & Native
+                            </p>
+                            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed" data-i18n="texto_certificacion_1">
+                                Inglés - Nivel B1
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección STACK TECNOLÓGICO -->
+    <section id="stack" class="scroll-mt-12 max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="stack">
+                    Stack Tecnológico
+                </h2>
+            </div>
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-sm flex flex-col gap-6">
+
+                <!-- Lenguajes -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="code-2"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="lenguajes">
+                                Lenguajes
+                            </h3>
+                        </div>
+                        <span id="contador-lenguajes" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-lenguajes" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="layers"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight">
+                                Frameworks
+                            </h3>
+                        </div>
+                        <span id="contador-frameworks" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-frameworks" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Librerías & APIs -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="library"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_librerias_titulo">
+                                Librerías & APIs
+                            </h3>
+                        </div>
+                        <span id="contador-librerias" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-librerias" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Componentes & ORMs -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="boxes"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_componentes_titulo">
+                                Componentes & ORMs
+                            </h3>
+                        </div>
+                        <span id="contador-componentes" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-componentes" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bases de Datos -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="database"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_sgbd_titulo">
+                                Sistemas Gestores de Bases de Datos (SGBD)
+                            </h3>
+                        </div>
+                        <span id="contador-sgbd" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-sgbd" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- IDEs -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="terminal"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight">
+                                IDEs
+                            </h3>
+                        </div>
+                        <span id="contador-ide" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-ide" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Herramientas & Despliegue -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="wrench"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_herramientas_titulo">
+                                Herramientas & Despliegue
+                            </h3>
+                        </div>
+                        <span id="contador-herramientas" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-herramientas" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Habilidades -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 pb-6 border-b border-slate-800/60">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="sparkles"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="habilidades">
+                                Habilidades
+                            </h3>
+                        </div>
+                        <span id="contador-habilidades" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-habilidades" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ingeniería de Software -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 last:border-none last:pb-0">
+                    <div class="flex items-center justify-start gap-2 w-full sm:w-52 shrink-0">
+                        <div class="flex items-center gap-2 min-w-0 text-emerald-400">
+                            <i class="w-5 h-5 shrink-0" data-lucide="cpu"></i>
+                            <h3 class="font-bold text-white text-sm leading-tight" data-i18n="ingenieria_software">
+                                Ingeniería de Software
+                            </h3>
+                        </div>
+                        <span id="contador-is" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative flex items-center flex-1 min-w-0 group/scroll">
+                        <button type="button" aria-label="Scroll left" class="scroll-btn-left hidden absolute left-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-left"></i>
+                        </button>
+                        <ul id="lista-is" class="scroll-container flex flex-nowrap flex-1 py-1 gap-2 items-center font-medium text-xs no-scrollbar overflow-x-auto scroll-smooth">
+                        </ul>
+                        <button type="button" aria-label="Scroll right" class="scroll-btn-right hidden absolute right-0 z-10 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 shadow-md backdrop-blur-sm transition-all focus:outline-none">
+                            <i class="w-4 h-4" data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección PROYECTOS & LOGROS -->
+    <section id="proyectos" class="scroll-mt-12 max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="proyectos_titulo">
+                    Proyectos & Logros
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Proyecto 1 -->
+                <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 pb-4 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-500/50 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-lg text-white">NetEvents</h3>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" data-i18n="logro_netEvents_estado">
+                                Ganador Hackathon 2025
+                            </span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4" data-i18n="logro_netEvents_texto">
+                            Proyecto colaborativo seleccionado como ganador del Hackathon Andalucía Emprende 2025 entre 14 equipos por la innovación y viabilidad del modelo de negocio. <br>
+                            Solución creativa para fomentar la cultura y el ocio en las ciudades.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl" data-i18n="logro_netEvents_tag_1">
+                                ODS (Objetivos de Desarrollo Sostenible)
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                MVP
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Elevator Pitch
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7408130981578158080/" target="_blank" rel="noopener noreferrer" class="group/btn relative z-10 overflow-hidden flex items-center justify-center gap-2.5 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
+                                <svg class="w-[1.125rem] h-[1.125rem] hover:text-[#0A66C2] fill-current shrink-0 transition-colors duration-300" viewBox="0 0 24 24">
+                                    <rect x="0" y="0" width="24" height="24" rx="5"></rect>
+                                    <path class="fill-[#0f172a] group-hover/btn:fill-white transition-colors duration-500" d="M7.4 19.5H4.2V9.2h3.2v10.3zM5.8 7.8c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.7 11.7h-3.2v-5c0-1.2 0-2.7-1.7-2.7-1.7 0-1.9 1.3-1.9 2.6v5.1H9.5V9.2h3.1v1.4h.04c.43-.82 1.5-1.7 3.06-1.7 3.3 0 3.9 2.1 3.9 5v5.6z"/>
+                                </svg>
+                                <span data-i18n="boton_verPublicacion" class="transition-colors duration-300">Ver Publicación</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 pb-4 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-500/50 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-lg text-white">ERP Autoescuela</h3>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20" data-i18n="proyecto_tfg_estado">
+                                En desarrollo (TFG)
+                            </span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4" data-i18n="proyecto_tfg_texto">
+                            Sistema integral de planificación de recursos (ERP) diseñado para la gestión operativa y administrativa de una autoescuela. <br>
+                            Desarrollo orientado a la defensa del TFG.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                HTML
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Tailwind CSS
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                JavaScript
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                HTMX
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Spring Boot
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                PostgreSQL
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <a href="https://github.com/antonioabadpro/ERP_Autoescuela" target="_blank" rel="noopener noreferrer" class="relative z-10 overflow-hidden flex items-center justify-center gap-2.5 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
+                                <svg class="w-[1.125rem] h-[1.125rem] fill-current shrink-0 transition-colors duration-300" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/>
+                                </svg>
+                                <span data-i18n="boton_verCodigo" class="transition-colors duration-300">Ver Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 pb-4 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-500/50 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-lg text-white">ToniCar</h3>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400" data-i18n="proyecto_toniCar_estado">
+                                Completado
+                            </span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4" data-i18n="proyecto_toniCar_texto">
+                            Aplicación web académica que simula el funcionamiento de un concesionario online, permitiendo consultar un catálogo de coches, gestionar usuarios y enviar solicitudes de información mediante una arquitectura MVC basada en Jakarta EE.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400 font-semibold mb-4">
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                HTML
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Bootstrap CSS
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                JavaScript
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Java Servlets
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                JSP
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                GlassFish
+                            </p>
+                            <p class="shrink-0 px-3 py-1.5 bg-emerald-950/20 hover:bg-slate-800/50 border border-slate-700/60 hover:border-emerald-500/50 transition-colors rounded-2xl">
+                                Apache Derby
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <a href="https://github.com/antonioabadpro/ToniCar_DAW" target="_blank" rel="noopener noreferrer" class="relative z-10 overflow-hidden flex items-center justify-center gap-2.5 w-full py-2 px-4 rounded-lg font-bold text-slate-300 bg-slate-800/50 border border-slate-700/60 cursor-pointer transition-colors duration-500 hover:text-black after:content-[''] after:bg-white after:absolute after:-z-10 after:-left-[20%] after:-right-[20%] after:top-0 after:bottom-0 after:[transform:skewX(45deg)_scale(0,1)] hover:after:[transform:skewX(45deg)_scale(1,1)] after:transition-all after:duration-500">
+                                <svg class="w-[1.125rem] h-[1.125rem] fill-current shrink-0 transition-colors duration-300" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/>
+                                </svg>
+                                <span data-i18n="boton_verCodigo" class="transition-colors duration-300">Ver Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón Ver Todos los Proyectos -->
+            <div class="flex justify-center">
+                <a href="https://github.com/antonioabadpro?tab=repositories" target="_blank" rel="noopener noreferrer" class="group/all inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white transition-colors">
+                    <svg class="w-[1.125rem] h-[1.125rem] fill-current shrink-0 transition-colors duration-300" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/>
+                    </svg>
+                    <span data-i18n="boton_verTodosProyectos">Ver todos los proyectos</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover/all:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de CONTACTO -->
+    <section id="contacto" class="scroll-mt-12 max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="reveal opacity-0 translate-y-8 transition-all duration-700 ease-out">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white tracking-tight inline-block relative after:content-[''] after:block after:w-8 after:h-1 after:bg-emerald-500 after:mt-1 after:rounded-full" data-i18n="contacto_titulo">
+                    Información de Contacto
+                </h2>
+            </div>
+
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-8 sm:p-10 backdrop-blur-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="lg:col-span-2 space-y-4">
+                        <h3 class="text-2xl font-bold text-white tracking-tight" data-i18n="contacto_subtitulo">
+                            ¿Hablamos o necesitas mi CV?
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed max-w-xl" data-i18n="contacto_texto">
+                            Selecciona el motivo de tu consulta y se abrirá un borrador directo en Gmail listo para enviar.
+                        </p>
+
+                        <!-- Selector de motivo minimalista -->
+                        <div class="pt-2">
+                            <label for="motivoContacto" class="block text-xs font-medium text-slate-300 mb-2" data-i18n="contacto_motivo">
+                                Motivo del contacto:
+                            </label>
+                            <div class="relative max-w-sm">
+                                <select id="motivoContacto" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 appearance-none focus:outline-none focus:border-emerald-500 transition-colors cursor-pointer">
+                                    <option value="oferta" data-i18n="contacto_opt_oferta">Posible oferta de trabajo</option>
+                                    <option value="info" data-i18n="contacto_opt_info">Solicitud de información / CV</option>
+                                    <option value="otro" data-i18n="contacto_opt_otro">Otro motivo</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <button id="btnBorradorGmail" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-5 py-2.5 rounded-lg shadow-lg shadow-emerald-900/20 hover:-translate-y-0.5 transition-all text-sm">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                <span data-i18n="contacto_btn_borradorGmail">Abrir borrador en Gmail</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Redes sociales -->
+                    <div class="flex flex-col gap-4 lg:border-l border-slate-800 lg:pl-8 pt-6 lg:pt-0 border-t lg:border-t-0 border-slate-800">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500" data-i18n="contacto_rrss">
+                            Redes Sociales
+                        </p>
+                        <a href="https://www.linkedin.com/in/antonioabadhernandezgalvez/" target="_blank" class="flex items-center gap-3 text-sm font-medium text-slate-400 hover:text-[#0A66C2] transition-all hover:translate-x-1">
+                            <svg class="w-[1.125rem] h-[1.125rem] fill-current" viewBox="0 0 24 24">
+                                <!-- Cuadrado ajustado a 24x24 con esquinas redondeadas proporcionadas (rx) -->
+                                <rect x="0" y="0" width="24" height="24" rx="5"></rect>
+                                <path fill="#0f172a" d="M7.4 19.5H4.2V9.2h3.2v10.3zM5.8 7.8c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.7 11.7h-3.2v-5c0-1.2 0-2.7-1.7-2.7-1.7 0-1.9 1.3-1.9 2.6v5.1H9.5V9.2h3.1v1.4h.04c.43-.82 1.5-1.7 3.06-1.7 3.3 0 3.9 2.1 3.9 5v5.6z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://www.instagram.com/antonioabad.eng/" target="_blank" class="group flex items-center gap-3 text-sm font-medium text-slate-400 transition-all hover:translate-x-1">
+                            <svg class="w-[1.125rem] h-[1.125rem] transition-colors" viewBox="0 0 24 24">
+                                <defs>
+                                    <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#f09433" />
+                                        <stop offset="50%" stop-color="#dc2743" />
+                                        <stop offset="100%" stop-color="#bc1888" />
+                                    </linearGradient>
+                                </defs>
+                                
+                                <path 
+                                    class="fill-slate-400 group-hover:fill-[url(#instagram-gradient)] transition-[fill]" 
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                                />
+                            </svg>
+
+                            <span class="group-hover:bg-gradient-to-r group-hover:from-[#f09433] group-hover:via-[#dc2743] group-hover:to-[#bc1888] group-hover:bg-clip-text group-hover:text-transparent">
+                                Instagram
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-800/80 py-8 text-center text-sm text-slate-400">
+        <p> &copy; <span id="year-actual"></span> &bull; Antonio Abad Hernández Gálvez</p>
+        <p data-i18n="footer-descripcion">En búsqueda constante del crecimiento personal y profesional.</p>
+    </footer>
+
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // ****************** ---- NAVBAR (MENÚ HAMBURGUESA MÓVIL) ---- ******************
+        const mobileMenuBtn = document.getElementById('btn-menu-hamburguesa');
+        const mobileMenu = document.getElementById('menu-hamburguesa');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function setMenuIcon(iconName) {
+            mobileMenuBtn.innerHTML = `<i data-lucide="${iconName}" class="w-5 h-5"></i>`;
+            lucide.createIcons();
+        }
+
+        function toggleMenu() {
+            const isClosed = mobileMenu.classList.contains('hidden');
+
+            if (isClosed) {
+                // 1. Entrada: Fade-in Down (baja desde arriba)
+                mobileMenu.classList.remove('hidden', 'anim-menu-out');
+                mobileMenu.classList.add('anim-menu-in');
+
+                // 2. Cambiar icono a X
+                setMenuIcon('x');
+            } else {
+                // 1. Salida: Fade-out Up (se recoge hacia arriba)
+                mobileMenu.classList.remove('anim-menu-in');
+                mobileMenu.classList.add('anim-menu-out');
+
+                // Esperar a que termine la animación (200ms) para ocultarlo del todo
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('anim-menu-out');
+                }, 200);
+
+                // 2. Restaurar icono a menú
+                setMenuIcon('menu');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Cerrar al pulsar sobre cualquier enlace
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Cerrar si se redimensiona a pantalla de escritorio
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('anim-menu-in', 'anim-menu-out');
+                setMenuIcon('menu');
+            }
+        });
+
+        // ****************** ---- TRAYECTORIA---- ******************
+
+        // Funcionalidad cambio de columnas (Tabs) en la sección de TRAYECTORIA
+        const btnEstudio = document.getElementById('btn-formacion-academica');
+        const btnTrabajo = document.getElementById('btn-experiencia-profesional');
+        const btnCertificaciones = document.getElementById('btn-certificaciones');
+
+        const columnaEstudio = document.getElementById('tab-estudio');
+        const columnaTrabajo = document.getElementById('tab-trabajo');
+        const columnaCertificaciones = document.getElementById('tab-certificaciones');
+
+        const indicador = document.getElementById('tab-indicador');
+
+        const listaBotones = [btnEstudio, btnTrabajo, btnCertificaciones];
+        const listaColumnas = [columnaEstudio, columnaTrabajo, columnaCertificaciones];
+
+        const clasesBotonActivo = ['text-white', 'bg-slate-900'];
+        const clasesBotonInactivo = ['text-slate-400', 'bg-transparent'];
+
+        function cambiarTabTrayectoria(indiceActivo) {
+
+            // Cambiamos el estilo de los botones para reflejar la columna seleccionada
+            listaBotones.forEach((btn, idx) => {
+                if (idx === indiceActivo) {
+                    btn.classList.remove(...clasesBotonInactivo);
+                    btn.classList.add(...clasesBotonActivo);
+                } else {
+                    btn.classList.remove(...clasesBotonActivo);
+                    btn.classList.add(...clasesBotonInactivo);
+                }
+            });
+
+            // Movemos el indicador visual inferior a la columna seleccionada
+            if (indicador) {
+                indicador.style.transform = `translateX(${indiceActivo * 100}%)`;
+            }
+
+            // Mostramos la columna seleccionada y ocultamos el resto de columnas
+            listaColumnas.forEach((col, idx) => {
+                if (idx === indiceActivo) {
+                    col.classList.remove('hidden');
+                    col.classList.remove('anim-tab-fadeIn');
+                    void col.offsetWidth; // Reiniciamos la animación forzando un reflow (re-procesamiento del DOM para calcular los elementos de la pagina)
+                    col.classList.add('anim-tab-fadeIn');
+                } else {
+                    col.classList.add('hidden');
+                }
+            });
+        }
+
+        // Eventos de click para los botones de la sección de TRAYECTORIA
+        listaBotones.forEach((btn, index) => {
+            btn.addEventListener('click', () => cambiarTabTrayectoria(index));
+        });
+
+        // ****************** ---- STACK TECNOLÓGICO ---- ******************
+
+        // ****************** ---- 1. STACK TECNOLÓGICO (Lista Lenguajes) ---- ******************
+        const numLenguajesExperto = 9; // Numero de lenguajes que se consideran "experto" (los primeros del array)
+
+        const listaLenguajes = {
+            es: [
+                "C", "C++", "C#", "Java", "HTML", "CSS", "JavaScript",
+                "SQL", "PL/SQL", "NoSQL", "Python", "PlantUML", "Bash", "Kotlin MP", "MATLAB",
+                "Alloy (UML)", "OCL (UML)", "Ensamblador x86", "xPath (XML)", "XSLT (XML)", "Pascal-FC", "VHDL"
+            ],
+            en: [
+                "C", "C++", "C#", "Java", "HTML", "CSS", "JavaScript",
+                "SQL", "PL/SQL", "NoSQL", "Python", "PlantUML", "Bash", "Kotlin MP", "MATLAB",
+                "Alloy (UML)", "OCL (UML)", "x86 Assembly", "xPath (XML)", "XSLT (XML)", "Pascal-FC", "VHDL"
+            ]
+        }
+
+
+        const listaIconosLenguajes = [
+            "devicon-c-plain", // C
+            "devicon-cplusplus-plain", // C++
+            "devicon-csharp-plain", // C#
+            "devicon-java-plain", // Java
+            "devicon-html5-plain", // HTML
+            "devicon-css3-plain", // CSS
+            "devicon-javascript-plain", // JavaScript
+            "", // SQL
+            "", // PL/SQL
+            "", // NoSQL
+            "devicon-python-plain", // Python
+            "devicon-unifiedmodelinglanguage-plain", // UML
+            "devicon-bash-plain", // Bash
+            "devicon-kotlin-plain", // Kotlin MP
+            "devicon-matlab-plain", // MATLAB
+            "", // Alloy
+            "", // OCL
+            "", // Ensamblador x86
+            "", // xPath
+            "", // XSLT
+            "", // Pascal-FC
+            ""  // VHDL
+        ];
+
+        // ****************** ---- 2. STACK TECNOLÓGICO (Lista Frameworks) ---- ******************
+        const numFrameworksExperto = 4; // Numero de frameworks que se consideran "experto" (los primeros del array)
+
+        const listaFrameworks = [
+            "Spring Boot", "Tailwind CSS", "Bootstrap CSS", "Hibernate (Java)", "ROS (Robot Operating System)"
+        ];
+
+        const listaIconosFrameworks = [
+            "devicon-spring-plain", // Spring Boot
+            "devicon-tailwindcss-plain", // Tailwind CSS
+            "devicon-bootstrap-plain", // Bootstrap CSS
+            "devicon-hibernate-plain", // Hibernate(Java)
+            "devicon-ros-original" // ROS (Robot Operating System)
+        ];
+
+        // ****************** ---- 3. STACK TECNOLÓGICO (Lista Librerías) ---- ******************
+        const numLibreriasExperto = 1; // Numero de librerías que se consideran "experto" (los primeros del array)
+
+        const listaLibrerias = [
+            "HTMX", "PyTorch", "NumPy", "Pandas", "Matplotlib", "Scikit-learn"
+        ];
+
+        const listaIconosLibrerias = [
+            "devicon-htmx-plain", // HTMX
+            "devicon-pytorch-original", // PyTorch
+            "devicon-numpy-plain", // NumPy
+            "devicon-pandas-plain", // Pandas
+            "devicon-matplotlib-plain", // Matplotlib
+            "devicon-scikitlearn-plain" // Scikit-learn
+        ];
+
+        // ****************** ---- 4. STACK TECNOLÓGICO (Lista Componentes) ---- ******************
+        const numComponentesExperto = 7; // Numero de componentes que se consideran "experto" (los primeros del array)
+
+        const listaComponentes = [
+            "Java Servlets", "Java Server Pages (JSP)", "Java Swing", "Jakarta EE (Java)", "Java Persistence API (JPA)", "Hibernate ORM (Java)", "EclipseLink ORM (Java)"
+        ];
+
+        const listaIconosComponentes = [
+            "", // Java Servlets
+            "", // Java Server Pages (JSP)
+            "", // Java Swing
+            "devicon-jakartaee-plain", // Jakarta EE (Java)
+            "", // Java Persistence API (JPA)
+            "devicon-hibernate-plain", // Hibernate ORM (Java)
+            "devicon-eclipse-plain-wordmark" // EclipseLink ORM (Java)
+        ];
+
+        // ****************** ---- 5. STACK TECNOLÓGICO (Lista SGBD) ---- ******************
+        const numSGBDExperto = 5; // Numero de SGBD que se consideran "experto" (los primeros del array)
+
+        const listaSGBD = [
+            "Oracle Database", "PostgreSQL", "MySQL", "MariaDB", "H2 Database", "MongoDB"
+        ];
+
+        const listaIconosSGBD = [
+            "devicon-oracle-original", // Oracle Database
+            "devicon-postgresql-plain", // PostgreSQL
+            "devicon-mysql-plain", // MySQL
+            "devicon-mariadb-plain", // MariaDB
+            "devicon-h2-plain", // H2 Database
+            "devicon-mongodb-plain" // MongoDB
+        ];
+
+        // ****************** ---- 6. STACK TECNOLÓGICO (Lista IDEs) ---- ******************
+        const numIDEExperto = 13; // Numero de IDEs que se consideran "experto" (los primeros del array)
+
+        const listaIDE = [
+            "VS Code", "IntelliJ IDEA", "NetBeans", "Eclipse", "Oracle SQL Developer", "DBeaver", "Microsoft Visual Studio", "Code::Blocks", "Andoid Studio", "Google Colab", "Xilinx", "MATLAB", "emu8086"
+        ];
+
+        const listaIconosIDE = [
+            "devicon-vscode-plain", // VS Code
+            "devicon-intellij-plain", // IntelliJ IDEA
+            "devicon-netbeans-plain", // NetBeans
+            "devicon-eclipse-plain", // Eclipse
+            "devicon-sqldeveloper-plain", // Oracle SQL Developer
+            "devicon-dbeaver-plain", // DBeaver
+            "devicon-visualstudio-plain", // Microsoft Visual Studio
+            "devicon-codeblocks-plain", // Code::Blocks
+            "devicon-androidstudio-plain", // Android Studio
+            "devicon-googlecolab-plain", // Google Colab
+            "", // Xilinx
+            "devicon-matlab-plain", // MATLAB
+            ""  // emu8086
+        ];
+
+        // ****************** ---- 7. STACK TECNOLÓGICO (Lista Herramientas) ---- ******************
+        const numHerramientasExperto = 16; // Numero de herramientas que se consideran "experto" (los primeros del array)
+
+        const listaHerramientas = [
+            "Git", "GitHub", "GitHub Desktop", "Jira", "Supabase", "Postman", "LM Studio", "Cisco Packet Tracer", "Swagger", "Orange Data Mining", "Tinkercad", "Maven", "Ant", "Gradle", "Lucidchart", "Draw.io", "Docker", "Praat", "Microsoft Project", "Microsoft Visio", "n8n"
+        ];
+
+        const listaIconosHerramientas = [
+            "devicon-git-plain", // Git
+            "devicon-github-original", // GitHub
+            "devicon-github-original", // GitHub Desktop
+            "devicon-jira-plain", // Jira
+            "devicon-supabase-plain", // Supabase
+            "devicon-postman-plain", // Postman
+            "", // LM Studio
+            "", // Cisco Packet Tracer
+            "devicon-swagger-plain", // Swagger
+            "", // Orange Data Mining
+            "", // Tinkercad
+            "devicon-maven-plain", // Maven
+            "", // Ant
+            "devicon-gradle-plain", // Gradle
+            "", // Lucidchart
+            "", // Draw.io
+            "devicon-docker-plain", // Docker
+            "", // Praat
+            "", // Microsoft Project
+            "", // Microsoft Visio
+            ""  // n8n
+        ]
+
+        // ****************** ---- 8. STACK TECNOLÓGICO (Lista Habilidades) ---- ******************
+        const numHabilidadesExperto = 9; // Numero de habilidades que se consideran "experto" (los primeros del array)
+
+        const listaHabilidades = {
+            es: [
+                "Desarrollo de Aplicaciones Web", "Desarrollo de Aplicaciones de Escritorio",
+                "Medición de la Calidad del Software", "Estimación y Planificación de Proyectos de Software",
+                "Programación Concurrente", "Sistemas Distribuidos", "Manejo de la Shell de Linux",
+                "Análisis de Algoritmos", "Optimización y Eficiencia de Código",
+                "Desarrollo de Aplicaciones Móviles", "Infraestructura de Redes de Computadores",
+                "Interconexión de Redes de Computadores", "Seguridad de Redes de Computadores",
+                "Arquitectura de Computadores", "Machine Learning", "Procesamiento del Habla", "Robótica"
+            ],
+            en: [
+                "Web Application Development", "Desktop Application Development",
+                "Software Quality Measurement", "Software Project Estimation & Planning",
+                "Concurrent Programming", "Distributed Systems", "Linux Shell Scripting",
+                "Algorithm Analysis", "Code Optimisation & Efficiency",
+                "Mobile Application Development", "Computer Network Infrastructure",
+                "Computer Network Interconnection", "Computer Network Security",
+                "Computer Architecture", "Machine Learning", "Speech Processing", "Robotics"
+            ]
+        };
+
+        // ****************** ---- 9. STACK TECNOLÓGICO (Lista Ingeniería de SW) ---- ******************
+        const numISExperto = 14; // Numero de habilidades que se consideran "experto" (los primeros del array)
+
+        const listaIS = {
+            es: [
+                "Clean Code", "Código Legible", "Principios SOLID", "Patrones de Diseño", "TDD (Test Driven Development)", "Elicitación y Análisis de Requisitos", "Kanban (Gestión de Proyectos)", "Scrum (Metodología Ágil)", "UML (Unified Modeling Language)", "Modelo Entidad-Relación (ER)", "OOP (Object-Oriented Programming)", "MVC (Model-View-Controller)", "Software Testing", "Clean Architecture", "Hexagonal Architecture", "Model Checking"
+            ],
+            en: [
+                "Clean Code", "Readable Code", "SOLID Principles", "Design Patterns", "TDD (Test Driven Development)", "Requirements Elicitation & Analysis", "Kanban (Project Management)", "Scrum (Agile Methodology)", "UML (Unified Modeling Language)", "Entity-Relationship Model (ER)", "OOP (Object-Oriented Programming)", "MVC (Model-View-Controller)", "Software Testing", "Clean Architecture", "Hexagonal Architecture", "Model Checking"
+            ]
+        }
+
+        function renderizarStackTecnologico() {
+            const categorias = [
+                {
+                    contenedorLista: document.getElementById("lista-lenguajes"),
+                    contenedorContador: document.getElementById("contador-lenguajes"),
+                    listaElementos: listaLenguajes[idiomaActual],
+                    listaIconos: listaIconosLenguajes,
+                    numExperto: numLenguajesExperto
+                },
+                {
+                    contenedorLista: document.getElementById("lista-frameworks"),
+                    contenedorContador: document.getElementById("contador-frameworks"),
+                    listaElementos: listaFrameworks,
+                    listaIconos: listaIconosFrameworks,
+                    numExperto: numFrameworksExperto
+                },
+                {
+                    contenedorLista: document.getElementById("lista-librerias"),
+                    contenedorContador: document.getElementById("contador-librerias"),
+                    listaElementos: listaLibrerias,
+                    listaIconos: listaIconosLibrerias,
+                    numExperto: numLibreriasExperto
+                },
+                {
+                    contenedorLista: document.getElementById("lista-componentes"),
+                    contenedorContador: document.getElementById("contador-componentes"),
+                    listaElementos: listaComponentes,
+                    listaIconos: listaIconosComponentes,
+                    numExperto: numComponentesExperto
+                },
+                {
+                    contenedorLista: document.getElementById("lista-sgbd"),
+                    contenedorContador: document.getElementById("contador-sgbd"),
+                    listaElementos: listaSGBD,
+                    listaIconos: listaIconosSGBD,
+                    numExperto: numSGBDExperto
+                },
+                {
+                    contenedorLista: document.getElementById("lista-ide"),
+                    contenedorContador: document.getElementById("contador-ide"),
+                    listaElementos: listaIDE,
+                    listaIconos: listaIconosIDE,
+                    numExperto: numIDEExperto
+                },
+                {
+                    contenedorLista: document.getElementById("lista-herramientas"),
+                    contenedorContador: document.getElementById("contador-herramientas"),
+                    listaElementos: listaHerramientas,
+                    listaIconos: listaIconosHerramientas,
+                    numExperto: numHerramientasExperto
+                },
+                {
+                    contenedorLista: document.getElementById("lista-habilidades"),
+                    contenedorContador: document.getElementById("contador-habilidades"),
+                    listaElementos: listaHabilidades[idiomaActual],
+                    listaIconos: [],
+                    numExperto: numHabilidadesExperto
+                },
+                {
+                    contenedorLista: document.getElementById("lista-is"),
+                    contenedorContador: document.getElementById("contador-is"),
+                    listaElementos: listaIS[idiomaActual],
+                    listaIconos: [],
+                    numExperto: numISExperto
+                }
+            ];
+
+            categorias.forEach(cat => {
+                if (cat.contenedorContador) {
+                    cat.contenedorContador.textContent = `${cat.listaElementos.length}`;
+                }
+
+                if (cat.contenedorLista) {
+                    let htmlGenerado = "";
+
+                    cat.listaElementos.forEach((nombre, index) => {
+                        const iconoClase = cat.listaIconos && cat.listaIconos[index] ? cat.listaIconos[index] : "";
+                        const htmlIcono = iconoClase ? `<i class="${iconoClase} mr-1"></i>` : "";
+
+                        if (index < cat.numExperto) {
+                            htmlGenerado += `
+                            <li class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-emerald-950/50 hover:bg-emerald-800/50 border border-emerald-700/60 hover:border-emerald-500/70 transition-colors rounded-md flex items-center">
+                                ${htmlIcono}${nombre}
+                            </li>
+                            `;
+                        } else {
+                            htmlGenerado += `
+                            <li class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-400 bg-slate-900/50 hover:bg-slate-800/50 border border-slate-700/60 hover:border-slate-500/60 transition-colors rounded-md flex items-center">
+                                ${htmlIcono}${nombre}
+                            </li>
+                            `;
+                        }
+                    });
+
+                    cat.contenedorLista.innerHTML = htmlGenerado;
+                }
+            });
+        }
+
+        // Registramos el evento 'DOMContentLoaded' para renderizar el stack completo al cargar la página
+        document.addEventListener("DOMContentLoaded", renderizarStackTecnologico);
+
+        // ****************** ---- STACK TECNOLÓGICO (Scroll Horizontal) ---- ******************
+
+        // Desplaza el contenedor en la dirección indicada
+        function desplazarHorizontal(evento) {
+            let boton = evento.currentTarget;
+            let contenedor = boton.parentElement.querySelector(".scroll-container");
+            let distancia = parseInt(boton.getAttribute("data-distancia"), 10) || 220;
+
+            if (contenedor) {
+                contenedor.scrollBy({ left: distancia, behavior: "smooth" });
+            }
+        }
+
+        // Comprueba el desbordamiento y actualiza la visibilidad de los botones
+        function actualizarVisibilidadFlechas(contenedor) {
+            if (!contenedor) return;
+
+            let envoltorio = contenedor.parentElement;
+            let btnIzquierda = envoltorio.querySelector(".scroll-btn-left");
+            let btnDerecha = envoltorio.querySelector(".scroll-btn-right");
+
+            if (!btnIzquierda || !btnDerecha) return;
+
+            let hayDesbordamiento = contenedor.scrollWidth > contenedor.clientWidth + 1;
+
+            if (!hayDesbordamiento) {
+                btnIzquierda.classList.add("hidden");
+                btnDerecha.classList.add("hidden");
+                return;
+            }
+
+            // Flecha izquierda: visible si se ha desplazado a la derecha
+            if (contenedor.scrollLeft > 10) {
+                btnIzquierda.classList.remove("hidden");
+            } else {
+                btnIzquierda.classList.add("hidden");
+            }
+
+            // Flecha derecha: visible si aún queda contenido por ver a la derecha
+            let limiteDerecho = contenedor.scrollWidth - contenedor.clientWidth;
+            if (contenedor.scrollLeft < limiteDerecho - 10) {
+                btnDerecha.classList.remove("hidden");
+            } else {
+                btnDerecha.classList.add("hidden");
+            }
+        }
+
+        // Manejador del evento 'scroll' en cada contenedor
+        function manejarScrollContenedor(evento) {
+            actualizarVisibilidadFlechas(evento.target);
+        }
+
+        // Recorre todos los carriles y actualiza su estado (útil para resize/carga)
+        function actualizarTodosLosCarriles() {
+            let contenedores = document.querySelectorAll(".scroll-container");
+            for (let i = 0; i < contenedores.length; i++) {
+                actualizarVisibilidadFlechas(contenedores[i]);
+            }
+        }
+
+        // Inicializa los observadores y los eventos al cargar el DOM
+        function inicializarStackScroll() {
+            let botonesIzquierda = document.querySelectorAll(".scroll-btn-left");
+            let botonesDerecha = document.querySelectorAll(".scroll-btn-right");
+            let contenedores = document.querySelectorAll(".scroll-container");
+
+            // Asignar distancia y evento a botones izquierdos
+            for (let i = 0; i < botonesIzquierda.length; i++) {
+                botonesIzquierda[i].setAttribute("data-distancia", "-220");
+                botonesIzquierda[i].addEventListener("click", desplazarHorizontal);
+            }
+
+            // Asignar distancia y evento a botones derechos
+            for (let j = 0; j < botonesDerecha.length; j++) {
+                botonesDerecha[j].setAttribute("data-distancia", "220");
+                botonesDerecha[j].addEventListener("click", desplazarHorizontal);
+            }
+
+            // Asignar evento scroll a cada carril
+            for (let k = 0; k < contenedores.length; k++) {
+                contenedores[k].addEventListener("scroll", manejarScrollContenedor);
+            }
+
+            // Recalcular al cambiar el tamaño de la ventana
+            window.addEventListener("resize", actualizarTodosLosCarriles);
+
+            // Comprobación inicial de dimensiones
+            actualizarTodosLosCarriles();
+        }
+
+        // Registro del punto de entrada cuando se carga el DOM
+        document.addEventListener("DOMContentLoaded", inicializarStackScroll);
+
+        // ****************** ---- DESPLAZAMIENTO HORIZONTAL SUAVE CON SCROLL ---- ******************
+        function inicializarEfectoScroll() {
+            const elementosParaAnimar = document.querySelectorAll('.reveal');
+
+            const observador = new IntersectionObserver((entradas, observer) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        // Al entrar en el viewport, restauramos opacidad y posición original
+                        entrada.target.classList.remove('opacity-0', 'translate-y-8');
+                        entrada.target.classList.add('opacity-100', 'translate-y-0');
+                        // Dejamos de observar para ejecutar la animación una sola vez
+                        observer.unobserve(entrada.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.20, // Se activa cuando el 20% del elemento es visible
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            elementosParaAnimar.forEach(el => observador.observe(el));
+        }
+
+        document.addEventListener("DOMContentLoaded", inicializarEfectoScroll);
+
+        // ****************** ---- CONTACTO (Abrir borrador en Gmail) ---- ******************
+        // Lógica Redirección a Gmail
+        const btnBorradorGmail = document.getElementById('btnBorradorGmail');
+        const selectMotivoContacto = document.getElementById('motivoContacto');
+        let idiomaActual = 'es';
+
+        const listaPlantillasEmail = {
+            es: {
+                oferta: {
+                    subject: "Propuesta de Empleo - [Nombre de la Empresa]",
+                    body: "Hola Antonio,\n\nSoy [Tu Nombre] de [Empresa].\nHemos revisado tu perfil y nos gustaría presentarte una oportunidad laboral para el puesto de [Nombre del puesto / Puesto o Rol].\n\nTe dejamos algunos detalles clave de la propuesta:\n- Modalidad: [Remoto / Híbrido / Presencial en (Ubicación)]\n- Jornada: [Completa / Media jornada]\n- Tipo de contrato / Duración: [Indefinido / Temporal / etc.]\n- Incorporación estimada: [Inmediata / Fecha]\n- Tecnologías Principales: [Stack]\n- Breve descripción: [Detalles]\n\nSi te resulta de interés la propuesta, ¿tendrías disponibilidad para comentar más detalles por llamada o videollamada?\n\nUn saludo,\n[Tu Nombre / Cargo]"
+                },
+                info: {
+                    subject: "Solicitud de Información y CV - [Nombre de la Empresa]",
+                    body: "Hola Antonio,\n\nSoy [Tu Nombre] de [Empresa].\nHe visto tu portfolio y me gustaría solicitar tu Currículum Vitae actualizado.\n\nNos interesa conocer más sobre tu perfil enfocado a:\n- Motivo / Tipo de proyecto o área: [Ej. Desarrollo backend, full-stack, consultoría, etc.]\n- Aspectos que nos gustaría destacar o conocer: [Ej. Experiencia con X tecnología, proyectos recientes, disponibilidad]\n\nAsí podremos evaluar la información más relevante para el contexto de nuestra empresa.\n\nQuedo a la espera.\n\nUn saludo,\n[Tu Nombre / Cargo]"
+                },
+                otro: {
+                    subject: "Contacto General - [Nombre de la Empresa / Tu Nombre]",
+                    body: "Hola Antonio,\n\nSoy [Tu Nombre] de [Empresa / Particular].\nTe escribo para comentarte lo siguiente:\n\n[Indica aquí el motivo o consulta]\n\nUn saludo,\n[Tu Nombre / Firma]"
+                }
+            },
+            en: {
+                oferta: {
+                    subject: "Job Proposal - [Company Name]",
+                    body: "Hi Antonio,\n\nI am [Your Name] from [Company].\nWe reviewed your profile and would like to share a job opportunity for the role of [Job Title / Role].\n\nHere are some key details of the proposal:\n- Work Model: [Remote / Hybrid / On-site in (Location)]\n- Working Hours: [Full-time / Part-time]\n- Contract Type / Duration: [Permanent / Temporary / etc.]\n- Estimated Start Date: [Immediate / Date]\n- Core Technologies: [Stack]\n- Brief Description: [Details]\n\nIf you are interested in this opportunity, would you be available for a brief call to discuss further?\n\nBest regards,\n[Your Name / Title]"
+                },
+                info: {
+                    subject: "Information and CV Request - [Company Name]",
+                    body: "Hi Antonio,\n\nI am [Your Name] from [Company].\nI reviewed your portfolio and would like to request your updated CV.\n\nWe would like to learn more about your profile with a focus on:\n- Purpose / Project Type or Area: [e.g., Backend development, full-stack, consulting, etc.]\n- Key aspects or focus areas: [e.g., Experience with X technology, recent projects, availability]\n\nThis will allow us to evaluate the most relevant details for our company's context.\n\nLooking forward to hearing from you.\n\nBest regards,\n[Your Name / Title]"
+                },
+                otro: {
+                    subject: "General Inquiry - [Company Name / Your Name]",
+                    body: "Hi Antonio,\n\nI am [Your Name] from [Company / Individual].\nI am writing to you regarding the following:\n\n[Indicate your reason or inquiry here]\n\nBest regards,\n[Your Name / Signature]"
+                }
+            }
+        };
+
+        btnBorradorGmail.addEventListener('click', () => {
+            const motivoSeleccionado = selectMotivoContacto.value;
+            const plantillaSeleccionada = listaPlantillasEmail[idiomaActual][motivoSeleccionado];
+
+            const emailDestino = "antonioabad.eng@gmail.com";
+            const asuntoCodificado = encodeURIComponent(plantillaSeleccionada.subject);
+            const cuerpoCodificado = encodeURIComponent(plantillaSeleccionada.body);
+
+            const esMovil = /Android|iPhone|iPad|Windows Phone|Mobile|Tablet/i.test(navigator.userAgent);
+
+            // Si el usuario está en un dispositivo móvil, abre directamente la app de correo/Gmail configurada
+            if (esMovil) {
+                window.location.href = `mailto:${emailDestino}?subject=${asuntoCodificado}&body=${cuerpoCodificado}`;
+            }
+            else { // Si el usuario está en un PC, abre Gmail en una nueva pestaña con el selector de cuentas
+                // URL destino de redacción de Gmail
+                const composeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailDestino}&su=${asuntoCodificado}&body=${cuerpoCodificado}`;
+
+                // Encapsulamos en el AccountChooser de Google
+                const selectAccountUrl = `https://accounts.google.com/AccountChooser?prompt=select_account&continue=${encodeURIComponent(composeUrl)}`;
+
+                // Abrimos la ventana para seleccionar la cuenta de correo
+                window.open(selectAccountUrl, '_blank');
+            }
+        });
+
+        // ****************** ---- FOOTER (Actualizar año) ---- ******************
+        document.getElementById('year-actual').textContent = new Date().getFullYear();
+
+        // ****************** ---- IDIOMA (Cambio de idioma Español/English) ---- ******************
+        const btnIdioma = document.getElementById('btn-idioma');
+
+        const traducciones = {
+            es: {
+                inicio: "Inicio",
+                trayectoria: "Trayectoria",
+                proyectos: "Proyectos",
+                contacto: "Contacto",
+                texto_inicio_presentacion: "Hola, soy",
+                texto_inicio_ubicacion: "Huelva y alrededores",
+                texto_inicio_nombre: "nombre",
+                texto_inicio_apellidos: "apellidos",
+                texto_inicio_profesion: "Ingeniero Informático • Ingeniero de Software",
+                texto_inicio_resumen: "Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de Software en la UNIR. <br> Desarrollador Full Stack especializado en Backend robusto y seguro. <br> Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto. <br>",
+                texto_inicio_frase_1: "“El software comienza desde la idea, no en la primera línea de código. La calidad, la mantenibilidad y la escalabilidad son la clave del éxito.”",
+                texto_inicio_frase_2: "“En la mayoría de ocasiones, los requisitos cambian constantemente; Cuanto mejor sea el diseño inicial del software, menor será el coste de adaptación.”",
+                boton_verProyectos: "Ver proyectos",
+                boton_contactar: "Contactar",
+                tab_formacion_academica: "Formación Académica",
+                tab_estudios: "Estudios",
+                tab_experiencia_profesional: "Experiencia Profesional",
+                tab_experiencia: "Experiencia",
+                tab_certificaciones: "Certificaciones",
+                tab_cursos: "Cursos",
+                titulo_trayectoria_estudios_2: "Máster Universitario en Ingeniería de Software y Sistemas Informáticos",
+                fecha_trayectoria_estudios_2: "2026 - ACTUALIDAD",
+                universidad_estudios_2: "Escuela Técnica Superior de Ingeniería y Tecnología (ESIT) - UNIR (Universidad Internacional de La Rioja)",
+                titulo_estudio_1: "Grado Universitario en Ingeniería Informática (Especialidad Ingeniería de Software)",
+                universidad_estudio_1: "Escuela Superior de Ingeniería (ETSI) - UHU (Universidad de Huelva)",
+                texto_estudio_1: "Nota más alta de mi promoción en las siguientes asignaturas:",
+                estudio_1_asig_1: "Ingeniería de Requisitos",
+                estudio_1_asig_2: "Diseño de Interfaces de Usuario",
+                estudio_1_asig_3: "Desarrollo de Aplicaciones Web",
+                estudio_1_asig_4: "Integración de la Información y Aplicaciones",
+                estudio_1_asig_5: "Arquitectura Software Dirigida por Modelos",
+                fecha_trayectoria_trabajo_1: "2018 - ACTUALIDAD",
+                titulo_trabajo_1: "Asesoramiento y Mantenimiento de Equipos Informáticos",
+                trabajo_1_texto_1: "Asesoramiento personalizado en la adquisición, configuración y optimización de Hardware y Software para clientes particulares.",
+                trabajo_1_texto_2: "Diagnóstico preventivo, mantenimiento integral de Sistemas Operativos y resolución de incidencias en equipos informáticos.",
+                certificacion_2: "Curso de Desarrollo con IA: de 0 a Producción",
+                texto_certificacion_2: "Certificado de Iniciación al Desarrollo con IA",
+                certificacion_1: "Idiomas",
+                texto_certificacion_1: "Inglés - Nivel B1",
+                stack: "Stack Tecnológico",
+                lenguajes: "Lenguajes",
+                stack_librerias_titulo: "Librerías & APIs",
+                stack_componentes_titulo: "Componentes & ORMs",
+                stack_sgbd_titulo: "Sistemas Gestores de Bases de Datos (SGBD)",
+                stack_herramientas_titulo: "Herramientas & Despliegue",
+                habilidades: "Habilidades",
+                ingenieria_software: "Ingeniería de Software",
+                proyectos_titulo: "Proyectos & Logros",
+                logro_netEvents_estado: "Ganador Hackathon 2025",
+                logro_netEvents_texto: "Proyecto colaborativo seleccionado como ganador del Hackathon Andalucía Emprende 2025 entre 14 equipos por la innovación y viabilidad del modelo de negocio. <br> Solución creativa para fomentar la cultura y el ocio en las ciudades.",
+                logro_netEvents_tag_1: "ODS (Objetivos de Desarrollo Sostenible)",
+                boton_verPublicacion: "Ver Publicación",
+                proyecto_tfg_estado: "En desarrollo (TFG)",
+                proyecto_tfg_texto: "Sistema integral de planificación de recursos (ERP) diseñado para la gestión operativa y administrativa de una autoescuela. <br> Desarrollo orientado a la defensa del TFG.",
+                boton_verCodigo: "Ver Código",
+                proyecto_toniCar_estado: "Completado",
+                proyecto_toniCar_texto: "Aplicación web académica que simula el funcionamiento de un concesionario online, permitiendo consultar un catálogo de coches, gestionar usuarios y enviar solicitudes de información mediante una arquitectura MVC basada en Jakarta EE.",
+                boton_verTodosProyectos: "Ver todos los proyectos",
+                contacto_titulo: "Información de Contacto",
+                contacto_subtitulo: "¿Hablamos o necesitas mi CV?",
+                contacto_texto: "Selecciona el motivo de tu consulta y se abrirá un borrador directo en Gmail listo para enviar.",
+                contacto_motivo: "Motivo del contacto:",
+                contacto_opt_oferta: "Posible oferta de trabajo",
+                contacto_opt_info: "Solicitud de información / CV",
+                contacto_opt_otro: "Otro motivo",
+                contacto_btn_borradorGmail: "Abrir borrador en Gmail",
+                contacto_rrss: "Redes Sociales",
+                "footer-descripcion": "En búsqueda constante del crecimiento personal y profesional."
+            },
+            en: {
+                inicio: "Home",
+                trayectoria: "Career",
+                proyectos: "Projects",
+                contacto: "Contact",
+                texto_inicio_presentacion: "Hello, I am",
+                texto_inicio_ubicacion: "Huelva and surroundings",
+                texto_inicio_nombre: "name",
+                texto_inicio_apellidos: "surnames",
+                texto_inicio_profesion: "Computer Engineer • Software Engineer",
+                texto_inicio_resumen: "BSc in Computer Software Engineering graduate from the University of Huelva and MSc student in Software Engineering at UNIR. <br> Full Stack Developer specialised in robust and secure Backend architectures. <br> Ambitious, innovative, detail-oriented, and striving for excellence in every project. <br>",
+                texto_inicio_frase_1: "“Software begins with the idea, not at the first line of code. Quality, maintainability, and scalability are the key to success.”",
+                texto_inicio_frase_2: "“In most cases, requirements change constantly; the better the initial software design, the lower the cost of adaptation.”",
+                boton_verProyectos: "View projects",
+                boton_contactar: "Get in touch",
+                tab_formacion_academica: "Academic Background",
+                tab_estudios: "Education",
+                tab_experiencia_profesional: "Work Experience",
+                tab_experiencia: "Experience",
+                tab_certificaciones: "Certifications",
+                tab_cursos: "Courses",
+                fecha_trayectoria_estudios_2: "2026 - PRESENT",
+                titulo_trayectoria_estudios_2: "Master's Degree in Software Engineering and Computer Systems",
+                universidad_estudios_2: "School of Engineering and Technology (ESIT) - UNIR (International University of La Rioja)",
+                titulo_estudio_1: "Bachelor's Degree in Computer Engineering (Software Engineering Specialisation)",
+                universidad_estudio_1: "School of Engineering (ETSI) - UHU (University of Huelva)",
+                texto_estudio_1: "Highest grade of my cohort in the following modules:",
+                estudio_1_asig_1: "Requirements Engineering",
+                estudio_1_asig_2: "User Interface Design",
+                estudio_1_asig_3: "Web Application Development",
+                estudio_1_asig_4: "Enterprise Information & Application Integration",
+                estudio_1_asig_5: "Model-Driven Software Architecture",
+                fecha_trayectoria_trabajo_1: "2018 - PRESENT",
+                titulo_trabajo_1: "IT Hardware & Software Support Consultancy",
+                trabajo_1_texto_1: "Tailored consultancy in the procurement, configuration, and optimisation of Hardware and Software for private clients.",
+                trabajo_1_texto_2: "Preventive diagnostics, comprehensive Operating System maintenance, and IT hardware troubleshooting.",
+                certificacion_2: "AI Development Course: From 0 to Production",
+                texto_certificacion_2: "Introductory Certificate in AI Development",
+                certificacion_1: "Languages",
+                texto_certificacion_1: "English - B1 Level",
+                stack: "Tech Stack",
+                lenguajes: "Languages",
+                stack_librerias_titulo: "Libraries & APIs",
+                stack_componentes_titulo: "Components & ORMs",
+                stack_sgbd_titulo: "Database Management Systems (DBMS)",
+                stack_herramientas_titulo: "Tools & Deployment",
+                habilidades: "Skills",
+                ingenieria_software: "Software Engineering",
+                proyectos_titulo: "Projects & Achievements",
+                logro_netEvents_estado: "Hackathon Winner 2025",
+                logro_netEvents_texto: "Collaborative project awarded 1st place in the Andalucía Emprende 2025 Hackathon among 14 teams for its innovation and business model viability. <br> Creative solution to boost urban culture and leisure.",
+                logro_netEvents_tag_1: "SDGs (Sustainable Development Goals)",
+                boton_verPublicacion: "View Post",
+                proyecto_tfg_estado: "In development (Capstone Project)",
+                proyecto_tfg_texto: "Comprehensive Enterprise Resource Planning (ERP) system designed for the operational and administrative management of a driving school. <br> Developed for the Final Degree Project defence.",
+                boton_verCodigo: "View Source",
+                proyecto_toniCar_estado: "Completed",
+                proyecto_toniCar_texto: "Academic web application simulating an online car dealership, allowing users to browse a catalogue, manage user accounts, and submit enquiries via a Jakarta EE MVC architecture.",
+                boton_verTodosProyectos: "View all repositories",
+                contacto_titulo: "Contact Information",
+                contacto_subtitulo: "Shall we talk, or do you need my CV?",
+                contacto_texto: "Select the purpose of your enquiry and a ready-to-send draft will open directly in Gmail.",
+                contacto_motivo: "Enquiry reason:",
+                contacto_opt_oferta: "Job opportunity / Proposal",
+                contacto_opt_info: "Information / CV request",
+                contacto_opt_otro: "Other enquiry",
+                contacto_btn_borradorGmail: "Open draft in Gmail",
+                contacto_rrss: "Social Networks",
+                "footer-descripcion": "In constant pursuit of personal and professional growth."
+            }
+        };
+
+        function cambiarIdioma(lang) {
+            idiomaActual = lang;
+            document.documentElement.lang = lang;
+            btnIdioma.textContent = lang.toUpperCase();
+
+            document.querySelectorAll('[data-i18n]').forEach(elemento => {
+                const clave = elemento.getAttribute('data-i18n');
+                if (traducciones[lang] && traducciones[lang][clave]) {
+                    const icono = elemento.querySelector('i, svg');
+                    if (icono) {
+                        // Mantenemos los iconos inline (como los checkmarks) y actualiza el texto
+                        elemento.childNodes.forEach(node => {
+                            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                                node.textContent = ` ${traducciones[lang][clave]} `;
+                            }
+                        });
+                    } else {
+                        elemento.innerHTML = traducciones[lang][clave];
+                    }
+                }
+            });
+
+            renderizarStackTecnologico(); // Re-renderizamos el stack tecnológico para actualizar las habilidades según el idioma
+            actualizarTodosLosCarriles(); // Actualizamos la visibilidad de las flechas de desplazamiento después de cambiar el idioma
+            lucide.createIcons(); // Aseguramos que los iconos se rendericen correctamente después del cambio de idioma
+        }
+
+
+        btnIdioma.addEventListener('click', () => {
+            const nuevoIdioma = idiomaActual === 'es' ? 'en' : 'es';
+            cambiarIdioma(nuevoIdioma);
+        });
+
+        // ******************* ---- SWITCH TEMA (Modo Oscuro / Modo Claro) ---- ******************
+        const btnTema = document.getElementById('btn-tema');
+
+        function actualizarIconoTema(esOscuro) {
+            btnTema.innerHTML = `<i data-lucide="${esOscuro ? 'moon' : 'sun'}" class="w-4 h-4"></i>`;
+            lucide.createIcons();
+        }
+
+        function cambiarTema() {
+            const esOscuro = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', esOscuro ? 'dark' : 'light');
+            actualizarIconoTema(esOscuro);
+        }
+
+        // Cargar preferencia guardada o del sistema al iniciar
+        (function inicializarTema() {
+            const temaGuardado = localStorage.getItem('theme');
+            const prefiereOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const esOscuro = temaGuardado === 'dark' || (!temaGuardado && prefiereOscuro);
+
+            if (esOscuro) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            actualizarIconoTema(esOscuro);
+        })();
+
+        btnTema.addEventListener('click', cambiarTema);
+
+    </script>
 </body>
+
 </html>
