@@ -272,7 +272,7 @@
 
                 <!-- Nombre y Apellidos -->
                 <h1 class="reveal-item [animation-delay:200ms] text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-2 sm:mb-4 leading-tight">
-                    Hola, soy<br>
+                    <span data-i18n="texto_inicio_presentacion">Hola, soy</span><br>
                     <div class="flex flex-wrap items-end gap-2 sm:gap-3">
                         <span id="nombre" class="text-emerald-500">Antonio Abad</span>
                         <span class="inline-flex items-center justify-center h-5 sm:h-6 md:h-7 px-2 md:px-2.5 mb-1 md:mb-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-wide text-slate-400 border border-slate-700/60 rounded-lg leading-none select-none" data-i18n="texto_inicio_nombre">nombre</span>
@@ -375,7 +375,7 @@
                 <div id="tab-estudio" class="tab-content anim-tab-fadeSuave p-6 sm:p-8 space-y-6">
                     <!-- Master Universitario -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2026 - ACTUALIDAD</span>
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap" data-i18n="fecha_trayectoria_estudios_2">2026 - ACTUALIDAD</span>
                         <div>
                             <h3 class="font-bold text-base text-white" data-i18n="titulo_trayectoria_estudios_2">
                                 Máster Universitario en Ingeniería de Software y Sistemas Informáticos
@@ -429,7 +429,7 @@
                 <div id="tab-trabajo" class="tab-content anim-tab-fadeSuave hidden p-6 sm:p-8 space-y-6">
                     <!-- Asesoramiento y Mantenimiento de Equipos Informáticos -->
                     <div class="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-slate-800/60 last:border-none last:pb-0">
-                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap">2018 - ACTUALIDAD</span>
+                        <span class="inline-flex items-center justify-center w-36 py-1 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md shrink-0 whitespace-nowrap" data-i18n="fecha_trayectoria_trabajo_1">2018 - ACTUALIDAD</span>
                         <div>
                             <h3 class="font-bold text-base text-white" data-i18n="titulo_trabajo_1">
                                 Asesoramiento y Mantenimiento de Equipos Informáticos
@@ -939,8 +939,21 @@
                             LinkedIn
                         </a>
                         <a href="https://www.instagram.com/antonioabad.eng/" target="_blank" class="group flex items-center gap-3 text-sm font-medium text-slate-400 transition-all hover:translate-x-1">
-                            <!-- Icono: en estado normal hereda el color gris y al hover se aplica la máscara con el gradiente oficial -->
-                            <span class="w-[1.125rem] h-[1.125rem] inline-block bg-slate-400 group-hover:bg-gradient-to-tr group-hover:from-[#f09433] group-hover:via-[#dc2743] group-hover:to-[#bc1888] [mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [-webkit-mask-size:contain] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center] [mask-image:url('data:image/svg+xml;utf8,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22><path%20d=%22M12%202.163c3.204%200%203.584.012%204.85.07%203.252.148%204.771%201.691%204.919%204.919.058%201.265.069%201.645.069%204.849%200%203.205-.012%203.584-.069%204.849-.149%203.225-1.664%204.771-4.919%204.919-1.266.058-1.644.07-4.85.07-3.204%200-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849%200-3.204.013-3.583.07-4.849.149-3.227%201.664-4.771%204.919-4.919%201.266-.057%201.645-.069%204.849-.069zm0-2.163c-3.259%200-3.667.014-4.947.072-4.358.2-6.78%202.618-6.98%206.98-.059%201.281-.073%201.689-.073%204.948%200%203.259.014%203.668.072%204.948.2%204.358%202.618%206.78%206.98%206.98%201.281.058%201.689.072%204.948.072%203.259%200%203.668-.014%204.948-.072%204.354-.2%206.782-2.618%206.979-6.98.059-1.28.073-1.689.073-4.948%200-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0%205.838c-3.403%200-6.162%202.759-6.162%206.162s2.759%206.163%206.162%206.163%206.162-2.759%206.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0%2010.162c-2.209%200-4-1.79-4-4%200-2.209%201.791-4%204-4s4%201.791%204%204c0%202.21-1.791%204-4%204zm6.406-11.845c-.796%200-1.441.645-1.441%201.44s.645%201.44%201.441%201.44c.795%200%201.439-.645%201.439-1.44s-.644-1.44-1.439-1.44z%22/></svg>')] [-webkit-mask-image:url('data:image/svg+xml;utf8,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22><path%20d=%22M12%202.163c3.204%200%203.584.012%204.85.07%203.252.148%204.771%201.691%204.919%204.919.058%201.265.069%201.645.069%204.849%200%203.205-.012%203.584-.069%204.849-.149%203.225-1.664%204.771-4.919%204.919-1.266.058-1.644.07-4.85.07-3.204%200-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849%200-3.204.013-3.583.07-4.849.149-3.227%201.664-4.771%204.919-4.919%201.266-.057%201.645-.069%204.849-.069zm0-2.163c-3.259%200-3.667.014-4.947.072-4.358.2-6.78%202.618-6.98%206.98-.059%201.281-.073%201.689-.073%204.948%200%203.259.014%203.668.072%204.948.2%204.358%202.618%206.78%206.98%206.98%201.281.058%201.689.072%204.948.072%203.259%200%203.668-.014%204.948-.072%204.354-.2%206.782-2.618%206.979-6.98.059-1.28.073-1.689.073-4.948%200-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0%205.838c-3.403%200-6.162%202.759-6.162%206.162s2.759%206.163%206.162%206.163%206.162-2.759%206.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0%2010.162c-2.209%200-4-1.79-4-4%200-2.209%201.791-4%204-4s4%201.791%204%204%200%202.21-1.791%204-4%204zm6.406-11.845c-.796%200-1.441.645-1.441%201.44s.645%201.44%201.441%201.44c.795%200%201.439-.645%201.439-1.44s-.644-1.44-1.439-1.44z%22/></svg>')]"></span>
+                            <svg class="w-[1.125rem] h-[1.125rem] transition-colors" viewBox="0 0 24 24">
+                                <defs>
+                                    <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#f09433" />
+                                        <stop offset="50%" stop-color="#dc2743" />
+                                        <stop offset="100%" stop-color="#bc1888" />
+                                    </linearGradient>
+                                </defs>
+                                
+                                <path 
+                                    class="fill-slate-400 group-hover:fill-[url(#instagram-gradient)] transition-[fill]" 
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                                />
+                            </svg>
+
                             <span class="group-hover:bg-gradient-to-r group-hover:from-[#f09433] group-hover:via-[#dc2743] group-hover:to-[#bc1888] group-hover:bg-clip-text group-hover:text-transparent">
                                 Instagram
                             </span>
@@ -1524,6 +1537,182 @@
 
         // ****************** ---- FOOTER (Actualizar año) ---- ******************
         document.getElementById('year-actual').textContent = new Date().getFullYear();
+
+        // ****************** ---- IDIOMA (Cambio de idioma Español/English) ---- ******************
+        const btnIdioma = document.getElementById('btn-idioma');
+
+        const traducciones = {
+            es: {
+                inicio: "Inicio",
+                trayectoria: "Trayectoria",
+                proyectos: "Proyectos",
+                contacto: "Contacto",
+                texto_inicio_presentacion: "Hola, soy",
+                texto_inicio_ubicacion: "Huelva y alrededores",
+                texto_inicio_nombre: "nombre",
+                texto_inicio_apellidos: "apellidos",
+                texto_inicio_profesion: "Ingeniero Informático • Ingeniero de Software",
+                texto_inicio_resumen: "Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de Software en la UNIR. <br> Desarrollador Full Stack especializado en Backend robusto y seguro. <br> Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto. <br>",
+                texto_inicio_frase_1: "“El software comienza desde la idea, no en la primera línea de código. La calidad, la mantenibilidad y la escalabilidad son la clave del éxito.”",
+                texto_inicio_frase_2: "“En la mayoría de ocasiones, los requisitos cambian constantemente; Cuanto mejor sea el diseño inicial del software, menor será el coste de adaptación.”",
+                boton_verProyectos: "Ver proyectos",
+                boton_contactar: "Contactar",
+                tab_formacion_academica: "Formación Académica",
+                tab_estudios: "Estudios",
+                tab_experiencia_profesional: "Experiencia Profesional",
+                tab_experiencia: "Experiencia",
+                tab_certificaciones: "Certificaciones",
+                tab_cursos: "Cursos",
+                titulo_trayectoria_estudios_2: "Máster Universitario en Ingeniería de Software y Sistemas Informáticos",
+                fecha_trayectoria_estudios_2: "2026 - ACTUALIDAD",
+                universidad_estudios_2: "Escuela Técnica Superior de Ingeniería y Tecnología (ESIT) - UNIR (Universidad Internacional de La Rioja)",
+                titulo_estudio_1: "Grado Universitario en Ingeniería Informática (Especialidad Ingeniería de Software)",
+                universidad_estudio_1: "Escuela Superior de Ingeniería (ETSI) - UHU (Universidad de Huelva)",
+                texto_estudio_1: "Nota más alta de mi promoción en las siguientes asignaturas:",
+                estudio_1_asig_1: "Ingeniería de Requisitos",
+                estudio_1_asig_2: "Diseño de Interfaces de Usuario",
+                estudio_1_asig_3: "Desarrollo de Aplicaciones Web",
+                estudio_1_asig_4: "Integración de la Información y Aplicaciones",
+                estudio_1_asig_5: "Arquitectura Software Dirigida por Modelos",
+                fecha_trayectoria_trabajo_1: "2018 - ACTUALIDAD",
+                titulo_trabajo_1: "Asesoramiento y Mantenimiento de Equipos Informáticos",
+                trabajo_1_texto_1: "Asesoramiento personalizado en la adquisición, configuración y optimización de Hardware y Software para clientes particulares.",
+                trabajo_1_texto_2: "Diagnóstico preventivo, mantenimiento integral de Sistemas Operativos y resolución de incidencias en equipos informáticos.",
+                certificacion_2: "Curso de Desarrollo con IA: de 0 a Producción",
+                texto_certificacion_2: "Certificado de Iniciación al Desarrollo con IA",
+                certificacion_1: "Idiomas",
+                texto_certificacion_1: "Inglés - Nivel B1",
+                stack: "Stack Tecnológico",
+                lenguajes: "Lenguajes",
+                stack_librerias_titulo: "Librerías & APIs",
+                stack_componentes_titulo: "Componentes & ORMs",
+                stack_sgbd_titulo: "Sistemas Gestores de Bases de Datos",
+                stack_herramientas_titulo: "Herramientas & Despliegue",
+                habilidades: "Habilidades",
+                ingenieria_software: "Ingeniería de Software",
+                proyectos_titulo: "Proyectos & Logros",
+                logro_netEvents_estado: "Ganador Hackathon 2025",
+                logro_netEvents_texto: "Proyecto colaborativo seleccionado como ganador del Hackathon Andalucía Emprende 2025 entre 14 equipos por la innovación y viabilidad del modelo de negocio. <br> Solución creativa para fomentar la cultura y el ocio en las ciudades.",
+                logro_netEvents_tag_1: "ODS (Objetivos de Desarrollo Sostenible)",
+                boton_verPublicacion: "Ver Publicación",
+                proyecto_tfg_estado: "En desarrollo (TFG)",
+                proyecto_tfg_texto: "Sistema integral de planificación de recursos (ERP) diseñado para la gestión operativa y administrativa de una autoescuela. <br> Desarrollo orientado a la defensa del TFG.",
+                boton_verCodigo: "Ver Código",
+                proyecto_toniCar_estado: "Completado",
+                proyecto_toniCar_texto: "Aplicación web académica que simula el funcionamiento de un concesionario online, permitiendo consultar un catálogo de coches, gestionar usuarios y enviar solicitudes de información mediante una arquitectura MVC basada en Jakarta EE.",
+                boton_verTodosProyectos: "Ver todos los proyectos",
+                contacto_titulo: "Información de Contacto",
+                contacto_subtitulo: "¿Hablamos o necesitas mi CV?",
+                contacto_texto: "Selecciona el motivo de tu consulta y se abrirá un borrador directo en Gmail listo para enviar.",
+                contacto_motivo: "Motivo del contacto:",
+                contacto_opt_oferta: "Posible oferta de trabajo",
+                contacto_opt_info: "Solicitud de información / CV",
+                contacto_opt_otro: "Otro motivo",
+                contacto_btn_borradorGmail: "Abrir borrador en Gmail",
+                contacto_rrss: "Redes Sociales",
+                "footer-descripcion": "En búsqueda constante del crecimiento personal y profesional."
+            },
+            en: {
+                inicio: "Home",
+                trayectoria: "Career",
+                proyectos: "Projects",
+                contacto: "Contact",
+                texto_inicio_presentacion: "Hello, I am",
+                texto_inicio_ubicacion: "Huelva and surroundings",
+                texto_inicio_nombre: "name",
+                texto_inicio_apellidos: "surnames",
+                texto_inicio_profesion: "Computer Engineer • Software Engineer",
+                texto_inicio_resumen: "BSc in Computer Software Engineering graduate from the University of Huelva and MSc student in Software Engineering at UNIR. <br> Full Stack Developer specialised in robust and secure Backend architectures. <br> Ambitious, innovative, detail-oriented, and striving for excellence in every project. <br>",
+                texto_inicio_frase_1: "“Software begins with the concept, not at the first line of code. Quality, maintainability, and scalability are the key to success.”",
+                texto_inicio_frase_2: "“In most cases, requirements change constantly; the better the initial software design, the lower the cost of adaptation.”",
+                boton_verProyectos: "View projects",
+                boton_contactar: "Get in touch",
+                tab_formacion_academica: "Academic Background",
+                tab_estudios: "Education",
+                tab_experiencia_profesional: "Work Experience",
+                tab_experiencia: "Experience",
+                tab_certificaciones: "Certifications",
+                tab_cursos: "Courses",
+                fecha_trayectoria_estudios_2: "2026 - PRESENT",
+                titulo_trayectoria_estudios_2: "Master's Degree in Software Engineering and Computer Systems",
+                universidad_estudios_2: "School of Engineering and Technology (ESIT) - UNIR (International University of La Rioja)",
+                titulo_estudio_1: "Bachelor's Degree in Computer Engineering (Software Engineering Specialisation)",
+                universidad_estudio_1: "School of Engineering (ETSI) - UHU (University of Huelva)",
+                texto_estudio_1: "Highest grade of my cohort in the following modules:",
+                estudio_1_asig_1: "Requirements Engineering",
+                estudio_1_asig_2: "User Interface Design",
+                estudio_1_asig_3: "Web Application Development",
+                estudio_1_asig_4: "Enterprise Information & Application Integration",
+                estudio_1_asig_5: "Model-Driven Software Architecture",
+                fecha_trayectoria_trabajo_1: "2018 - PRESENT",
+                titulo_trabajo_1: "IT Hardware & Software Support Consultancy",
+                trabajo_1_texto_1: "Tailored consultancy in the procurement, configuration, and optimisation of Hardware and Software for private clients.",
+                trabajo_1_texto_2: "Preventive diagnostics, comprehensive Operating System maintenance, and IT hardware troubleshooting.",
+                certificacion_2: "AI Development Course: From 0 to Production",
+                texto_certificacion_2: "Introductory Certificate in AI Development",
+                certificacion_1: "Languages",
+                texto_certificacion_1: "English - B1 Level",
+                stack: "Tech Stack",
+                lenguajes: "Languages",
+                stack_librerias_titulo: "Libraries & APIs",
+                stack_componentes_titulo: "Components & ORMs",
+                stack_sgbd_titulo: "Database Management Systems (DBMS)",
+                stack_herramientas_titulo: "Tools & Deployment",
+                habilidades: "Skills",
+                ingenieria_software: "Software Engineering",
+                proyectos_titulo: "Projects & Achievements",
+                logro_netEvents_estado: "Hackathon Winner 2025",
+                logro_netEvents_texto: "Collaborative project awarded 1st place in the Andalucía Emprende 2025 Hackathon among 14 teams for its innovation and business model viability. <br> Creative solution to boost urban culture and leisure.",
+                logro_netEvents_tag_1: "SDGs (Sustainable Development Goals)",
+                boton_verPublicacion: "View Post",
+                proyecto_tfg_estado: "In development (BSc Dissertation)",
+                proyecto_tfg_texto: "Comprehensive Enterprise Resource Planning (ERP) system designed for the operational and administrative management of a driving school. <br> Developed for the final degree dissertation defence.",
+                boton_verCodigo: "View Source",
+                proyecto_toniCar_estado: "Completed",
+                proyecto_toniCar_texto: "Academic web application simulating an online car dealership, allowing users to browse a catalogue, manage user accounts, and submit enquiries via a Jakarta EE MVC architecture.",
+                boton_verTodosProyectos: "View all repositories",
+                contacto_titulo: "Contact Information",
+                contacto_subtitulo: "Shall we talk, or do you need my CV?",
+                contacto_texto: "Select the purpose of your enquiry and a ready-to-send draft will open directly in Gmail.",
+                contacto_motivo: "Enquiry reason:",
+                contacto_opt_oferta: "Job opportunity / Proposal",
+                contacto_opt_info: "Information / CV request",
+                contacto_opt_otro: "Other enquiry",
+                contacto_btn_borradorGmail: "Open draft in Gmail",
+                contacto_rrss: "Social Networks",
+                "footer-descripcion": "In constant pursuit of personal and professional growth."
+            }
+        };
+
+        function aplicarIdioma(lang) {
+            idiomaActual = lang;
+            document.documentElement.lang = lang;
+            btnIdioma.textContent = lang.toUpperCase();
+
+            document.querySelectorAll('[data-i18n]').forEach(elemento => {
+                const clave = elemento.getAttribute('data-i18n');
+                if (traducciones[lang] && traducciones[lang][clave]) {
+                    const icono = elemento.querySelector('i, svg');
+                    if (icono) {
+                        // Mantenemos los iconos inline (como los checkmarks) y actualiza el texto
+                        elemento.childNodes.forEach(node => {
+                            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                                node.textContent = ` ${traducciones[lang][clave]} `;
+                            }
+                        });
+                    } else {
+                        elemento.innerHTML = traducciones[lang][clave];
+                    }
+                }
+            });
+
+            lucide.createIcons();
+        }
+
+        btnIdioma.addEventListener('click', () => {
+            const nuevoIdioma = idiomaActual === 'es' ? 'en' : 'es';
+            aplicarIdioma(nuevoIdioma);
+        });
 
     </script>
 </body>
