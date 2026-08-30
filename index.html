@@ -717,7 +717,7 @@
                         <div class="flex items-center gap-2 min-w-0 text-emerald-400">
                             <i class="w-5 h-5 shrink-0" data-lucide="database"></i>
                             <h3 class="font-bold text-white text-sm leading-tight" data-i18n="stack_sgbd_titulo">
-                                Sistemas Gestores de Bases de Datos
+                                Sistemas Gestores de Bases de Datos (SGBD)
                             </h3>
                         </div>
                         <span id="contador-sgbd" class="inline-flex items-center justify-center size-6 text-[11px] font-bold text-slate-300 bg-slate-500/10 border border-slate-500/25 rounded-full shrink-0 ml-2 sm:ml-auto sm:mr-4">
@@ -1203,11 +1203,19 @@
         // ****************** ---- 1. STACK TECNOLÓGICO (Lista Lenguajes) ---- ******************
         const numLenguajesExperto = 9; // Numero de lenguajes que se consideran "experto" (los primeros del array)
 
-        const listaLenguajes = [
-            "C", "C++", "C#", "Java", "HTML", "CSS", "JavaScript",
-            "SQL", "PL/SQL", "NoSQL", "Python", "PlantUML", "Bash", "Kotlin MP", "MATLAB",
-            "Alloy (UML)", "OCL (UML)", "Ensamblador x86", "xPath (XML)", "XSLT (XML)", "Pascal-FC", "VHDL"
-        ];
+        const listaLenguajes = {
+            es: [
+                "C", "C++", "C#", "Java", "HTML", "CSS", "JavaScript",
+                "SQL", "PL/SQL", "NoSQL", "Python", "PlantUML", "Bash", "Kotlin MP", "MATLAB",
+                "Alloy (UML)", "OCL (UML)", "Ensamblador x86", "xPath (XML)", "XSLT (XML)", "Pascal-FC", "VHDL"
+            ],
+            en: [
+                "C", "C++", "C#", "Java", "HTML", "CSS", "JavaScript",
+                "SQL", "PL/SQL", "NoSQL", "Python", "PlantUML", "Bash", "Kotlin MP", "MATLAB",
+                "Alloy (UML)", "OCL (UML)", "x86 Assembly", "xPath (XML)", "XSLT (XML)", "Pascal-FC", "VHDL"
+            ]
+        }
+
 
         const listaIconosLenguajes = [
             "devicon-c-plain", // C
@@ -1238,7 +1246,7 @@
         const numFrameworksExperto = 4; // Numero de frameworks que se consideran "experto" (los primeros del array)
 
         const listaFrameworks = [
-            "Spring Boot", "Tailwind CSS", "Bootstrap CSS", "Hibernate(Java)", "ROS (Robot Operating System)"
+            "Spring Boot", "Tailwind CSS", "Bootstrap CSS", "Hibernate (Java)", "ROS (Robot Operating System)"
         ];
 
         const listaIconosFrameworks = [
@@ -1355,23 +1363,45 @@
         // ****************** ---- 8. STACK TECNOLÓGICO (Lista Habilidades) ---- ******************
         const numHabilidadesExperto = 9; // Numero de habilidades que se consideran "experto" (los primeros del array)
 
-        const listaHabilidades = [
-            "Desarrollo de Aplicaciones Web", "Desarrollo de Aplicaciones de Escritorio", "Medición de la Calidad del Software", "Estimación y Planificación de Proyectos de Software", "Programación Concurrente", "Sistemas Distribuidos", "Manejo de la Shell de Linux", "Análisis de Algoritmos", "Optimización y Eficiencia de Código", "Desarrollo de Aplicaciones Móviles", "Infraestructura de Redes de Computadores", "Interconexión de Redes de Computadores", "Seguridad de Redes de Computadores", "Arquitectura de Computadores", "Machine Learning", "Procesamiento del Habla", "Robótica"
-        ];
+        const listaHabilidades = {
+            es: [
+                "Desarrollo de Aplicaciones Web", "Desarrollo de Aplicaciones de Escritorio",
+                "Medición de la Calidad del Software", "Estimación y Planificación de Proyectos de Software",
+                "Programación Concurrente", "Sistemas Distribuidos", "Manejo de la Shell de Linux",
+                "Análisis de Algoritmos", "Optimización y Eficiencia de Código",
+                "Desarrollo de Aplicaciones Móviles", "Infraestructura de Redes de Computadores",
+                "Interconexión de Redes de Computadores", "Seguridad de Redes de Computadores",
+                "Arquitectura de Computadores", "Machine Learning", "Procesamiento del Habla", "Robótica"
+            ],
+            en: [
+                "Web Application Development", "Desktop Application Development",
+                "Software Quality Measurement", "Software Project Estimation & Planning",
+                "Concurrent Programming", "Distributed Systems", "Linux Shell Scripting",
+                "Algorithm Analysis", "Code Optimisation & Efficiency",
+                "Mobile Application Development", "Computer Network Infrastructure",
+                "Computer Network Interconnection", "Computer Network Security",
+                "Computer Architecture", "Machine Learning", "Speech Processing", "Robotics"
+            ]
+        };
 
         // ****************** ---- 9. STACK TECNOLÓGICO (Lista Ingeniería de SW) ---- ******************
         const numISExperto = 14; // Numero de habilidades que se consideran "experto" (los primeros del array)
 
-        const listaIS = [
-            "Clean Code", "Código Legible", "Principios SOLID", "Patrones de Diseño", "TDD (Test Driven Development)", "Elicitación y Análisis de Requisitos", "Kanban (Gestión de Proyectos)", "Scrum (Metodología Ágil)", "UML (Unified Modeling Language)", "Modelo Entidad-Relación (ER)", "OOP (Object-Oriented Programming)", "MVC (Model-View-Controller)", "Software Testing", "Clean Architecture", "Hexagonal Architecture", "Model Checking"
-        ];
+        const listaIS = {
+            es: [
+                "Clean Code", "Código Legible", "Principios SOLID", "Patrones de Diseño", "TDD (Test Driven Development)", "Elicitación y Análisis de Requisitos", "Kanban (Gestión de Proyectos)", "Scrum (Metodología Ágil)", "UML (Unified Modeling Language)", "Modelo Entidad-Relación (ER)", "OOP (Object-Oriented Programming)", "MVC (Model-View-Controller)", "Software Testing", "Clean Architecture", "Hexagonal Architecture", "Model Checking"
+            ],
+            en: [
+                "Clean Code", "Readable Code", "SOLID Principles", "Design Patterns", "TDD (Test Driven Development)", "Requirements Elicitation & Analysis", "Kanban (Project Management)", "Scrum (Agile Methodology)", "UML (Unified Modeling Language)", "Entity-Relationship Model (ER)", "OOP (Object-Oriented Programming)", "MVC (Model-View-Controller)", "Software Testing", "Clean Architecture", "Hexagonal Architecture", "Model Checking"
+            ]
+        }
 
         function renderizarStackTecnologico() {
             const categorias = [
                 {
                     contenedorLista: document.getElementById("lista-lenguajes"),
                     contenedorContador: document.getElementById("contador-lenguajes"),
-                    listaElementos: listaLenguajes,
+                    listaElementos: listaLenguajes[idiomaActual],
                     listaIconos: listaIconosLenguajes,
                     numExperto: numLenguajesExperto
                 },
@@ -1420,14 +1450,14 @@
                 {
                     contenedorLista: document.getElementById("lista-habilidades"),
                     contenedorContador: document.getElementById("contador-habilidades"),
-                    listaElementos: listaHabilidades,
+                    listaElementos: listaHabilidades[idiomaActual],
                     listaIconos: [],
                     numExperto: numHabilidadesExperto
                 },
                 {
                     contenedorLista: document.getElementById("lista-is"),
                     contenedorContador: document.getElementById("contador-is"),
-                    listaElementos: listaIS,
+                    listaElementos: listaIS[idiomaActual],
                     listaIconos: [],
                     numExperto: numISExperto
                 }
@@ -1700,7 +1730,7 @@
                 lenguajes: "Lenguajes",
                 stack_librerias_titulo: "Librerías & APIs",
                 stack_componentes_titulo: "Componentes & ORMs",
-                stack_sgbd_titulo: "Sistemas Gestores de Bases de Datos",
+                stack_sgbd_titulo: "Sistemas Gestores de Bases de Datos (SGBD)",
                 stack_herramientas_titulo: "Herramientas & Despliegue",
                 habilidades: "Habilidades",
                 ingenieria_software: "Ingeniería de Software",
@@ -1737,7 +1767,7 @@
                 texto_inicio_apellidos: "surnames",
                 texto_inicio_profesion: "Computer Engineer • Software Engineer",
                 texto_inicio_resumen: "BSc in Computer Software Engineering graduate from the University of Huelva and MSc student in Software Engineering at UNIR. <br> Full Stack Developer specialised in robust and secure Backend architectures. <br> Ambitious, innovative, detail-oriented, and striving for excellence in every project. <br>",
-                texto_inicio_frase_1: "“Software begins with the concept, not at the first line of code. Quality, maintainability, and scalability are the key to success.”",
+                texto_inicio_frase_1: "“Software begins with the idea, not at the first line of code. Quality, maintainability, and scalability are the key to success.”",
                 texto_inicio_frase_2: "“In most cases, requirements change constantly; the better the initial software design, the lower the cost of adaptation.”",
                 boton_verProyectos: "View projects",
                 boton_contactar: "Get in touch",
@@ -1779,8 +1809,8 @@
                 logro_netEvents_texto: "Collaborative project awarded 1st place in the Andalucía Emprende 2025 Hackathon among 14 teams for its innovation and business model viability. <br> Creative solution to boost urban culture and leisure.",
                 logro_netEvents_tag_1: "SDGs (Sustainable Development Goals)",
                 boton_verPublicacion: "View Post",
-                proyecto_tfg_estado: "In development (BSc Dissertation)",
-                proyecto_tfg_texto: "Comprehensive Enterprise Resource Planning (ERP) system designed for the operational and administrative management of a driving school. <br> Developed for the final degree dissertation defence.",
+                proyecto_tfg_estado: "In development (Capstone Project)",
+                proyecto_tfg_texto: "Comprehensive Enterprise Resource Planning (ERP) system designed for the operational and administrative management of a driving school. <br> Developed for the Final Degree Project defence.",
                 boton_verCodigo: "View Source",
                 proyecto_toniCar_estado: "Completed",
                 proyecto_toniCar_texto: "Academic web application simulating an online car dealership, allowing users to browse a catalogue, manage user accounts, and submit enquiries via a Jakarta EE MVC architecture.",
@@ -1798,7 +1828,7 @@
             }
         };
 
-        function aplicarIdioma(lang) {
+        function cambiarIdioma(lang) {
             idiomaActual = lang;
             document.documentElement.lang = lang;
             btnIdioma.textContent = lang.toUpperCase();
@@ -1820,19 +1850,22 @@
                 }
             });
 
-            lucide.createIcons();
+            renderizarStackTecnologico(); // Re-renderizamos el stack tecnológico para actualizar las habilidades según el idioma
+            actualizarTodosLosCarriles(); // Actualizamos la visibilidad de las flechas de desplazamiento después de cambiar el idioma
+            lucide.createIcons(); // Aseguramos que los iconos se rendericen correctamente después del cambio de idioma
         }
+
 
         btnIdioma.addEventListener('click', () => {
             const nuevoIdioma = idiomaActual === 'es' ? 'en' : 'es';
-            aplicarIdioma(nuevoIdioma);
+            cambiarIdioma(nuevoIdioma);
         });
 
         // ******************* ---- SWITCH TEMA (Modo Oscuro / Modo Claro) ---- ******************
         const btnTema = document.getElementById('btn-tema');
 
         function actualizarIconoTema(esOscuro) {
-            btnTema.innerHTML = `<i data-lucide="${esOscuro ? 'sun' : 'moon'}" class="w-4 h-4"></i>`;
+            btnTema.innerHTML = `<i data-lucide="${esOscuro ? 'moon' : 'sun'}" class="w-4 h-4"></i>`;
             lucide.createIcons();
         }
 
