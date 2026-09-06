@@ -308,6 +308,58 @@
         }
 
     </style>
+    <style>
+        /***************** ---- BARRA SCROLL LATERAL DEL NAVEGADOR ---- ******************/
+
+        /* Variables de Color y Esquema por Modo */
+        :root {
+            color-scheme: light;
+            /* Fondo carril claro (slate-100) */
+            --sb-track: #f1f5f9;
+            /* Barra verde esmeralda fija (emerald-600) */
+            --sb-thumb: #059669;
+            /* Verde esmeralda más oscuro en hover (emerald-700) */
+            --sb-hover: #047857;
+        }
+
+        html.dark,
+        :root.dark {
+            color-scheme: dark;
+            /* Fondo carril oscuro (slate-950) */
+            --sb-track: #020617;
+            /* Barra verde esmeralda luminosa (emerald-500) */
+            --sb-thumb: #10b981;
+            /* Verde esmeralda más claro en hover (emerald-400) */
+            --sb-hover: #34d399;
+        }
+
+        /* Estándar W3C moderno (Firefox y versiones recientes de Chrome/Edge) */
+        html,
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--sb-thumb) var(--sb-track);
+        }
+
+        /* Motores Chromium / WebKit (Chrome, Edge, Brave, Opera, Safari) */
+        ::-webkit-scrollbar {
+            width: 8px !important;
+            height: 8px !important;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: var(--sb-track) !important;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--sb-thumb) !important;
+            border-radius: 9999px !important;
+            border: 2px solid var(--sb-track) !important;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--sb-hover) !important;
+        }
+    </style>
 </head>
 
 <body class="bg-slate-950 text-slate-100 transition-colors duration-300 antialiased selection:bg-emerald-500 selection:text-white">
