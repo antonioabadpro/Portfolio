@@ -5,34 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Metadatos SEO -->
-    <meta name="description" content="Portfolio profesional de Antonio Abad Hernández Gálvez. Ingeniero Informático especializado en Ingeniería de Software, Arquitectura de Sistemas y Desarrollo Full Stack. Ver proyectos, habilidades y contacto.">
+    <meta name="description" content="Portfolio profesional de AAHG (Antonio Abad Hernández Gálvez). Ingeniero Informático especializado en Ingeniería de Software, Arquitectura de Sistemas y Desarrollo Full Stack.">
     <link rel="canonical" href="https://antonioabadpro.netlify.app/" />
-    <link rel="icon" type="image/png" href="img/Letra_A.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/Letra_A.png">
+    <link rel="icon" type="image/png" href="https://antonioabadpro.netlify.app/img/Letra_A.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://antonioabadpro.netlify.app/img/Letra_A.png">
 
-    <meta name="keywords" content="Antonio Abad Hernández Gálvez, Ingeniero Informático, Ingeniero de Software, Desarrollador Full Stack, Portfolio, Proyectos, Habilidades, Contacto">
-    <meta name="author" content="Antonio Abad Hernández Gálvez">
+    <meta name="keywords" content="AAHG, Antonio Abad Hernández Gálvez, Ingeniero Informático, Ingeniero de Software, Desarrollador Full Stack, Portfolio, Proyectos, Habilidades, Contacto">
+    <meta name="author" content="Antonio Abad Hernández Gálvez (AAHG)">
     <meta name="robots" content="index, follow">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://antonioabadpro.netlify.app/">
-    <meta property="og:title" content="Antonio Abad Hernández Gálvez | Ingeniero de Software & Desarrollador Full Stack">
-    <meta property="og:description" content="Portfolio profesional de Antonio Abad Hernández Gálvez. Ingeniero Informático especializado en Ingeniería de Software, Arquitectura de Sistemas y Desarrollo Full Stack. Ver proyectos, habilidades y contacto.">
-    <meta property="og:image" content="img/Letra_A.png">
+    <meta property="og:title" content="AAHG - Antonio Abad Hernández Gálvez | Ingeniero Informático - Ingeniero de Software | Desarrollador Full Stack">
+    <meta property="og:description" content="Portfolio profesional de AAHG (Antonio Abad Hernández Gálvez). Ingeniero Informático especializado en Ingeniería de Software, Arquitectura de Sistemas y Desarrollo Full Stack.">
+    <meta property="og:image" content="https://antonioabadpro.netlify.app/img/Letra_A.png">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://antonioabadpro.netlify.app/">
-    <meta property="twitter:title" content="Antonio Abad Hernández Gálvez | Ingeniero de Software & Desarrollador Full Stack">
-    <meta property="twitter:description" content="Portfolio profesional de Antonio Abad Hernández Gálvez. Ingeniero Informático especializado en Ingeniería de Software, Arquitectura de Sistemas y Desarrollo Full Stack. Ver proyectos, habilidades y contacto.">
-    <meta property="twitter:image" content="img/Letra_A.png">
+    <meta property="twitter:title" content="AAHG - Antonio Abad Hernández Gálvez | Ingeniero Informático - Ingeniero de Software | Desarrollador Full Stack">
+    <meta property="twitter:description" content="Portfolio profesional de AAHG (Antonio Abad Hernández Gálvez). Ingeniero Informático especializado en Ingeniería de Software, Arquitectura de Sistemas y Desarrollo Full Stack.">
+    <meta property="twitter:image" content="https://antonioabadpro.netlify.app/img/Letra_A.png">
 
-    <title>Antonio Abad Hernández Gálvez | Ingeniero de Software & Desarrollador Full Stack</title>
+    <title>AAHG - Antonio Abad Hernández Gálvez | Ingeniero Informático - Ingeniero de Software</title>
+
+    <!-- Datos Estructurados JSON-LD (Clave para asociar AAHG a tu identidad) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Antonio Abad Hernández Gálvez",
+      "alternateName": "AAHG",
+      "url": "https://antonioabadpro.netlify.app/",
+      "jobTitle": "Ingeniero Informático & Ingeniero de Software | Desarrollador Full Stack",
+      "sameAs": [
+        "https://www.linkedin.com/in/antonioabadhernandezgalvez/",
+        "https://github.com/antonioabadpro",
+        "https://www.instagram.com/antonioabad.eng/"
+      ]
+    }
+    </script>
+
 
     <!-- Tailwind v3 CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Typed.js CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
     <!-- DevIcons CDN -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -182,57 +203,59 @@
             will-change: transform, width;
         }
 
-        /* Paleta Modo Claro */
-    :root {
-        --color-white: 15 23 42;          /* Invierte text-white a texto oscuro */
-        --color-slate-950: 241 245 249;    /* Fondo base (#f1f5f9) */
-        --color-slate-900: 255 255 255;    /* Tarjetas y fondos elevados (#ffffff) */
-        --color-slate-800: 226 232 240;    /* Bordes y separadores (#e2e8f0) */
-        --color-slate-700: 203 213 225;    /* Bordes secundarios (#cbd5e1) */
-        --color-slate-500: 100 116 139;    /* #64748b */
-        --color-slate-400: 71 85 105;      /* Textos legibles (#475569) */
-        --color-slate-300: 51 65 85;       /* Textos de títulos (#334155) */
-        --color-slate-200: 30 41 59;
-        --color-slate-100: 15 23 42;
-        --color-slate-50: 2 6 23;
+        /* Paleta de colores (Modo Claro) */
+        :root {
+            --color-white: 15 23 42;          /* Invierte text-white a texto oscuro */
+            --color-slate-950: 241 245 249;    /* Fondo base (#f1f5f9) */
+            --color-slate-900: 255 255 255;    /* Tarjetas y fondos elevados (#ffffff) */
+            --color-slate-800: 226 232 240;    /* Bordes y separadores (#e2e8f0) */
+            --color-slate-700: 203 213 225;    /* Bordes secundarios (#cbd5e1) */
+            --color-slate-500: 100 116 139;    /* #64748b */
+            --color-slate-400: 71 85 105;      /* Textos legibles (#475569) */
+            --color-slate-300: 51 65 85;       /* Textos de títulos (#334155) */
+            --color-slate-200: 30 41 59;
+            --color-slate-100: 15 23 42;
+            --color-slate-50: 2 6 23;
 
-        --color-emerald-400: 5 150 105;
-        --color-emerald-500: 16 185 129;
-        --color-emerald-600: 5 150 105;
-        --color-emerald-700: 167 243 208;
-        --color-emerald-800: 209 250 229;
-        --color-emerald-950: 16 185 129;
-    }
+            --color-emerald-400: 5 150 105;
+            --color-emerald-500: 16 185 129;
+            --color-emerald-600: 5 150 105;
+            --color-emerald-700: 167 243 208;
+            --color-emerald-800: 209 250 229;
+            --color-emerald-950: 16 185 129;
+        }
 
-    /* Paleta Modo Oscuro */
-    .dark {
-        --color-white: 255 255 255;
-        --color-slate-950: 2 6 23;
-        --color-slate-900: 15 23 42;
-        --color-slate-800: 30 41 59;
-        --color-slate-700: 51 65 85;
-        --color-slate-500: 100 116 139;
-        --color-slate-400: 148 163 184;
-        --color-slate-300: 203 213 225;
-        --color-slate-200: 226 232 240;
-        --color-slate-100: 241 245 249;
-        --color-slate-50: 248 250 252;
+        /* Paleta de colores (Modo Oscuro) */
+        .dark {
+            --color-white: 255 255 255;
+            --color-slate-950: 2 6 23;
+            --color-slate-900: 15 23 42;
+            --color-slate-800: 30 41 59;
+            --color-slate-700: 51 65 85;
+            --color-slate-500: 100 116 139;
+            --color-slate-400: 148 163 184;
+            --color-slate-300: 203 213 225;
+            --color-slate-200: 226 232 240;
+            --color-slate-100: 241 245 249;
+            --color-slate-50: 248 250 252;
 
-        --color-emerald-400: 52 211 153;
-        --color-emerald-500: 16 185 129;
-        --color-emerald-600: 5 150 105;
-        --color-emerald-700: 4 120 87;
-        --color-emerald-800: 6 95 70;
-        --color-emerald-950: 2 44 34;
-    }
+            --color-emerald-400: 52 211 153;
+            --color-emerald-500: 16 185 129;
+            --color-emerald-600: 5 150 105;
+            --color-emerald-700: 4 120 87;
+            --color-emerald-800: 6 95 70;
+            --color-emerald-950: 2 44 34;
+        }
 
-    /* 1. Botones verdes principales: texto blanco siempre */
-    .bg-emerald-600, .bg-emerald-600 * {
-        color: #ffffff !important;
-    }
+        /****************** ---- EFECTOS MODO CLARO ---- ******************/
 
-    /* 1. LOGO DE LINKEDIN (ESTADO NORMAL Y HOVER) */
-        /* Estado normal: Ícono monocromático limpio calado con el fondo */
+        /* Botones verdes principales: texto blanco siempre */
+        .bg-emerald-600, .bg-emerald-600 * {
+            color: #ffffff !important;
+        }
+
+        /* LOGO DE LINKEDIN (Modo Claro) */
+        /* Estado normal (Icono monocromático limpio calado con el fondo) */
         svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
             fill: currentColor !important;
             opacity: 0.85;
@@ -243,7 +266,7 @@
             transition: fill 0.3s ease;
         }
 
-        /* Hover general en LinkedIn (ej. Redes sociales) */
+        /* Hover Logo LinkedIn */
         a:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect,
         .group:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
             fill: #0A66C2 !important;
@@ -254,10 +277,8 @@
             fill: #ffffff !important;
         }
 
-        /* ==========================================================================
-           2. BARRIDO INVERTIDO EXACTO PARA BOTONES DE PROYECTOS EN MODO CLARO
-           ========================================================================== */
-        /* Base en modo claro */
+        /* BOTONES DE PROYECTOS (Modo Claro) */
+        /* Efecto invertido de Barrido para los botones de proyectos en modo claro */
         :root:not(.dark) a.group\/btn,
         :root:not(.dark) #proyectos a.cursor-pointer {
             background-color: #f1f5f9 !important;
@@ -265,13 +286,13 @@
             color: #334155 !important;
         }
 
-        /* Fondo del barrido en modo claro: oscuro (#0f172a / slate-900) */
+        /* Fondo del barrido de los botones en modo claro -> El fondo pasa a un color oscuro (#0f172a / slate-900) */
         :root:not(.dark) .group\/btn::after,
         :root:not(.dark) #proyectos a.cursor-pointer::after {
             background-color: #0f172a !important;
         }
 
-        /* En hover modo claro: texto e icono GitHub pasan a blanco puro (#ffffff) */
+        /* Hover modo claro (Logo GitHub) -> El texto y el icono GitHub pasan a blanco puro (#ffffff) */
         :root:not(.dark) a.group\/btn:hover,
         :root:not(.dark) #proyectos a.cursor-pointer:hover,
         :root:not(.dark) #proyectos a.cursor-pointer:hover span,
@@ -281,7 +302,7 @@
             border-color: #0f172a !important;
         }
 
-        /* En hover modo claro del botón LinkedIn: el fondo del ícono se vuelve azul y las letras blancas */
+        /* Hover modo claro (Logo LinkedIn) -> El fondo del icono se vuelve azul y las letras blancas */
         :root:not(.dark) a.group\/btn:hover svg rect {
             fill: #0A66C2 !important;
             opacity: 1;
@@ -290,26 +311,100 @@
             fill: #ffffff !important;
         }
 
-    /* 3. Tabs de Trayectoria (Modo Claro) */
-    :root:not(.dark) .tab-btn.bg-transparent:hover {
-        background-color: #f8fafc !important; /* Hover gris sutil */
-        color: #0f172a !important;
-    }
-    :root:not(.dark) .tab-btn.bg-slate-900 {
-        background-color: #f1f5f9 !important; /* Tab activo distinguido */
-        color: #0f172a !important;
-    }
+        /* Tabs de Trayectoria (Modo Claro) */
+        :root:not(.dark) .tab-btn.bg-transparent:hover {
+            background-color: #f8fafc !important; /* Hover gris sutil */
+            color: #0f172a !important;
+        }
 
-    /* 4. Footer: tono más claro que el fondo en modo claro */
-    :root:not(.dark) footer {
-        background-color: #f8fafc !important;
-        border-color: #e2e8f0 !important;
-    }
+        :root:not(.dark) .tab-btn.bg-slate-900 {
+            background-color: #f1f5f9 !important; /* Tab activo distinguido */
+            color: #0f172a !important;
+        }
 
+        /* Footer (Modo Claro) */
+        :root:not(.dark) footer {
+            background-color: #f8fafc !important;
+            border-color: #e2e8f0 !important;
+        }
+
+        /******************** ---- SECCIÓN INICIO (EFECTO TYPEWRITER PARA TEXTO RESUMEN) ---- ******************/
+        @keyframes typedjsBlink {
+            50%
+            {
+                opacity: 0.0;
+            }
+        }
+
+        .typed-cursor {
+            color: #10b981;
+            font-weight: 300;
+            opacity: 1;
+            display: inline;
+            animation: typedjsBlink 0.7s infinite;
+        }
+
+    </style>
+
+    <style>
+        /***************** ---- BARRA SCROLL LATERAL DEL NAVEGADOR ---- ******************/
+
+        /* Variables de Color y Esquema por Modo */
+        :root {
+            color-scheme: light;
+            /* Fondo carril claro (slate-100) */
+            --sb-track: #f1f5f9;
+            /* Barra verde esmeralda fija (emerald-600) */
+            --sb-thumb: #059669;
+            /* Verde esmeralda más oscuro en hover (emerald-700) */
+            --sb-hover: #047857;
+        }
+
+        html.dark,
+        :root.dark {
+            color-scheme: dark;
+            /* Fondo carril oscuro (slate-950) */
+            --sb-track: #020617;
+            /* Barra verde esmeralda luminosa (emerald-500) */
+            --sb-thumb: #10b981;
+            /* Verde esmeralda más claro en hover (emerald-400) */
+            --sb-hover: #34d399;
+        }
+
+        /* Estándar W3C moderno (Firefox y versiones recientes de Chrome/Edge) */
+        html,
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--sb-thumb) var(--sb-track);
+        }
+
+        /* Motores Chromium / WebKit (Chrome, Edge, Brave, Opera, Safari) */
+        ::-webkit-scrollbar {
+            width: 8px !important;
+            height: 8px !important;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: var(--sb-track) !important;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--sb-thumb) !important;
+            border-radius: 9999px !important;
+            border: 2px solid var(--sb-track) !important;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--sb-hover) !important;
+        }
     </style>
 </head>
 
 <body class="bg-slate-950 text-slate-100 transition-colors duration-300 antialiased selection:bg-emerald-500 selection:text-white">
+    <!-- Barra superior de progreso de scroll -->
+    <!-- Barra de progreso superior (acelerada por GPU, respuesta instantánea) -->
+    <div id="scroll-progress" class="fixed top-0 left-0 w-full h-[2.5px] bg-emerald-500 z-[60] origin-left scale-x-0 pointer-events-none will-change-transform">
+    </div>
     <!-- Navbar -->
     <nav class="reveal-navbar sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -377,7 +472,7 @@
 
     <!-- Sección INICIO (Ubicacion, Nombre, Profesion, Texto Resumen y Botones) -->
     <section id="inicio" class="scroll-mt-20 min-h-[75vh] max-w-6xl mx-auto pt-12 sm:pt-16 pb-16 sm:pb-24 px-4 sm:px-6 flex flex-col justify-center">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start lg:items-center">
             <!-- Columna de Texto -->
             <div class="flex flex-col justify-center lg:col-span-7 order-2 lg:order-1">
                 <div class="reveal-item inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold w-fit mb-5 sm:mb-6">
@@ -398,20 +493,33 @@
                     </div>
                 </h1>
 
-                <!-- Profesion -->
-                <h2 class="reveal-item [animation-delay:400ms] text-base sm:text-xl text-slate-100 font-medium mb-5 sm:mb-6" data-i18n="texto_inicio_profesion">
-                    Ingeniero Informático &bull; Ingeniero de Software
-                </h2>
+                <!-- Profesion (Ticker Vertical) -->
+                <div class="reveal-item [animation-delay:400ms] mb-5 sm:mb-6 flex items-center text-base sm:text-xl font-medium text-slate-100">
+                    <div class="relative h-7 sm:h-8 overflow-hidden">
+                        <h2 id="ticker-profesion" class="flex flex-col">
+
+                        </h2>
+                    </div>
+                </div>
 
                 <!-- Texto Resumen -->
                 <div class="reveal-item [animation-delay:600ms] text-slate-400 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed mb-8">
-                    <p data-i18n="texto_inicio_resumen">
-                        Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de
-                        Software en la UNIR. <br>
-                        Desarrollador Full Stack especializado en Backend robusto y seguro. <br>
-                        Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto. <br>
-                    </p>
-                    <blockquote class="reveal-item [animation-delay:700ms] relative my-6 p-5 sm:p-6 border-l-4 border-violet-600 bg-slate-800/40 rounded-r-xl max-w-2xl transition-all duration-300 ease-out hover:bg-slate-800/70 hover:border-violet-500 hover:shadow-xl hover:shadow-violet-600/10 hover:-translate-y-0.5 group">
+                    <!-- Contenedor 'grid' que calcula la altura física real según el idioma -->
+                    <div class="grid grid-cols-1 items-start transition-all duration-300">
+                        <!-- Texto 'fantasma' invisible que reserva el espacio exacto sin saltos -->
+                        <p id="texto-inicio-resumen-phantom" class="col-start-1 row-start-1 invisible select-none pointer-events-none leading-relaxed" aria-hidden="true">
+
+                        </p>
+
+                        <!-- Texto visible donde escribe Typed.js -->
+                        <p class="col-start-1 row-start-1 leading-relaxed">
+                            <span id="texto-inicio-resumen">
+
+                            </span>
+                        </p>
+                    </div>
+                    <!-- Blockquote estático en su posición definitiva -->
+                    <blockquote class="reveal-item [animation-delay:800ms] relative my-6 p-5 sm:p-6 border-l-4 border-violet-600 bg-slate-800/40 rounded-r-xl max-w-2xl transition-all duration-300 ease-out hover:bg-slate-800/70 hover:border-violet-500 hover:shadow-xl hover:shadow-violet-600/10 hover:-translate-y-0.5 group">
                         <ul class="space-y-4 text-sm sm:text-base italic text-slate-300 font-normal leading-relaxed">
                             <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-violet-500/80 group-hover:before:bg-violet-400 group-hover:before:scale-110 before:transition-all" data-i18n="texto_inicio_frase_1">
                                 “El software comienza desde la idea, no en la primera línea de código. La calidad, la mantenibilidad y la escalabilidad son la clave del éxito.”
@@ -424,7 +532,7 @@
                 </div>
 
                 <!-- Botones de Acción -->
-                <div class="reveal-item [animation-delay:800ms] flex flex-row gap-3 sm:gap-6 w-full sm:w-auto">
+                <div class="reveal-item [animation-delay:900ms] flex flex-row gap-3 sm:gap-6 w-full sm:w-auto">
                     <a href="#proyectos" class="flex-1 sm:flex-none sm:w-52 inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg shadow-lg shadow-emerald-900/20 hover:-translate-y-0.5 transition-all text-xs sm:text-sm whitespace-nowrap">
                     <i class="devicon-github-plain text-xs sm:text-sm"></i>
                     <span data-i18n="boton_verProyectos">Ver proyectos</span>
@@ -1143,6 +1251,147 @@
             }
         });
 
+        // ******************* ---- INICIO ---- ******************
+
+        // ****************** ---- TYPEWRITER PARA EL TEXTO RESUMEN ---- ******************
+        let instanciaTypedResumen = null;
+
+        const textosResumen = {
+            es: [
+                "Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de Software y Sistemas Informáticos en la UNIR.",
+                "Desarrollador Full Stack especializado en Backend robusto y seguro.",
+                "Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto."
+            ],
+            en: [
+                "BSc in Computer Software Engineering graduate from the University of Huelva and MSc student in Software Engineering and Computer Systems at UNIR.",
+                "Full Stack Developer specialised in robust and secure Backend architectures.",
+                "Ambitious, innovative, detail-oriented, and striving for excellence in every project."
+            ]
+        };
+
+        function iniciarTypewriterResumen(lang, retrasoInicial = 0) {
+            if (instanciaTypedResumen) {
+                instanciaTypedResumen.destroy();
+            }
+
+            const phantom = document.getElementById('texto-inicio-resumen-phantom');
+            const typedTarget = document.getElementById('texto-inicio-resumen');
+
+            // Asignamos inmediatamente el texto al elemento fantasma para fijar la altura antes de que comience la escritura (Typed.js) y evitar que el contenedor cambie de tamaño durante la animación.
+            if (phantom) {
+                phantom.innerHTML = textosResumen[lang].map(p => `<span class="block">${p}</span>`).join('');
+            }
+            if (typedTarget) {
+                typedTarget.innerHTML = "";
+            }
+
+            // Unimos las frases con un salto simple (inline)
+            const textoUnido = textosResumen[lang].join('<br>');
+
+            // Iniciamos el efecto sin desfase de altura, pero con un retraso inicial para que el usuario pueda leer el texto anterior antes de que comience la animación.
+            instanciaTypedResumen = new Typed('#texto-inicio-resumen', {
+                strings: [textoUnido],
+                typeSpeed: 10,
+                startDelay: retrasoInicial,
+                contentType: 'html',
+                showCursor: true,
+                cursorChar: '▋',
+                autoInsertCss: false, /* Evita que Typed.js inserte automáticamente estilos CSS para el cursor, permitiendo un control total sobre su estilo mediante CSS personalizado. */
+                loop: false,
+                onComplete: (self) => {
+                    if (self.cursor) {
+                        setTimeout(() => {
+                            self.cursor.style.transition = 'opacity 0.4s ease';
+                            self.cursor.style.opacity = '0';
+                        }, 800);
+                    }
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            iniciarTypewriterResumen(idiomaActual, 600);
+        });
+
+        // ****************** ---- TICKER VERTICAL DE PROFESIONES ---- ******************
+        const rolesProfesion = {
+            es: [
+                "Ingeniero Informático",
+                "Ingeniero de Software"
+            ],
+            en: [
+                "Computer Engineer",
+                "Software Engineer"
+            ]
+        };
+
+        let intervaloTicker = null;
+        let animandoTicker = false;
+        const NUM_ROLES = 2; // Número de roles en el ticker (para evitar errores si se cambia la lista)
+        const TIEMPO_ESPERA_TICKER = 2500; // Tiempo de espera entre cada animación (en milisegundos)
+        const VELOCIDAD_ANIMACION_TICKER = "0.85s"; // Duración de la animación de subida (en segundos)
+
+        function renderizarTickerProfesion(lang) {
+            const contenedor = document.getElementById('ticker-profesion');
+            if (!contenedor) return;
+
+            // Resetear estilos y posición
+            contenedor.style.transition = 'none';
+            contenedor.style.transform = 'translateY(0px)';
+            animandoTicker = false;
+
+            const lista = rolesProfesion[lang];
+
+            contenedor.innerHTML = lista
+                .map(rol => `<span class="h-7 sm:h-8 flex items-center text-slate-100 font-semibold tracking-wide whitespace-nowrap">${rol}</span>`)
+                .join('');
+        }
+
+        function iniciarTickerProfesion() {
+            if (intervaloTicker) clearInterval(intervaloTicker);
+
+            const contenedor = document.getElementById('ticker-profesion');
+
+            intervaloTicker = setInterval(() => {
+                if (!contenedor || contenedor.children.length < NUM_ROLES || animandoTicker) return;
+
+                const primerHijo = contenedor.firstElementChild;
+                if (!primerHijo) return;
+
+                // Medimos la altura exacta en píxeles de 1 solo elemento (ej: 28px en móvil, 32px en escritorio)
+                const alturaPaso = primerHijo.offsetHeight;
+                animandoTicker = true;
+
+                // 1. Animación suave de subida de exactamente 1 elemento
+                contenedor.style.transition = `transform ${VELOCIDAD_ANIMACION_TICKER} cubic-bezier(0.65, 0, 0.35, 1)`;
+                contenedor.style.transform = `translateY(-${alturaPaso}px)`;
+
+                // 2. Al terminar la animación, reciclamos el nodo arriba hacia abajo y reseteamos el transform
+                const handleTransitionEnd = () => {
+                    contenedor.removeEventListener('transitionend', handleTransitionEnd);
+
+                    // Pasamos el primer elemento al final de la cola
+                    contenedor.appendChild(contenedor.firstElementChild);
+
+                    // Reseteamos posición a 0 de forma invisible e instantánea
+                    contenedor.style.transition = 'none';
+                    contenedor.style.transform = 'translateY(0px)';
+
+                    // Forzamos al navegador a procesar el reflow
+                    void contenedor.offsetHeight;
+                    animandoTicker = false;
+                };
+
+                contenedor.addEventListener('transitionend', handleTransitionEnd, { once: true });
+
+            }, TIEMPO_ESPERA_TICKER);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderizarTickerProfesion(idiomaActual);
+            iniciarTickerProfesion();
+        });
+
         // ****************** ---- TRAYECTORIA---- ******************
 
         // Funcionalidad cambio de columnas (Tabs) en la sección de TRAYECTORIA
@@ -1330,10 +1579,10 @@
         ];
 
         // ****************** ---- 7. STACK TECNOLÓGICO (Lista Herramientas) ---- ******************
-        const numHerramientasExperto = 16; // Numero de herramientas que se consideran "experto" (los primeros del array)
+        const numHerramientasExperto = 17; // Numero de herramientas que se consideran "experto" (los primeros del array)
 
         const listaHerramientas = [
-            "Git", "GitHub", "GitHub Desktop", "Jira", "Supabase", "Postman", "LM Studio", "Cisco Packet Tracer", "Swagger", "Orange Data Mining", "Tinkercad", "Maven", "Ant", "Gradle", "Lucidchart", "Draw.io", "Docker", "Praat", "Microsoft Project", "Microsoft Visio", "n8n"
+            "Git", "GitHub", "GitHub Desktop", "Jira", "Supabase", "Postman", "Swagger", "Notion", "Netlify", "LM Studio", "Cisco Packet Tracer", "Orange Data Mining", "Maven", "Ant", "Gradle", "Lucidchart", "Tinkercad", "Docker", "Praat", "Microsoft Project", "Microsoft Visio", "n8n"
         ];
 
         const listaIconosHerramientas = [
@@ -1343,16 +1592,17 @@
             "devicon-jira-plain", // Jira
             "devicon-supabase-plain", // Supabase
             "devicon-postman-plain", // Postman
-            "", // LM Studio
-            "", // Cisco Packet Tracer
             "devicon-swagger-plain", // Swagger
+            "devicon-notion-plain", // Notion
+            "devicon-netlify-plain", // Netlify
+            "devicon-lmstudio-plain", // LM Studio
+            "", // Cisco Packet Tracer
             "", // Orange Data Mining
-            "", // Tinkercad
             "devicon-maven-plain", // Maven
             "", // Ant
             "devicon-gradle-plain", // Gradle
             "", // Lucidchart
-            "", // Draw.io
+            "", // Tinkercad
             "devicon-docker-plain", // Docker
             "", // Praat
             "", // Microsoft Project
@@ -1696,7 +1946,6 @@
                 texto_inicio_nombre: "nombre",
                 texto_inicio_apellidos: "apellidos",
                 texto_inicio_profesion: "Ingeniero Informático • Ingeniero de Software",
-                texto_inicio_resumen: "Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de Software en la UNIR. <br> Desarrollador Full Stack especializado en Backend robusto y seguro. <br> Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto. <br>",
                 texto_inicio_frase_1: "“El software comienza desde la idea, no en la primera línea de código. La calidad, la mantenibilidad y la escalabilidad son la clave del éxito.”",
                 texto_inicio_frase_2: "“En la mayoría de ocasiones, los requisitos cambian constantemente; Cuanto mejor sea el diseño inicial del software, menor será el coste de adaptación.”",
                 boton_verProyectos: "Ver proyectos",
@@ -1766,7 +2015,6 @@
                 texto_inicio_nombre: "name",
                 texto_inicio_apellidos: "surnames",
                 texto_inicio_profesion: "Computer Engineer • Software Engineer",
-                texto_inicio_resumen: "BSc in Computer Software Engineering graduate from the University of Huelva and MSc student in Software Engineering at UNIR. <br> Full Stack Developer specialised in robust and secure Backend architectures. <br> Ambitious, innovative, detail-oriented, and striving for excellence in every project. <br>",
                 texto_inicio_frase_1: "“Software begins with the idea, not at the first line of code. Quality, maintainability, and scalability are the key to success.”",
                 texto_inicio_frase_2: "“In most cases, requirements change constantly; the better the initial software design, the lower the cost of adaptation.”",
                 boton_verProyectos: "View projects",
@@ -1852,6 +2100,12 @@
 
             renderizarStackTecnologico(); // Re-renderizamos el stack tecnológico para actualizar las habilidades según el idioma
             actualizarTodosLosCarriles(); // Actualizamos la visibilidad de las flechas de desplazamiento después de cambiar el idioma
+
+            renderizarTickerProfesion(lang); // Actualizamos el ticker de profesión según el idioma
+            iniciarTickerProfesion(); // Reiniciamos el ticker de profesión para reflejar el cambio de idioma
+
+            iniciarTypewriterResumen(lang, 0); // Reiniciar Typewriter con el nuevo idioma de forma inmediata
+
             lucide.createIcons(); // Aseguramos que los iconos se rendericen correctamente después del cambio de idioma
         }
 
@@ -1890,6 +2144,29 @@
         })();
 
         btnTema.addEventListener('click', cambiarTema);
+
+        // ****************** ---- BARRA SUPERIOR DE PROGRESO DE SCROLL ---- ******************
+        const barraProgreso = document.getElementById('scroll-progress');
+        let ticking = false;
+
+        function actualizarBarraProgreso() {
+            const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+            if (alturaTotal > 0) {
+                const factor = Math.min(Math.max(window.scrollY / alturaTotal, 0), 1);
+                barraProgreso.style.transform = `scaleX(${factor})`;
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(actualizarBarraProgreso);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Llamada inicial por si la página carga con scroll
+        actualizarBarraProgreso();
 
     </script>
 </body>
