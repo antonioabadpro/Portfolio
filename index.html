@@ -182,57 +182,59 @@
             will-change: transform, width;
         }
 
-        /* Paleta Modo Claro */
-    :root {
-        --color-white: 15 23 42;          /* Invierte text-white a texto oscuro */
-        --color-slate-950: 241 245 249;    /* Fondo base (#f1f5f9) */
-        --color-slate-900: 255 255 255;    /* Tarjetas y fondos elevados (#ffffff) */
-        --color-slate-800: 226 232 240;    /* Bordes y separadores (#e2e8f0) */
-        --color-slate-700: 203 213 225;    /* Bordes secundarios (#cbd5e1) */
-        --color-slate-500: 100 116 139;    /* #64748b */
-        --color-slate-400: 71 85 105;      /* Textos legibles (#475569) */
-        --color-slate-300: 51 65 85;       /* Textos de títulos (#334155) */
-        --color-slate-200: 30 41 59;
-        --color-slate-100: 15 23 42;
-        --color-slate-50: 2 6 23;
+        /* Paleta de colores (Modo Claro) */
+        :root {
+            --color-white: 15 23 42;          /* Invierte text-white a texto oscuro */
+            --color-slate-950: 241 245 249;    /* Fondo base (#f1f5f9) */
+            --color-slate-900: 255 255 255;    /* Tarjetas y fondos elevados (#ffffff) */
+            --color-slate-800: 226 232 240;    /* Bordes y separadores (#e2e8f0) */
+            --color-slate-700: 203 213 225;    /* Bordes secundarios (#cbd5e1) */
+            --color-slate-500: 100 116 139;    /* #64748b */
+            --color-slate-400: 71 85 105;      /* Textos legibles (#475569) */
+            --color-slate-300: 51 65 85;       /* Textos de títulos (#334155) */
+            --color-slate-200: 30 41 59;
+            --color-slate-100: 15 23 42;
+            --color-slate-50: 2 6 23;
 
-        --color-emerald-400: 5 150 105;
-        --color-emerald-500: 16 185 129;
-        --color-emerald-600: 5 150 105;
-        --color-emerald-700: 167 243 208;
-        --color-emerald-800: 209 250 229;
-        --color-emerald-950: 16 185 129;
-    }
+            --color-emerald-400: 5 150 105;
+            --color-emerald-500: 16 185 129;
+            --color-emerald-600: 5 150 105;
+            --color-emerald-700: 167 243 208;
+            --color-emerald-800: 209 250 229;
+            --color-emerald-950: 16 185 129;
+        }
 
-    /* Paleta Modo Oscuro */
-    .dark {
-        --color-white: 255 255 255;
-        --color-slate-950: 2 6 23;
-        --color-slate-900: 15 23 42;
-        --color-slate-800: 30 41 59;
-        --color-slate-700: 51 65 85;
-        --color-slate-500: 100 116 139;
-        --color-slate-400: 148 163 184;
-        --color-slate-300: 203 213 225;
-        --color-slate-200: 226 232 240;
-        --color-slate-100: 241 245 249;
-        --color-slate-50: 248 250 252;
+        /* Paleta de colores (Modo Oscuro) */
+        .dark {
+            --color-white: 255 255 255;
+            --color-slate-950: 2 6 23;
+            --color-slate-900: 15 23 42;
+            --color-slate-800: 30 41 59;
+            --color-slate-700: 51 65 85;
+            --color-slate-500: 100 116 139;
+            --color-slate-400: 148 163 184;
+            --color-slate-300: 203 213 225;
+            --color-slate-200: 226 232 240;
+            --color-slate-100: 241 245 249;
+            --color-slate-50: 248 250 252;
 
-        --color-emerald-400: 52 211 153;
-        --color-emerald-500: 16 185 129;
-        --color-emerald-600: 5 150 105;
-        --color-emerald-700: 4 120 87;
-        --color-emerald-800: 6 95 70;
-        --color-emerald-950: 2 44 34;
-    }
+            --color-emerald-400: 52 211 153;
+            --color-emerald-500: 16 185 129;
+            --color-emerald-600: 5 150 105;
+            --color-emerald-700: 4 120 87;
+            --color-emerald-800: 6 95 70;
+            --color-emerald-950: 2 44 34;
+        }
 
-    /* 1. Botones verdes principales: texto blanco siempre */
-    .bg-emerald-600, .bg-emerald-600 * {
-        color: #ffffff !important;
-    }
+        /****************** ---- EFECTOS MODO CLARO ---- ******************/
 
-    /* 1. LOGO DE LINKEDIN (ESTADO NORMAL Y HOVER) */
-        /* Estado normal: Ícono monocromático limpio calado con el fondo */
+        /* Botones verdes principales: texto blanco siempre */
+        .bg-emerald-600, .bg-emerald-600 * {
+            color: #ffffff !important;
+        }
+
+        /* LOGO DE LINKEDIN (Modo Claro) */
+        /* Estado normal (Icono monocromático limpio calado con el fondo) */
         svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
             fill: currentColor !important;
             opacity: 0.85;
@@ -243,7 +245,7 @@
             transition: fill 0.3s ease;
         }
 
-        /* Hover general en LinkedIn (ej. Redes sociales) */
+        /* Hover Logo LinkedIn */
         a:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect,
         .group:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
             fill: #0A66C2 !important;
@@ -254,10 +256,8 @@
             fill: #ffffff !important;
         }
 
-        /* ==========================================================================
-           2. BARRIDO INVERTIDO EXACTO PARA BOTONES DE PROYECTOS EN MODO CLARO
-           ========================================================================== */
-        /* Base en modo claro */
+        /* BOTONES DE PROYECTOS (Modo Claro) */
+        /* Efecto invertido de Barrido para los botones de proyectos en modo claro */
         :root:not(.dark) a.group\/btn,
         :root:not(.dark) #proyectos a.cursor-pointer {
             background-color: #f1f5f9 !important;
@@ -265,13 +265,13 @@
             color: #334155 !important;
         }
 
-        /* Fondo del barrido en modo claro: oscuro (#0f172a / slate-900) */
+        /* Fondo del barrido de los botones en modo claro -> El fondo pasa a un color oscuro (#0f172a / slate-900) */
         :root:not(.dark) .group\/btn::after,
         :root:not(.dark) #proyectos a.cursor-pointer::after {
             background-color: #0f172a !important;
         }
 
-        /* En hover modo claro: texto e icono GitHub pasan a blanco puro (#ffffff) */
+        /* Hover modo claro (Logo GitHub) -> El texto y el icono GitHub pasan a blanco puro (#ffffff) */
         :root:not(.dark) a.group\/btn:hover,
         :root:not(.dark) #proyectos a.cursor-pointer:hover,
         :root:not(.dark) #proyectos a.cursor-pointer:hover span,
@@ -281,7 +281,7 @@
             border-color: #0f172a !important;
         }
 
-        /* En hover modo claro del botón LinkedIn: el fondo del ícono se vuelve azul y las letras blancas */
+        /* Hover modo claro (Logo LinkedIn) -> El fondo del icono se vuelve azul y las letras blancas */
         :root:not(.dark) a.group\/btn:hover svg rect {
             fill: #0A66C2 !important;
             opacity: 1;
@@ -290,26 +290,31 @@
             fill: #ffffff !important;
         }
 
-    /* 3. Tabs de Trayectoria (Modo Claro) */
-    :root:not(.dark) .tab-btn.bg-transparent:hover {
-        background-color: #f8fafc !important; /* Hover gris sutil */
-        color: #0f172a !important;
-    }
-    :root:not(.dark) .tab-btn.bg-slate-900 {
-        background-color: #f1f5f9 !important; /* Tab activo distinguido */
-        color: #0f172a !important;
-    }
+        /* Tabs de Trayectoria (Modo Claro) */
+        :root:not(.dark) .tab-btn.bg-transparent:hover {
+            background-color: #f8fafc !important; /* Hover gris sutil */
+            color: #0f172a !important;
+        }
 
-    /* 4. Footer: tono más claro que el fondo en modo claro */
-    :root:not(.dark) footer {
-        background-color: #f8fafc !important;
-        border-color: #e2e8f0 !important;
-    }
+        :root:not(.dark) .tab-btn.bg-slate-900 {
+            background-color: #f1f5f9 !important; /* Tab activo distinguido */
+            color: #0f172a !important;
+        }
+
+        /* Footer (Modo Claro) */
+        :root:not(.dark) footer {
+            background-color: #f8fafc !important;
+            border-color: #e2e8f0 !important;
+        }
 
     </style>
 </head>
 
 <body class="bg-slate-950 text-slate-100 transition-colors duration-300 antialiased selection:bg-emerald-500 selection:text-white">
+    <!-- Barra superior de progreso de scroll -->
+    <!-- Barra de progreso superior (acelerada por GPU, respuesta instantánea) -->
+    <div id="scroll-progress" class="fixed top-0 left-0 w-full h-[2.5px] bg-emerald-500 z-[60] origin-left scale-x-0 pointer-events-none will-change-transform">
+    </div>
     <!-- Navbar -->
     <nav class="reveal-navbar sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -1890,6 +1895,29 @@
         })();
 
         btnTema.addEventListener('click', cambiarTema);
+
+        // ****************** ---- BARRA SUPERIOR DE PROGRESO DE SCROLL ---- ******************
+        const barraProgreso = document.getElementById('scroll-progress');
+        let ticking = false;
+
+        function actualizarBarraProgreso() {
+            const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+            if (alturaTotal > 0) {
+                const factor = Math.min(Math.max(window.scrollY / alturaTotal, 0), 1);
+                barraProgreso.style.transform = `scaleX(${factor})`;
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(actualizarBarraProgreso);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Llamada inicial por si la página carga con scroll
+        actualizarBarraProgreso();
 
     </script>
 </body>
