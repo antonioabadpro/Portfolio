@@ -34,6 +34,9 @@
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Typed.js CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
     <!-- DevIcons CDN -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
@@ -307,7 +310,24 @@
             border-color: #e2e8f0 !important;
         }
 
+        /******************** ---- SECCIÓN INICIO (EFECTO TYPEWRITER PARA TEXTO RESUMEN) ---- ******************/
+        @keyframes typedjsBlink {
+            50%
+            {
+                opacity: 0.0;
+            }
+        }
+
+        .typed-cursor {
+            color: #10b981;
+            font-weight: 300;
+            opacity: 1;
+            display: inline;
+            animation: typedjsBlink 0.7s infinite;
+        }
+
     </style>
+
     <style>
         /***************** ---- BARRA SCROLL LATERAL DEL NAVEGADOR ---- ******************/
 
@@ -434,7 +454,7 @@
 
     <!-- Sección INICIO (Ubicacion, Nombre, Profesion, Texto Resumen y Botones) -->
     <section id="inicio" class="scroll-mt-20 min-h-[75vh] max-w-6xl mx-auto pt-12 sm:pt-16 pb-16 sm:pb-24 px-4 sm:px-6 flex flex-col justify-center">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start lg:items-center">
             <!-- Columna de Texto -->
             <div class="flex flex-col justify-center lg:col-span-7 order-2 lg:order-1">
                 <div class="reveal-item inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold w-fit mb-5 sm:mb-6">
@@ -462,13 +482,22 @@
 
                 <!-- Texto Resumen -->
                 <div class="reveal-item [animation-delay:600ms] text-slate-400 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed mb-8">
-                    <p data-i18n="texto_inicio_resumen">
-                        Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de
-                        Software en la UNIR. <br>
-                        Desarrollador Full Stack especializado en Backend robusto y seguro. <br>
-                        Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto. <br>
-                    </p>
-                    <blockquote class="reveal-item [animation-delay:700ms] relative my-6 p-5 sm:p-6 border-l-4 border-violet-600 bg-slate-800/40 rounded-r-xl max-w-2xl transition-all duration-300 ease-out hover:bg-slate-800/70 hover:border-violet-500 hover:shadow-xl hover:shadow-violet-600/10 hover:-translate-y-0.5 group">
+                    <!-- Contenedor 'grid' que calcula la altura física real según el idioma -->
+                    <div class="grid grid-cols-1 items-start transition-all duration-300">
+                        <!-- Texto 'fantasma' invisible que reserva el espacio exacto sin saltos -->
+                        <p id="texto-inicio-resumen-phantom" class="col-start-1 row-start-1 invisible select-none pointer-events-none leading-relaxed" aria-hidden="true">
+
+                        </p>
+
+                        <!-- Texto visible donde escribe Typed.js -->
+                        <p class="col-start-1 row-start-1 leading-relaxed">
+                            <span id="texto-inicio-resumen">
+
+                            </span>
+                        </p>
+                    </div>
+                    <!-- Blockquote estático en su posición definitiva -->
+                    <blockquote class="reveal-item [animation-delay:800ms] relative my-6 p-5 sm:p-6 border-l-4 border-violet-600 bg-slate-800/40 rounded-r-xl max-w-2xl transition-all duration-300 ease-out hover:bg-slate-800/70 hover:border-violet-500 hover:shadow-xl hover:shadow-violet-600/10 hover:-translate-y-0.5 group">
                         <ul class="space-y-4 text-sm sm:text-base italic text-slate-300 font-normal leading-relaxed">
                             <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-violet-500/80 group-hover:before:bg-violet-400 group-hover:before:scale-110 before:transition-all" data-i18n="texto_inicio_frase_1">
                                 “El software comienza desde la idea, no en la primera línea de código. La calidad, la mantenibilidad y la escalabilidad son la clave del éxito.”
@@ -481,7 +510,7 @@
                 </div>
 
                 <!-- Botones de Acción -->
-                <div class="reveal-item [animation-delay:800ms] flex flex-row gap-3 sm:gap-6 w-full sm:w-auto">
+                <div class="reveal-item [animation-delay:900ms] flex flex-row gap-3 sm:gap-6 w-full sm:w-auto">
                     <a href="#proyectos" class="flex-1 sm:flex-none sm:w-52 inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg shadow-lg shadow-emerald-900/20 hover:-translate-y-0.5 transition-all text-xs sm:text-sm whitespace-nowrap">
                     <i class="devicon-github-plain text-xs sm:text-sm"></i>
                     <span data-i18n="boton_verProyectos">Ver proyectos</span>
@@ -1200,6 +1229,66 @@
             }
         });
 
+        // ****************** ---- TYPEWRITER PARA EL TEXTO RESUMEN ---- ******************
+        let instanciaTypedResumen = null;
+
+        const textosResumen = {
+            es: [
+                "Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de Software y Sistemas Informáticos en la UNIR.",
+                "Desarrollador Full Stack especializado en Backend robusto y seguro.",
+                "Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto."
+            ],
+            en: [
+                "BSc in Computer Software Engineering graduate from the University of Huelva and MSc student in Software Engineering and Computer Systems at UNIR.",
+                "Full Stack Developer specialised in robust and secure Backend architectures.",
+                "Ambitious, innovative, detail-oriented, and striving for excellence in every project."
+            ]
+        };
+
+        function iniciarTypewriterResumen(lang, retrasoInicial = 0) {
+            if (instanciaTypedResumen) {
+                instanciaTypedResumen.destroy();
+            }
+
+            const phantom = document.getElementById('texto-inicio-resumen-phantom');
+            const typedTarget = document.getElementById('texto-inicio-resumen');
+
+            // Asignamos inmediatamente el texto al elemento fantasma para fijar la altura antes de que comience la escritura (Typed.js) y evitar que el contenedor cambie de tamaño durante la animación.
+            if (phantom) {
+                phantom.innerHTML = textosResumen[lang].map(p => `<span class="block">${p}</span>`).join('');
+            }
+            if (typedTarget) {
+                typedTarget.innerHTML = "";
+            }
+
+            // Unimos las frases con un salto simple (inline)
+            const textoUnido = textosResumen[lang].join('<br>');
+
+            // Iniciamos el efecto sin desfase de altura, pero con un retraso inicial para que el usuario pueda leer el texto anterior antes de que comience la animación.
+            instanciaTypedResumen = new Typed('#texto-inicio-resumen', {
+                strings: [textoUnido],
+                typeSpeed: 10,
+                startDelay: retrasoInicial,
+                contentType: 'html',
+                showCursor: true,
+                cursorChar: '▋',
+                autoInsertCss: false, /* Evita que Typed.js inserte automáticamente estilos CSS para el cursor, permitiendo un control total sobre su estilo mediante CSS personalizado. */
+                loop: false,
+                onComplete: (self) => {
+                    if (self.cursor) {
+                        setTimeout(() => {
+                            self.cursor.style.transition = 'opacity 0.4s ease';
+                            self.cursor.style.opacity = '0';
+                        }, 800);
+                    }
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            iniciarTypewriterResumen(idiomaActual, 600);
+        });
+
         // ****************** ---- TRAYECTORIA---- ******************
 
         // Funcionalidad cambio de columnas (Tabs) en la sección de TRAYECTORIA
@@ -1753,7 +1842,6 @@
                 texto_inicio_nombre: "nombre",
                 texto_inicio_apellidos: "apellidos",
                 texto_inicio_profesion: "Ingeniero Informático • Ingeniero de Software",
-                texto_inicio_resumen: "Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de Software en la UNIR. <br> Desarrollador Full Stack especializado en Backend robusto y seguro. <br> Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto. <br>",
                 texto_inicio_frase_1: "“El software comienza desde la idea, no en la primera línea de código. La calidad, la mantenibilidad y la escalabilidad son la clave del éxito.”",
                 texto_inicio_frase_2: "“En la mayoría de ocasiones, los requisitos cambian constantemente; Cuanto mejor sea el diseño inicial del software, menor será el coste de adaptación.”",
                 boton_verProyectos: "Ver proyectos",
@@ -1823,7 +1911,6 @@
                 texto_inicio_nombre: "name",
                 texto_inicio_apellidos: "surnames",
                 texto_inicio_profesion: "Computer Engineer • Software Engineer",
-                texto_inicio_resumen: "BSc in Computer Software Engineering graduate from the University of Huelva and MSc student in Software Engineering at UNIR. <br> Full Stack Developer specialised in robust and secure Backend architectures. <br> Ambitious, innovative, detail-oriented, and striving for excellence in every project. <br>",
                 texto_inicio_frase_1: "“Software begins with the idea, not at the first line of code. Quality, maintainability, and scalability are the key to success.”",
                 texto_inicio_frase_2: "“In most cases, requirements change constantly; the better the initial software design, the lower the cost of adaptation.”",
                 boton_verProyectos: "View projects",
@@ -1909,6 +1996,8 @@
 
             renderizarStackTecnologico(); // Re-renderizamos el stack tecnológico para actualizar las habilidades según el idioma
             actualizarTodosLosCarriles(); // Actualizamos la visibilidad de las flechas de desplazamiento después de cambiar el idioma
+
+            iniciarTypewriterResumen(lang, 0); // Reiniciar Typewriter con el nuevo idioma de forma inmediata
             lucide.createIcons(); // Aseguramos que los iconos se rendericen correctamente después del cambio de idioma
         }
 
