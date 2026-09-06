@@ -475,10 +475,14 @@
                     </div>
                 </h1>
 
-                <!-- Profesion -->
-                <h2 class="reveal-item [animation-delay:400ms] text-base sm:text-xl text-slate-100 font-medium mb-5 sm:mb-6" data-i18n="texto_inicio_profesion">
-                    Ingeniero Informático &bull; Ingeniero de Software
-                </h2>
+                <!-- Profesion (Ticker Vertical) -->
+                <div class="reveal-item [animation-delay:400ms] mb-5 sm:mb-6 flex items-center text-base sm:text-xl font-medium text-slate-100">
+                    <div class="relative h-7 sm:h-8 overflow-hidden">
+                        <h2 id="ticker-profesion" class="flex flex-col">
+
+                        </h2>
+                    </div>
+                </div>
 
                 <!-- Texto Resumen -->
                 <div class="reveal-item [animation-delay:600ms] text-slate-400 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed mb-8">
@@ -1229,6 +1233,8 @@
             }
         });
 
+        // ******************* ---- INICIO ---- ******************
+
         // ****************** ---- TYPEWRITER PARA EL TEXTO RESUMEN ---- ******************
         let instanciaTypedResumen = null;
 
@@ -1287,6 +1293,85 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             iniciarTypewriterResumen(idiomaActual, 600);
+        });
+
+        // ****************** ---- TICKER VERTICAL DE PROFESIONES ---- ******************
+        const rolesProfesion = {
+            es: [
+                "Ingeniero Informático",
+                "Ingeniero de Software"
+            ],
+            en: [
+                "Computer Engineer",
+                "Software Engineer"
+            ]
+        };
+
+        let intervaloTicker = null;
+        let animandoTicker = false;
+        const NUM_ROLES = 2; // Número de roles en el ticker (para evitar errores si se cambia la lista)
+        const TIEMPO_ESPERA_TICKER = 2500; // Tiempo de espera entre cada animación (en milisegundos)
+        const VELOCIDAD_ANIMACION_TICKER = "0.85s"; // Duración de la animación de subida (en segundos)
+
+        function renderizarTickerProfesion(lang) {
+            const contenedor = document.getElementById('ticker-profesion');
+            if (!contenedor) return;
+
+            // Resetear estilos y posición
+            contenedor.style.transition = 'none';
+            contenedor.style.transform = 'translateY(0px)';
+            animandoTicker = false;
+
+            const lista = rolesProfesion[lang];
+
+            contenedor.innerHTML = lista
+                .map(rol => `<span class="h-7 sm:h-8 flex items-center text-slate-100 font-semibold tracking-wide whitespace-nowrap">${rol}</span>`)
+                .join('');
+        }
+
+        function iniciarTickerProfesion() {
+            if (intervaloTicker) clearInterval(intervaloTicker);
+
+            const contenedor = document.getElementById('ticker-profesion');
+
+            intervaloTicker = setInterval(() => {
+                if (!contenedor || contenedor.children.length < NUM_ROLES || animandoTicker) return;
+
+                const primerHijo = contenedor.firstElementChild;
+                if (!primerHijo) return;
+
+                // Medimos la altura exacta en píxeles de 1 solo elemento (ej: 28px en móvil, 32px en escritorio)
+                const alturaPaso = primerHijo.offsetHeight;
+                animandoTicker = true;
+
+                // 1. Animación suave de subida de exactamente 1 elemento
+                contenedor.style.transition = `transform ${VELOCIDAD_ANIMACION_TICKER} cubic-bezier(0.65, 0, 0.35, 1)`;
+                contenedor.style.transform = `translateY(-${alturaPaso}px)`;
+
+                // 2. Al terminar la animación, reciclamos el nodo arriba hacia abajo y reseteamos el transform
+                const handleTransitionEnd = () => {
+                    contenedor.removeEventListener('transitionend', handleTransitionEnd);
+
+                    // Pasamos el primer elemento al final de la cola
+                    contenedor.appendChild(contenedor.firstElementChild);
+
+                    // Reseteamos posición a 0 de forma invisible e instantánea
+                    contenedor.style.transition = 'none';
+                    contenedor.style.transform = 'translateY(0px)';
+
+                    // Forzamos al navegador a procesar el reflow
+                    void contenedor.offsetHeight;
+                    animandoTicker = false;
+                };
+
+                contenedor.addEventListener('transitionend', handleTransitionEnd, { once: true });
+
+            }, TIEMPO_ESPERA_TICKER);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderizarTickerProfesion(idiomaActual);
+            iniciarTickerProfesion();
         });
 
         // ****************** ---- TRAYECTORIA---- ******************
@@ -1997,7 +2082,11 @@
             renderizarStackTecnologico(); // Re-renderizamos el stack tecnológico para actualizar las habilidades según el idioma
             actualizarTodosLosCarriles(); // Actualizamos la visibilidad de las flechas de desplazamiento después de cambiar el idioma
 
+            renderizarTickerProfesion(lang); // Actualizamos el ticker de profesión según el idioma
+            iniciarTickerProfesion(); // Reiniciamos el ticker de profesión para reflejar el cambio de idioma
+
             iniciarTypewriterResumen(lang, 0); // Reiniciar Typewriter con el nuevo idioma de forma inmediata
+
             lucide.createIcons(); // Aseguramos que los iconos se rendericen correctamente después del cambio de idioma
         }
 
