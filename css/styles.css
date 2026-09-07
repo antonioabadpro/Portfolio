@@ -1,0 +1,366 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ********************** ---- FUENTES ---- ****************** */
+/* inter-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+/* inter-500 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+
+/* inter-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/inter-v20-latin-600.woff2') format('woff2');
+}
+
+/* inter-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/inter-v20-latin-700.woff2') format('woff2');
+}
+
+/* inter-800 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/inter-v20-latin-800.woff2') format('woff2');
+}
+
+/* Configuración del fade-in Up para la sección de Inicio */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Configuración del fade-in Down para la sección de Inicio */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Configuración de la animación de entrada del menú hamburguesa (baja suavemente y aparece) */
+@keyframes menuEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Configuración de la animación de salida del menú hamburguesa (sube suavemente y desaparece) */
+@keyframes menuExit {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Animación Fade-In suave para los tabs de Trayectoria */
+@keyframes tabFadeSuave {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Oculta la barra de desplazamiento del Stack Tecnologico para mejorar la estetica y la experiencia de usuario */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Animación de fade-in Down para la navbar */
+.reveal-navbar {
+    opacity: 0;
+    animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Animación de fade-in Up para los elementos de la sección de Inicio */
+.reveal-item {
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Animación de entrada para el menú de navegación móvil */
+.anim-menu-in {
+    animation: menuEnter 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animación de entrada para el menú de navegación móvil */
+.anim-menu-out {
+    animation: menuExit 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+/* Animación de fade-in para los tabs de Trayectoria */
+.anim-tab-fadeIn {
+    animation: tabFadeSuave 0.45s ease-out forwards;
+}
+
+/* Desplazamiento suave para el indicador verde del tab */
+#tab-indicador {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s ease;
+    will-change: transform, width;
+}
+
+/* Paleta de colores (Modo Claro) */
+:root {
+    --color-white: 15 23 42;
+    /* Invierte text-white a texto oscuro */
+    --color-slate-950: 241 245 249;
+    /* Fondo base (#f1f5f9) */
+    --color-slate-900: 255 255 255;
+    /* Tarjetas y fondos elevados (#ffffff) */
+    --color-slate-800: 226 232 240;
+    /* Bordes y separadores (#e2e8f0) */
+    --color-slate-700: 203 213 225;
+    /* Bordes secundarios (#cbd5e1) */
+    --color-slate-500: 100 116 139;
+    /* #64748b */
+    --color-slate-400: 71 85 105;
+    /* Textos legibles (#475569) */
+    --color-slate-300: 51 65 85;
+    /* Textos de títulos (#334155) */
+    --color-slate-200: 30 41 59;
+    --color-slate-100: 15 23 42;
+    --color-slate-50: 2 6 23;
+
+    --color-emerald-400: 5 150 105;
+    --color-emerald-500: 16 185 129;
+    --color-emerald-600: 5 150 105;
+    --color-emerald-700: 167 243 208;
+    --color-emerald-800: 209 250 229;
+    --color-emerald-950: 16 185 129;
+}
+
+/* Paleta de colores (Modo Oscuro) */
+.dark {
+    --color-white: 255 255 255;
+    --color-slate-950: 2 6 23;
+    --color-slate-900: 15 23 42;
+    --color-slate-800: 30 41 59;
+    --color-slate-700: 51 65 85;
+    --color-slate-500: 100 116 139;
+    --color-slate-400: 148 163 184;
+    --color-slate-300: 203 213 225;
+    --color-slate-200: 226 232 240;
+    --color-slate-100: 241 245 249;
+    --color-slate-50: 248 250 252;
+
+    --color-emerald-400: 52 211 153;
+    --color-emerald-500: 16 185 129;
+    --color-emerald-600: 5 150 105;
+    --color-emerald-700: 4 120 87;
+    --color-emerald-800: 6 95 70;
+    --color-emerald-950: 2 44 34;
+}
+
+/****************** ---- EFECTOS MODO CLARO ---- ******************/
+
+/* Botones verdes principales: texto blanco siempre */
+.bg-emerald-600,
+.bg-emerald-600 * {
+    color: #ffffff !important;
+}
+
+/* LOGO DE LINKEDIN (Modo Claro) */
+/* Estado normal (Icono monocromático limpio calado con el fondo) */
+svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
+    fill: currentColor !important;
+    opacity: 0.85;
+    transition: fill 0.3s ease, opacity 0.3s ease;
+}
+
+svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) path {
+    fill: rgb(var(--color-slate-900)) !important;
+    transition: fill 0.3s ease;
+}
+
+/* Hover Logo LinkedIn */
+a:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect,
+.group:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) rect {
+    fill: #0A66C2 !important;
+    opacity: 1;
+}
+
+a:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) path,
+.group:hover svg:has(path[d*="M7.4 19.5H4.2V9.2h3.2v10.3z"]) path {
+    fill: #ffffff !important;
+}
+
+/* BOTONES DE PROYECTOS (Modo Claro) */
+/* Efecto invertido de Barrido para los botones de proyectos en modo claro */
+:root:not(.dark) a.group\/btn,
+:root:not(.dark) #proyectos a.cursor-pointer {
+    background-color: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+}
+
+/* Fondo del barrido de los botones en modo claro -> El fondo pasa a un color oscuro (#0f172a / slate-900) */
+:root:not(.dark) .group\/btn::after,
+:root:not(.dark) #proyectos a.cursor-pointer::after {
+    background-color: #0f172a !important;
+}
+
+/* Hover modo claro (Logo GitHub) -> El texto y el icono GitHub pasan a blanco puro (#ffffff) */
+:root:not(.dark) a.group\/btn:hover,
+:root:not(.dark) #proyectos a.cursor-pointer:hover,
+:root:not(.dark) #proyectos a.cursor-pointer:hover span,
+:root:not(.dark) #proyectos a.cursor-pointer:hover svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    border-color: #0f172a !important;
+}
+
+/* Hover modo claro (Logo LinkedIn) -> El fondo del icono se vuelve azul y las letras blancas */
+:root:not(.dark) a.group\/btn:hover svg rect {
+    fill: #0A66C2 !important;
+    opacity: 1;
+}
+
+:root:not(.dark) a.group\/btn:hover svg path {
+    fill: #ffffff !important;
+}
+
+/* Tabs de Trayectoria (Modo Claro) */
+:root:not(.dark) .tab-btn.bg-transparent:hover {
+    background-color: #f8fafc !important;
+    /* Hover gris sutil */
+    color: #0f172a !important;
+}
+
+:root:not(.dark) .tab-btn.bg-slate-900 {
+    background-color: #f1f5f9 !important;
+    /* Tab activo distinguido */
+    color: #0f172a !important;
+}
+
+/* Footer (Modo Claro) */
+:root:not(.dark) footer {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+}
+
+/******************** ---- SECCIÓN INICIO (EFECTO TYPEWRITER PARA TEXTO RESUMEN) ---- ******************/
+@keyframes typedjsBlink {
+    50% {
+        opacity: 0.0;
+    }
+}
+
+.typed-cursor {
+    color: #10b981;
+    font-weight: 300;
+    opacity: 1;
+    display: inline;
+    animation: typedjsBlink 0.7s infinite;
+}
+
+/***************** ---- BARRA SCROLL LATERAL DEL NAVEGADOR ---- ******************/
+
+/* Variables de Color y Esquema por Modo */
+:root {
+    color-scheme: light;
+    /* Fondo carril claro (slate-100) */
+    --sb-track: #f1f5f9;
+    /* Barra verde esmeralda fija (emerald-600) */
+    --sb-thumb: #059669;
+    /* Verde esmeralda más oscuro en hover (emerald-700) */
+    --sb-hover: #047857;
+}
+
+html.dark,
+:root.dark {
+    color-scheme: dark;
+    /* Fondo carril oscuro (slate-950) */
+    --sb-track: #020617;
+    /* Barra verde esmeralda luminosa (emerald-500) */
+    --sb-thumb: #10b981;
+    /* Verde esmeralda más claro en hover (emerald-400) */
+    --sb-hover: #34d399;
+}
+
+/* Estándar W3C moderno (Firefox y versiones recientes de Chrome/Edge) */
+html,
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--sb-thumb) var(--sb-track);
+}
+
+/* Motores Chromium / WebKit (Chrome, Edge, Brave, Opera, Safari) */
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--sb-track) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--sb-thumb) !important;
+    border-radius: 9999px !important;
+    border: 2px solid var(--sb-track) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--sb-hover) !important;
+}
