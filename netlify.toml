@@ -1,0 +1,16 @@
+[build]
+  command = "node build.js"
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/es/"
+  status = 302
+  force = false
+  conditions = {Language = ["es"]}
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  force = false
