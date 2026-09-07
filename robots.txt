@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Descomenta la siguiente línea y pega tu URL real cuando tengas el dominio propio
-# Sitemap: https://antonioabadpro.netlify.app/sitemap.xml
+Sitemap: https://antonioabadpro.netlify.app/sitemap.xml
