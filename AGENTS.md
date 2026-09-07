@@ -81,9 +81,10 @@ Cada modificación en un fichero se hará de forma progresiva, es decir, no se a
 
 - **Stack Tecnológico Base:**
   - HTML5 Semántico + SEO avanzado.
-  - Tailwind CSS (vía CDN / Configuración extendida con variables CSS dinámicas).
-  - Vanilla JavaScript (modular, ligero, sin dependencias pesadas innecesarias).
-  - Librerías externas controladas: Lucide Icons, DevIcons, Typed.js.
+  - Tailwind CSS v3 (compilado y minificado localmente con CLI; variables CSS dinámicas RGB).
+  - Tipografía local: Inter autoalojada en `/fonts/` (`.woff2`) con directiva `font-display: swap`.
+  - Vanilla JavaScript modular en `/js/functions.js` cargado con `defer`.
+  - Iconografía vectorial SVG nativa (desacoplada de CDNs de terceros). Librería externa diferida: Typed.js.
 - **Estructura Modular del JavaScript:**
   - **Stack Tecnológico:** Las categorías, tecnologías e iconos deben alimentarse desde sus respectivas estructuras de datos sin duplicar marcado innecesario en el DOM.
   - **Typewriter & Tickers:** Controlar el espacio reservado (elementos *phantom*) para evitar saltos de línea y *layout shifts* durante la escritura.
@@ -110,3 +111,7 @@ Cada modificación en un fichero se hará de forma progresiva, es decir, no se a
 | **06/09/2026** | Creación inicial del archivo AGENTS.md | Estandarización de reglas técnicas, diseño UI/UX sénior y protocolos de memoria. |
 | **06/09/2026** | Incorporación de estándares SEO y estrategia multirruta (`/es`, `/en`) | Garantizar indexabilidad completa por idioma y preparar la migración desde `data-i18n`. |
 | **06/09/2026** | Integración del protocolo y catálogo de Skills | Asegurar ejecución sistemática de skills y sincronización con `find-skills`. |
+| **07/09/2026** | Desacoplamiento de CDNs y compilación local de Tailwind CSS | Sustitución de `cdn.tailwindcss.com` por compilación y minificación con Tailwind CLI (`css/styles.css` -> `css/styles.min.css`), reduciendo latencia de red y dependencia de terceros. |
+| **07/09/2026** | Self-hosting de tipografía Inter (`.woff2`) y vectorización SVG nativa | Supresión de llamadas a Google Fonts CDN; adopción de fuentes locales `.woff2` con `font-display: swap` y migración de Lucide Icons/DevIcons CDN a SVGs nativos integrados. |
+| **07/09/2026** | Modularización de JavaScript en `/js/functions.js` | Extracción de los scripts embebidos de `template.html` a un archivo externo con atributo `defer`, aligerando más de 1380 líneas por HTML y mejorando el First Contentful Paint. |
+| **07/09/2026** | Automatización de compilación y políticas de caché en Netlify | Actualización de `netlify.toml` con pipeline encadenado (`tailwindcss --minify && node build.js`) y cabeceras `Cache-Control` inmutables (1 año) para `/img/*` y `/css/*`. |
