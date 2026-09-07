@@ -2,10 +2,6 @@
 # Configuración del Build y Despliegue
 # ================================================
 
-[build]
-  command = "node build.js"
-  publish = "."
-
 # Hacemos que Netlify compile Tailwind automáticamente en cada despliegue
 [build]
   command = "npx tailwindcss -i ./css/styles.css -o ./css/styles.min.css --minify && node build.js"
