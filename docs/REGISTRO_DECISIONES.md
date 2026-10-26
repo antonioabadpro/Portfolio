@@ -1,0 +1,16 @@
+# Registro Histórico de Decisiones de Arquitectura y Negocio (ADR Log)
+
+> Este documento actúa como registro histórico inmutable de decisiones técnicas, diseño y memoria acumulada del proyecto ERP Autoescuelas (TFG) de conformidad con las directrices de [`AGENTS.md`](file:///c:/Users/anton/Desktop/Programaci%C3%B3n/Portfolio/AGENTS.md).
+
+| Fecha (DD/MM/YYYY) | Decisión / Regla Registrada | Contexto / Motivo |
+| :--- | :--- | :--- |
+| **06/09/2026** | Creación inicial del archivo AGENTS.md | Estandarización de reglas técnicas, diseño UI/UX sénior y protocolos de memoria. |
+| **06/09/2026** | Incorporación de estándares SEO y estrategia multirruta (`/es`, `/en`) | Garantizar indexabilidad completa por idioma y preparar la migración desde `data-i18n`. |
+| **06/09/2026** | Integración del protocolo y catálogo de Skills | Asegurar ejecución sistemática de skills y sincronización con `find-skills`. |
+| **07/09/2026** | Desacoplamiento de CDNs y compilación local de Tailwind CSS | Sustitución de `cdn.tailwindcss.com` por compilación y minificación con Tailwind CLI (`css/styles.css` -> `css/styles.min.css`), reduciendo latencia de red y dependencia de terceros. |
+| **07/09/2026** | Self-hosting de tipografía Inter (`.woff2`) y vectorización SVG nativa | Supresión de llamadas a Google Fonts CDN; adopción de fuentes locales `.woff2` con `font-display: swap` y migración de Lucide Icons/DevIcons CDN a SVGs nativos integrados. |
+| **07/09/2026** | Modularización de JavaScript en `/js/functions.js` | Extracción de los scripts embebidos de `template.html` a un archivo externo con atributo `defer`, aligerando más de 1380 líneas por HTML y mejorando el First Contentful Paint. |
+| **07/09/2026** | Automatización de compilación y políticas de caché en Netlify | Actualización de `netlify.toml` con pipeline encadenado (`tailwindcss --minify && node build.js`) y cabeceras `Cache-Control` inmutables (1 año) para `/img/*` y `/css/*`. |
+| **26/10/2026** | Migración integral del sistema Light/Dark Mode a utilidades atómicas de Tailwind CSS | Supresión de 138 líneas de CSS nativo con alta especificidad (`:root:not(.dark)`, `svg:has(...)`, `!important`) y sobreescrituras en `tailwind.config.js`. |
+| **27/10/2026** | Optimización de fluidez en Theme Switch (60/120 FPS) y restauración visual de Stack Tecnológico y SVGs | Erradicación del lag de 10 FPS al suprimir `transition-colors` sobre `backdrop-blur-md` e integrar `document.startViewTransition`; restauración de textos del Stack Tecnológico fieles a la Imagen 1 (`dark:text-slate-300`/`dark:text-slate-400`); corrección del trazado vectorial canónico de Lucide `scroll-text` en Certificaciones y restablecimiento dinámico del SVG de la Luna en `#btn-tema`. |
+| **27/10/2026** | Estandarización de edición interactiva mediante diffs en el IDE (`edit_file`) | Obligatoriedad estricta de usar `edit_file` para todas las modificaciones de código, prohibiendo scripts de consola/Node.js que impidan al desarrollador revisar y aceptar/rechazar los cambios línea a línea con control total. |

@@ -150,7 +150,7 @@ function renderizarTickerProfesion(lang) {
 
     const lista = rolesProfesion[lang];
     contenedor.innerHTML = lista
-        .map(rol => `<span class="h-7 sm:h-8 flex items-center text-slate-100 font-semibold tracking-wide whitespace-nowrap">${rol}</span>`)
+        .map(rol => `<span class="h-7 sm:h-8 flex items-center text-slate-900 dark:text-slate-100 font-semibold tracking-wide whitespace-nowrap">${rol}</span>`)
         .join('');
 }
 
@@ -207,8 +207,8 @@ function inicializarTabsTrayectoria() {
     const listaBotones = [btnEstudio, btnTrabajo, btnCertificaciones];
     const listaColumnas = [columnaEstudio, columnaTrabajo, columnaCertificaciones];
 
-    const clasesBotonActivo = ['text-white', 'bg-slate-900'];
-    const clasesBotonInactivo = ['text-slate-400', 'bg-transparent'];
+    const clasesBotonActivo = ['text-slate-900', 'dark:text-white', 'bg-slate-100', 'dark:bg-slate-900'];
+    const clasesBotonInactivo = ['text-slate-500', 'dark:text-slate-400', 'bg-transparent'];
 
     function cambiarTabTrayectoria(indiceActivo) {
         // Cambiamos el estilo de los botones para reflejar la columna seleccionada
@@ -615,12 +615,12 @@ function renderizarStackTecnologico() {
 
                 if (index < cat.numExperto) {
                     htmlGenerado += `
-                    <li class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-300 bg-emerald-950/50 hover:bg-emerald-800/50 border border-emerald-700/60 hover:border-emerald-500/70 transition-colors rounded-md flex items-center">
+                    <li class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-800 dark:text-slate-300 bg-emerald-50 dark:bg-emerald-950/50 hover:bg-emerald-100 dark:hover:bg-emerald-800/50 border border-emerald-300 dark:border-emerald-700/60 hover:border-emerald-400 dark:hover:border-emerald-500/70 transition-colors rounded-md flex items-center">
                         ${htmlIcono}${nombre}
                     </li>`;
                 } else {
                     htmlGenerado += `
-                    <li class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-400 bg-slate-900/50 hover:bg-slate-800/50 border border-slate-700/60 hover:border-slate-500/60 transition-colors rounded-md flex items-center">
+                    <li class="shrink-0 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-slate-900/50 hover:bg-slate-200 dark:hover:bg-slate-800/50 border border-slate-300 dark:border-slate-700/60 hover:border-slate-400 dark:hover:border-slate-500/60 transition-colors rounded-md flex items-center">
                         ${htmlIcono}${nombre}
                     </li>`;
                 }
@@ -820,9 +820,17 @@ function inicializarTema() {
     }
 
     function cambiarTema() {
-        const esOscuro = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', esOscuro ? 'dark' : 'light');
-        actualizarIconoTema(esOscuro);
+        const alternar = () => {
+            const esOscuro = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', esOscuro ? 'dark' : 'light');
+            actualizarIconoTema(esOscuro);
+        };
+
+        if (document.startViewTransition) {
+            document.startViewTransition(() => alternar());
+        } else {
+            alternar();
+        }
     }
 
     // Cargamos la preferencia guardada o del sistema al iniciar
