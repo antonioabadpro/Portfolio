@@ -55,9 +55,10 @@
   2. Enlaces cruzados de cabecera con etiquetas `<link rel="alternate" hreflang="es" href="..." />`, `<link rel="alternate" hreflang="en" href="..." />` y `<link rel="alternate" hreflang="x-default" href="..." />`.
   3. Metadatos SEO, Open Graph y Schema.org localizados estáticamente en el HTML de cada idioma.
 - **Centralización de Diccionarios y Datos:** El catálogo de proyectos, stack de tecnologías y plantillas dinámicas (como el cuerpo de contacto de Gmail) deben organizarse bajo estructuras tipadas por clave idiomática (`es`/`en`).
+- **Fuente Única de Verdad HTML (`template.html`):** Toda comprobación, auditoría o edición de marcado debe realizarse exclusivamente sobre `template.html`. Se prohíbe comprobar o editar manualmente `es/index.html` y `en/index.html`, ya que ambos se generan de forma automatizada mediante `npm run build` (`node build.js`).
 
 ## 3.3. Arquitectura Frontend y JavaScript No Intrusivo
-- **Stack Tecnológico Base:** HTML5 Semántico nativo, Tailwind CSS v3 (CLI local sin CDNs en producción) y Vanilla JavaScript modular cargado con `defer` en `js/functions.js` (o módulos ES6 dedicados).
+- **Stack Tecnológico Base:** HTML5 Semántico nativo, Tailwind CSS v3 (CLI local sin CDNs en producción) y arquitectura JavaScript modular desacoplada por secciones (`general.js`, `resumen.js`, `trayectoria.js`, `stack.js`, `proyectos.js`, `contacto.js`) cargada con `defer`.
 - **Iconografía Nativa:** Iconos vectoriales SVG limpios e incrustados localmente, con `viewBox` estandarizado y colores gobernados mediante clases `currentColor` o Tailwind. Prohibida la carga de fuentes de iconos externas (FontAwesome, Boxicons vía CDN).
 - **Estabilidad de Layout (Anti-CLS en Dinámicos):** Elementos dinámicos como tickers de profesiones o typewriter (Typed.js) deben contar con contenedores con reserva de altura/ancho mínimas (*phantom sizing*) para evitar sacudidas visuales durante el tipado.
 - **Gestión de Eventos y Scroll:** Delegación y observadores de intersección (`IntersectionObserver`) o `requestAnimationFrame` para animaciones y scroll suave hacia anclas, sin bloquear el hilo principal.
@@ -70,6 +71,7 @@
 - **NO Inyección de CDNs en Producción:** Prohibido inyectar librerías externas o scripts de terceros desde CDN que comprometan la privacidad, CSP o rendimiento (salvo Typed.js diferido si aplica). Fuentes e iconos residen obligatoriamente en local.
 - **NO Layout Shifts (CLS no controlado):** Prohibido insertar imágenes o contenedores interactivos sin atributos `width`/`height` o `aspect-ratio` preestablecidos por CSS.
 - **NO Texto Puro Hardcodeado sin Soporte i18n:** Prohibido introducir cadenas de texto en un solo idioma. Todo contenido requiere su correspondiente traducción equivalente en el esquema ES/EN.
+- **NO Manipulación Directa de HTMLs Derivados:** Prohibido comprobar o modificar directamente `es/index.html` o `en/index.html`. El único fichero fuente para cualquier revisión o cambio es `template.html`, generándose las versiones estáticas mediante `npm run build`.
 - **NO Modificaciones Masivas sin Aprobación:** Prohibido aplicar cambios en cascada sobre múltiples ficheros en un solo turno. Las modificaciones se presentan archivo a archivo para validación progresiva del desarrollador.
 - **NO Marcadores Residuales de Control de Versiones:** Prohibido dejar marcadores de conflicto de Git (`<<<<<<<`, `=======`, `>>>>>>>`) o comentarios temporales de depuración (`console.log`) en código entregado.
 - **Uso Obligatorio de Tipografía Local Optimizada:** La tipografía 'Inter' debe servirse exclusivamente desde `/fonts/` en formato `.woff2` con la regla CSS `font-display: swap`.

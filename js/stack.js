@@ -1,254 +1,5 @@
-// ****************** ---- CONFIGURACIÓN GLOBAL E IDIOMA ---- ******************
-// Detecta el idioma desde <html lang="..."> con fallback a "es"
-const IDIOMA = document.documentElement.lang === "en" ? "en" : "es";
-
-// ****************** ---- NAVBAR (MENÚ HAMBURGUESA MÓVIL) ---- ******************
-function inicializarMenuMovil() {
-    const mobileMenuBtn = document.getElementById('btn-menu-hamburguesa');
-    const mobileMenu = document.getElementById('menu-hamburguesa');
-    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-
-    if (!mobileMenuBtn || !mobileMenu) return;
-
-    const ICONS_MENU = {
-        menu: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" id="icono-menu-hamburguesa"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>',
-        x: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" id="icono-menu-hamburguesa"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>'
-    };
-
-    function setMenuIcon(iconName) {
-        mobileMenuBtn.innerHTML = ICONS_MENU[iconName] || '';
-    }
-
-    function toggleMenu() {
-        const isClosed = mobileMenu.classList.contains('hidden');
-
-        if (isClosed) { // Entrada: Fade-in Down (baja desde arriba)
-            mobileMenu.classList.remove('hidden', 'anim-menu-out');
-            mobileMenu.classList.add('anim-menu-in');
-            setMenuIcon('x'); // Cambiamos el icono a una 'x'
-        } else { // Salida: Fade-out Up (se recoge hacia arriba)
-            mobileMenu.classList.remove('anim-menu-in');
-            mobileMenu.classList.add('anim-menu-out');
-
-            // Esperamos a que termine la animación (200ms) para ocultarlo del todo
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('anim-menu-out');
-            }, 200);
-
-            setMenuIcon('menu'); // Cambiamos el icono de nuevo a las tres líneas
-        }
-    }
-
-    mobileMenuBtn.addEventListener('click', toggleMenu);
-
-    // Cerramos el menú al pulsar sobre cualquier enlace
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (!mobileMenu.classList.contains('hidden')) {
-                toggleMenu();
-            }
-        });
-    });
-
-    // Cerrar si se redimensiona a pantalla de escritorio
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('anim-menu-in', 'anim-menu-out');
-            setMenuIcon('menu');
-        }
-    });
-}
-
-// ******************* ---- INICIO ---- ******************
-
-// ****************** ---- TYPEWRITER PARA EL TEXTO RESUMEN ---- ******************
-let instanciaTypedResumen = null;
-
-const textosResumen = {
-    es: [
-        "Graduado en Ingeniería Informática por la Universidad de Huelva y estudiante del Máster en Ingeniería de Software y Sistemas Informáticos en la UNIR.",
-        "Desarrollador Full Stack especializado en Backend robusto y seguro.",
-        "Ambicioso, innovador, detallista y buscando la excelencia en cada proyecto."
-    ],
-    en: [
-        "BSc in Computer Software Engineering graduate from the University of Huelva and MSc student in Software Engineering and Computer Systems at UNIR.",
-        "Full Stack Developer specialised in robust and secure Backend architectures.",
-        "Ambitious, innovative, detail-oriented, and striving for excellence in every project."
-    ]
-};
-
-function iniciarTypewriterResumen(lang, retrasoInicial = 0) {
-    if (instanciaTypedResumen) {
-        instanciaTypedResumen.destroy();
-    }
-
-    const phantom = document.getElementById('texto-inicio-resumen-phantom');
-    const typedTarget = document.getElementById('texto-inicio-resumen');
-
-    // Asignamos inmediatamente el texto al elemento fantasma para fijar la altura antes de que comience la escritura (Typed.js) y evitar que el contenedor cambie de tamaño durante la animación.
-    if (phantom && textosResumen[lang]) {
-        phantom.innerHTML = textosResumen[lang].map(p => `<span class="block">${p}</span>`).join('');
-    }
-    if (typedTarget) {
-        typedTarget.innerHTML = "";
-    }
-
-    if (!textosResumen[lang] || typeof Typed === 'undefined') return;
-
-    // Unimos las frases con un salto simple (inline)
-    const textoUnido = textosResumen[lang].join('<br>');
-
-    // Iniciamos el efecto sin desfase de altura, pero con un retraso inicial para que el usuario pueda leer el texto anterior antes de que comience la animación.
-    instanciaTypedResumen = new Typed('#texto-inicio-resumen', {
-        strings: [textoUnido],
-        typeSpeed: 10,
-        startDelay: retrasoInicial,
-        contentType: 'html',
-        showCursor: true,
-        cursorChar: '▋',
-        autoInsertCss: false, // Evita que Typed.js inserte automáticamente estilos CSS para el cursor, permitiendo un control total sobre su estilo mediante CSS personalizado.
-        loop: false,
-        onComplete: (self) => {
-            if (self.cursor) {
-                setTimeout(() => {
-                    self.cursor.style.transition = 'opacity 0.4s ease';
-                    self.cursor.style.opacity = '0';
-                }, 800);
-            }
-        }
-    });
-}
-
-// ****************** ---- TICKER VERTICAL DE PROFESIONES ---- ******************
-const rolesProfesion = {
-    es: [
-        "Ingeniero Informático",
-        "Ingeniero de Software"
-    ],
-    en: [
-        "Computer Engineer",
-        "Software Engineer"
-    ]
-};
-
-let intervaloTicker = null;
-let animandoTicker = false;
-const NUM_ROLES = 2; // Número de roles en el ticker (para evitar errores si se cambia la lista)
-const TIEMPO_ESPERA_TICKER = 2000; // Tiempo de espera entre cada animación (en milisegundos)
-const VELOCIDAD_ANIMACION_TICKER = "0.85s"; // Duración de la animación de subida (en segundos)
-
-function renderizarTickerProfesion(lang) {
-    const contenedor = document.getElementById('ticker-profesion');
-    if (!contenedor || !rolesProfesion[lang]) return;
-
-    // Reseteamos los estilos y la posición
-    contenedor.style.transition = 'none';
-    contenedor.style.transform = 'translateY(0px)';
-    animandoTicker = false;
-
-    const lista = rolesProfesion[lang];
-    contenedor.innerHTML = lista
-        .map(rol => `<span class="h-7 sm:h-8 flex items-center text-slate-900 dark:text-slate-100 font-semibold tracking-wide whitespace-nowrap">${rol}</span>`)
-        .join('');
-}
-
-function iniciarTickerProfesion() {
-    if (intervaloTicker) clearInterval(intervaloTicker);
-
-    const contenedor = document.getElementById('ticker-profesion');
-
-    intervaloTicker = setInterval(() => {
-        if (!contenedor || contenedor.children.length < NUM_ROLES || animandoTicker) return;
-
-        const primerHijo = contenedor.firstElementChild;
-        if (!primerHijo) return;
-
-        // Medimos la altura exacta en píxeles de 1 solo elemento (ej: 28px en móvil, 32px en escritorio)
-        const alturaPaso = primerHijo.offsetHeight;
-        animandoTicker = true;
-
-        // Iniciamos la animación suave de subida de exactamente 1 elemento
-        contenedor.style.transition = `transform ${VELOCIDAD_ANIMACION_TICKER} cubic-bezier(0.65, 0, 0.35, 1)`;
-        contenedor.style.transform = `translateY(-${alturaPaso}px)`;
-
-        // Al terminar la animación, reciclamos el nodo arriba hacia abajo y reseteamos el transform
-        const handleTransitionEnd = () => {
-            contenedor.removeEventListener('transitionend', handleTransitionEnd);
-            contenedor.appendChild(contenedor.firstElementChild); // Pasamos el primer elemento al final de la cola
-
-            // Reseteamos posición a 0 de forma invisible e instantánea
-            contenedor.style.transition = 'none';
-            contenedor.style.transform = 'translateY(0px)';
-
-            // Forzamos al navegador a procesar el reflow para que la transición se aplique correctamente en el siguiente ciclo
-            void contenedor.offsetHeight;
-            animandoTicker = false;
-        };
-
-        contenedor.addEventListener('transitionend', handleTransitionEnd, { once: true });
-    }, TIEMPO_ESPERA_TICKER);
-}
-
-// ****************** ---- TRAYECTORIA (TABS) ---- ******************
-// Funcionalidad cambio de columnas (Tabs) en la sección de TRAYECTORIA
-function inicializarTabsTrayectoria() {
-    const btnEstudio = document.getElementById('btn-formacion-academica');
-    const btnTrabajo = document.getElementById('btn-experiencia-profesional');
-    const btnCertificaciones = document.getElementById('btn-certificaciones');
-
-    const columnaEstudio = document.getElementById('tab-estudio');
-    const columnaTrabajo = document.getElementById('tab-trabajo');
-    const columnaCertificaciones = document.getElementById('tab-certificaciones');
-
-    const indicador = document.getElementById('tab-indicador');
-
-    const listaBotones = [btnEstudio, btnTrabajo, btnCertificaciones];
-    const listaColumnas = [columnaEstudio, columnaTrabajo, columnaCertificaciones];
-
-    const clasesBotonActivo = ['text-slate-900', 'dark:text-white', 'bg-slate-100', 'dark:bg-slate-900'];
-    const clasesBotonInactivo = ['text-slate-500', 'dark:text-slate-400', 'bg-transparent'];
-
-    function cambiarTabTrayectoria(indiceActivo) {
-        // Cambiamos el estilo de los botones para reflejar la columna seleccionada
-        listaBotones.forEach((btn, idx) => {
-            if (!btn) return;
-            if (idx === indiceActivo) {
-                btn.classList.remove(...clasesBotonInactivo);
-                btn.classList.add(...clasesBotonActivo);
-            } else {
-                btn.classList.remove(...clasesBotonActivo);
-                btn.classList.add(...clasesBotonInactivo);
-            }
-        });
-
-        // Movemos el indicador visual inferior a la columna seleccionada
-        if (indicador) {
-            indicador.style.transform = `translateX(${indiceActivo * 100}%)`;
-        }
-
-        // Mostramos la columna seleccionada y ocultamos el resto de columnas
-        listaColumnas.forEach((col, idx) => {
-            if (!col) return;
-            if (idx === indiceActivo) {
-                col.classList.remove('hidden');
-                col.classList.remove('anim-tab-fadeIn');
-                void col.offsetWidth; // Reiniciamos la animación forzando un reflow (re-procesamiento del DOM para calcular los elementos de la pagina)
-                col.classList.add('anim-tab-fadeIn');
-            } else {
-                col.classList.add('hidden');
-            }
-        });
-    }
-
-    // Eventos de click para los botones de la sección de TRAYECTORIA
-    listaBotones.forEach((btn, index) => {
-        if (btn) {
-            btn.addEventListener('click', () => cambiarTabTrayectoria(index));
-        }
-    });
-}
+// ****************** ---- CONFIGURACIÓN IDIOMA LOCAL ---- ******************
+// Se resuelve de forma local dentro de las funciones para no colisionar con el ámbito global (general.js)
 
 // ****************** ---- STACK TECNOLÓGICO ---- ******************
 // Lista de Iconos SVG para mejorar el rendimiento en vez de cargar la librería completa de iconos
@@ -536,11 +287,12 @@ const listaIS = {
 }
 
 function renderizarStackTecnologico() {
+    const lang = window.IDIOMA || (document.documentElement.lang === "en" ? "en" : "es");
     const categorias = [
         {
             contenedorLista: document.getElementById("lista-lenguajes"),
             contenedorContador: document.getElementById("contador-lenguajes"),
-            listaElementos: listaLenguajes[IDIOMA],
+            listaElementos: listaLenguajes[lang],
             listaIconos: listaIconosLenguajes,
             numExperto: numLenguajesExperto
         },
@@ -589,14 +341,14 @@ function renderizarStackTecnologico() {
         {
             contenedorLista: document.getElementById("lista-habilidades"),
             contenedorContador: document.getElementById("contador-habilidades"),
-            listaElementos: listaHabilidades[IDIOMA],
+            listaElementos: listaHabilidades[lang],
             listaIconos: [],
             numExperto: numHabilidadesExperto
         },
         {
             contenedorLista: document.getElementById("lista-is"),
             contenedorContador: document.getElementById("contador-is"),
-            listaElementos: listaIS[IDIOMA],
+            listaElementos: listaIS[lang],
             listaIconos: [],
             numExperto: numISExperto
         }
@@ -715,181 +467,14 @@ function inicializarStackScroll() {
     actualizarTodosLosCarriles(); // Comprobamos al cargar la página para ocultar flechas si NO hay desbordamiento
 }
 
-// ****************** ---- DESPLAZAMIENTO HORIZONTAL SUAVE CON SCROLL ---- ******************
-function inicializarEfectoScroll() {
-    const elementosParaAnimar = document.querySelectorAll('.reveal');
-
-    const observador = new IntersectionObserver((entradas, observer) => {
-        entradas.forEach(entrada => {
-            if (entrada.isIntersecting) {
-                // Al entrar en el viewport, restauramos opacidad y posición original
-                entrada.target.classList.remove('opacity-0', 'translate-y-8');
-                entrada.target.classList.add('opacity-100', 'translate-y-0');
-                observer.unobserve(entrada.target); // Dejamos de observar para ejecutar la animación una sola vez
-            }
-        });
-    }, {
-        root: null,
-        threshold: 0.20, // Se activa cuando el 20% del elemento es visible
-        rootMargin: "0px 0px -50px 0px"
-    });
-
-    elementosParaAnimar.forEach(el => observador.observe(el));
-}
-
-// ****************** ---- CONTACTO (Abrir borrador en Gmail) ---- ******************
-const listaPlantillasEmail = {
-    es: {
-        oferta: {
-            subject: "Propuesta de Empleo - [Nombre de la Empresa]",
-            body: "Hola Antonio,\n\nSoy [Tu Nombre] de [Empresa].\nHemos revisado tu perfil y nos gustaría presentarte una oportunidad laboral para el puesto de [Nombre del puesto / Puesto o Rol].\n\nTe dejamos algunos detalles clave de la propuesta:\n- Modalidad: [Remoto / Híbrido / Presencial en (Ubicación)]\n- Jornada: [Completa / Media jornada]\n- Tipo de contrato / Duración: [Indefinido / Temporal / etc.]\n- Incorporación estimada: [Inmediata / Fecha]\n- Tecnologías Principales: [Stack]\n- Breve descripción: [Detalles]\n\nSi te resulta de interés la propuesta, ¿tendrías disponibilidad para comentar más detalles por llamada o videollamada?\n\nUn saludo,\n[Tu Nombre / Cargo]"
-        },
-        info: {
-            subject: "Solicitud de Información y CV - [Nombre de la Empresa]",
-            body: "Hola Antonio,\n\nSoy [Tu Nombre] de [Empresa].\nHe visto tu portfolio y me gustaría solicitar tu Currículum Vitae actualizado.\n\nNos interesa conocer más sobre tu perfil enfocado a:\n- Motivo / Tipo de proyecto o área: [Ej. Desarrollo backend, full-stack, consultoría, etc.]\n- Aspectos que nos gustaría destacar o conocer: [Ej. Experiencia con X tecnología, proyectos recientes, disponibilidad]\n\nAsí podremos evaluar la información más relevante para el contexto de nuestra empresa.\n\nQuedo a la espera.\n\nUn saludo,\n[Tu Nombre / Cargo]"
-        },
-        otro: {
-            subject: "Contacto General - [Nombre de la Empresa / Tu Nombre]",
-            body: "Hola Antonio,\n\nSoy [Tu Nombre] de [Empresa / Particular].\nTe escribo para comentarte lo siguiente:\n\n[Indica aquí el motivo o consulta]\n\nUn saludo,\n[Tu Nombre / Firma]"
-        }
-    },
-    en: {
-        oferta: {
-            subject: "Job Proposal - [Company Name]",
-            body: "Hi Antonio,\n\nI am [Your Name] from [Company].\nWe reviewed your profile and would like to share a job opportunity for the role of [Job Title / Role].\n\nHere are some key details of the proposal:\n- Work Model: [Remote / Hybrid / On-site in (Location)]\n- Working Hours: [Full-time / Part-time]\n- Contract Type / Duration: [Permanent / Temporary / etc.]\n- Estimated Start Date: [Immediate / Date]\n- Core Technologies: [Stack]\n- Brief Description: [Details]\n\nIf you are interested in this opportunity, would you be available for a brief call to discuss further?\n\nBest regards,\n[Your Name / Title]"
-        },
-        info: {
-            subject: "Information and CV Request - [Company Name]",
-            body: "Hi Antonio,\n\nI am [Your Name] from [Company].\nI reviewed your portfolio and would like to request your updated CV.\n\nWe would like to learn more about your profile with a focus on:\n- Purpose / Project Type or Area: [e.g., Backend development, full-stack, consulting, etc.]\n- Key aspects or focus areas: [e.g., Experience with X technology, recent projects, availability]\n\nThis will allow us to evaluate the most relevant details for our company's context.\n\nLooking forward to hearing from you.\n\nBest regards,\n[Your Name / Title]"
-        },
-        otro: {
-            subject: "General Inquiry - [Company Name / Your Name]",
-            body: "Hi Antonio,\n\nI am [Your Name] from [Company / Individual].\nI am writing to you regarding the following:\n\n[Indicate your reason or inquiry here]\n\nBest regards,\n[Your Name / Signature]"
-        }
-    }
-};
-
-// Función que contiene la lógica de redirección a Gmail
-function inicializarContactoGmail() {
-    const btnBorradorGmail = document.getElementById('btnBorradorGmail');
-    const selectMotivoContacto = document.getElementById('motivoContacto');
-
-    if (!btnBorradorGmail || !selectMotivoContacto) return;
-
-    btnBorradorGmail.addEventListener('click', () => {
-        const motivoSeleccionado = selectMotivoContacto.value;
-        const plantillaLang = listaPlantillasEmail[IDIOMA] || listaPlantillasEmail.es;
-        const plantillaSeleccionada = plantillaLang[motivoSeleccionado];
-
-        if (!plantillaSeleccionada) return;
-
-        const emailDestino = "antonioabad.eng@gmail.com";
-        const asuntoCodificado = encodeURIComponent(plantillaSeleccionada.subject);
-        const cuerpoCodificado = encodeURIComponent(plantillaSeleccionada.body);
-
-        // Si el usuario está en un dispositivo móvil, abre directamente la app de correo/Gmail configurada
-        const esMovil = /Android|iPhone|iPad|Windows Phone|Mobile|Tablet/i.test(navigator.userAgent);
-
-        if (esMovil) { // Si el usuario está en un dispositivo móvil, abre directamente la app de correo/Gmail configurada
-            window.location.href = `mailto:${emailDestino}?subject=${asuntoCodificado}&body=${cuerpoCodificado}`;
-        } else { // Si el usuario está en un PC, abre Gmail en una nueva pestaña con el selector de cuentas
-            // URL destino de redacción de Gmail
-            const composeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailDestino}&su=${asuntoCodificado}&body=${cuerpoCodificado}`;
-
-            // Encapsulamos en el AccountChooser de Google
-            const selectAccountUrl = `https://accounts.google.com/AccountChooser?prompt=select_account&continue=${encodeURIComponent(composeUrl)}`;
-
-            // Abrimos la ventana para seleccionar la cuenta de correo
-            window.open(selectAccountUrl, '_blank');
-        }
-    });
-}
-
-// ******************* ---- SWITCH TEMA (Modo Oscuro / Modo Claro) ---- ******************
-function inicializarTema() {
-    const btnTema = document.getElementById('btn-tema');
-    if (!btnTema) return;
-
-    const ICONS_TEMA = {
-        moon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" id="themeIcon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>',
-        sun: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" id="themeIcon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>'
-    };
-
-    function actualizarIconoTema(esOscuro) {
-        btnTema.innerHTML = esOscuro ? ICONS_TEMA.moon : ICONS_TEMA.sun;
-    }
-
-    function cambiarTema() {
-        const alternar = () => {
-            const esOscuro = document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', esOscuro ? 'dark' : 'light');
-            actualizarIconoTema(esOscuro);
-        };
-
-        if (document.startViewTransition) {
-            document.startViewTransition(() => alternar());
-        } else {
-            alternar();
-        }
-    }
-
-    // Cargamos la preferencia guardada o del sistema al iniciar
-    const temaGuardado = localStorage.getItem('theme');
-    const prefiereOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const esOscuro = temaGuardado === 'dark' || (!temaGuardado && prefiereOscuro);
-
-    if (esOscuro) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark');
-    }
-    actualizarIconoTema(esOscuro);
-
-    btnTema.addEventListener('click', cambiarTema);
-}
-
-// ****************** ---- BARRA SUPERIOR DE PROGRESO DE SCROLL ---- ******************
-function inicializarBarraProgreso() {
-    const barraProgreso = document.getElementById('scroll-progress');
-    if (!barraProgreso) return;
-
-    let ticking = false;
-
-    function actualizarBarraProgreso() {
-        const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
-        if (alturaTotal > 0) {
-            const factor = Math.min(Math.max(window.scrollY / alturaTotal, 0), 1);
-            barraProgreso.style.transform = `scaleX(${factor})`;
-        }
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(actualizarBarraProgreso);
-            ticking = true;
-        }
-    }, { passive: true });
-
-    actualizarBarraProgreso(); // Llamada inicial por si la página carga con scroll
-}
-
-// ****************** ---- INICIALIZACIÓN GLOBAL ---- ******************
-document.addEventListener("DOMContentLoaded", () => {
-    // Actualizar año en el footer
-    const yearElem = document.getElementById('year-actual');
-    if (yearElem) yearElem.textContent = new Date().getFullYear();
-
-    // Inicializar módulos
-    inicializarTema();
-    inicializarMenuMovil();
-    iniciarTypewriterResumen(IDIOMA, 600);
-    renderizarTickerProfesion(IDIOMA);
-    iniciarTickerProfesion();
-    inicializarTabsTrayectoria();
+// ****************** ---- INICIALIZACIÓN MÓDULO STACK ---- ******************
+function inicializarModuloStack() {
     renderizarStackTecnologico();
     inicializarStackScroll();
-    inicializarEfectoScroll();
-    inicializarContactoGmail();
-    inicializarBarraProgreso();
-});
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", inicializarModuloStack);
+} else {
+    inicializarModuloStack();
+}
